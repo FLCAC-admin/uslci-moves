@@ -1,0 +1,36 @@
+
+pumped_fuels: # based on Heavy Equipment repository
+  'Gasoline': # fueltypeid: 1
+    BRIDGE: True
+    name: 'Gasoline, disepensed, at pump'
+    repo:
+      Heavy equipment operation: 'Gasoline; dispensed at pump'
+    conversion: 11500 # btu / kg <- CHECK
+    unit: kg
+
+  'Diesel': # fueltypeid: 2
+    BRIDGE: True
+    name: 'Diesel, disepensed, at pump'
+    repo:
+      Heavy equipment operation: 'Diesel; dispensed at pump'
+    conversion: 10800 # btu / kg <- CHECK
+    unit: kg
+
+  'Compressed Natural Gas (CNG)': # fueltypeid: 3
+    BRIDGE: True
+    name: 'Compressed natural gas, disepensed, at pump'
+    repo:
+      Heavy equipment operation: 'Compressed natural gas; dispensed at pump'
+    conversion: 20160 # btu / kg <- CHECK
+    unit: kg
+
+  # 'E85': # fueltypeid: ??
+  #   name: 'E85, disepensed, at pump'
+  #   repo:
+  #     Heavy equipment operation: 'Compressed natural gas; dispensed at pump'
+  #   conversion: 10000 # btu / kg <- CHECK
+  #   unit: kg
+
+  'Electricity': # fueltypeid: ??
+    repo:
+      US Electricity Baseline: 'Electricity, AC, 120 V'
