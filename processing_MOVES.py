@@ -355,7 +355,9 @@ for s in df_olca['source_type'].unique():
 bridge_processes = build_process_dict(df_bridge, flows, meta=moves_inputs['Bridge'])
 
 #%% Write to json
+out_path = parent_path / 'output'
 write_objects('moves', flows, new_flows, processes,
-              source_objs, actor_objs, dq_objs, location_objs, bridge_processes)
+              source_objs, actor_objs, dq_objs, location_objs, bridge_processes,
+              out_path = out_path)
 ## ^^ Import this file into an empty database with units and flow properties only
 ## or merge into USLCI and overwrite all existing datasets
