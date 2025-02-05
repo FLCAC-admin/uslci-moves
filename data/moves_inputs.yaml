@@ -81,10 +81,12 @@ DQI:
 
   Flow:
     Flow reliability:
-      score: 2
+      score: 1
       description: >
-        Assumes that country or international sources of generation data are
-        verified.
+        EPA uses extensive in-use measurements through a variety of sources,
+        including dynamometer readings over defined drive cycles, real-world portable
+        emissions monitoring, and even some remote sensing data (often employing
+        drive-through test sheds).
 
     Temporal correlation:
       score: 1
@@ -101,9 +103,11 @@ DQI:
         Modeling is explicit to vehicle class and fuel type.
 
     Data collection methods:
-      score: 1 ## <- Still TBD, will there be differences by pollutant?
+      score: 1
       description: >
-        TBD
+        MOVES population and activity inputs come from large vehicle registration,
+        telematics, and survey datasets reflecting the full range of vehicle
+        types covered.
 
 Bridge:
   description: >
