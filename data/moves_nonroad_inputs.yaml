@@ -1,0 +1,82 @@
+
+Year: 2024
+EnergyFlow: 'Total Energy Consumption'
+
+DQI:
+  dqSystem:
+    Process:
+      Federal LCA Commons Core Database: 'US EPA - Process Pedigree Matrix'
+    Flow:
+      Federal LCA Commons Core Database: 'US EPA - Flow Pedigree Matrix' 
+
+  Process:
+    Process review:
+      score: 2
+      description: > 
+        Process data have been internally reviewed and externally reviewed (expected).
+    
+    Process completeness:
+      score: 1
+      description: Most (all?) flows from MOVES have been evaluated and given a value.
+
+    # # EPA DQI category
+    # Range data completeness:
+    #   score: 5
+    #   description: No range data provided for flows.
+
+    # # EPA DQA Data Attributes
+    # Reproducibility:
+    #   score: 1
+    #   description: >
+    #     Code and calculations are fully transparent based on a public model
+    #     (MOVES), which is fully transparent.
+
+    # Free to use:
+    #   score: 1
+    #   description: Data are made available on the FLCAC.
+
+    # Interoperable:
+    #   score: 1
+    #   description: >
+    #     Intended for use with the USLCI and interoperable with the
+    #     Heavy Equipment repository. 
+
+    # Maintained:
+    #   score: 1
+    #   description: Data will be reproduced annually.
+
+  Flow:
+    Flow reliability:
+      score: 1
+      description: >
+        EPA uses extensive in-use measurements through a variety of sources,
+        including dynamometer readings over defined drive cycles, real-world portable
+        emissions monitoring, and even some remote sensing data (often employing
+        drive-through test sheds).
+
+    Temporal correlation:
+      score: 1
+      description: Data are based on fleet modeling for 2024.
+
+    Geographical correlation:
+      score: 1
+      description: >
+        Data are modeled by state and aggregated to region or national totals.
+
+    Technological correlation:
+      score: 1
+      description: >
+        Modeling is explicit to vehicle class and fuel type.
+
+    Data collection methods:
+      score: 1
+      description: >
+        MOVES population and activity inputs come from large vehicle registration,
+        telematics, and survey datasets reflecting the full range of vehicle
+        types covered.
+
+Bridge:
+  description: >
+    This process links an input in a USLCI process to a provider from the
+    [REPO] repository on the Federal LCA Commons. The intended provider for
+    this process is "[PROVIDER]". Conversion to mass are based on XXXXXX.

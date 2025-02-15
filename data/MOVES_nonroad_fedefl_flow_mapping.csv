@@ -1,0 +1,9 @@
+SourceListName,SourceFlowName,SourceFlowUUID,SourceFlowContext,SourceUnit,MatchCondition,ConversionFactor,TargetFlowName,TargetFlowUUID,TargetFlowContext,TargetUnit,Mapper,Verifier,LastUpdated
+MOVES,THC,,air,kg,=,,,,emission/air,kg,Young,,
+MOVES,CO,,air,kg,=,1,Carbon monoxide,187c525c-3715-388c-b303-a0671524a615,emission/air,kg,Young,,2/14/2025
+MOVES,NOx,,air,kg,=,1,Nitrogen oxides,4382ba18-dd21-3837-80b2-94283ef5490e,emission/air,kg,Young,,2/14/2025
+MOVES,CH4,,air,kg,=,1,Methane,aab83476-ec6c-3742-af85-15d320b7ce80,emission/air,kg,Young,,2/14/2025
+MOVES,SO2,,air,kg,=,1,Sulfur dioxide,f4973035-59f5-3bdc-b257-b274dcc04e0f,emission/air,kg,Young,,2/14/2025
+MOVES,VOC,,air,kg,=,1,Volatile organic compounds,6f861846-1c4c-3fc9-a198-56b2d9abd83b,emission/air,kg,Young,,2/14/2025
+MOVES,CO2,,air,kg,=,1,Carbon dioxide,b6f010fb-a764-3063-af2d-bcb8309a97b7,emission/air,kg,Young,,2/14/2025
+MOVES,PM2.5 Exh,,air,kg,=,1,"Particulate matter, ≤ 2.5μm",49a9c581-7c83-36b0-b1bd-455ea4c665a6,emission/air,kg,Young,,2/14/2025

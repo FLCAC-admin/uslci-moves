@@ -8,7 +8,7 @@ pumped_fuels: # based on Heavy Equipment repository
     conversion: 11500 # btu / kg <- CHECK
     unit: kg
 
-  'Diesel': # fueltypeid: 2
+  'Diesel': &diesel # fueltypeid: 2
     BRIDGE: True
     name: 'Diesel, disepensed, at pump'
     repo:
@@ -16,7 +16,7 @@ pumped_fuels: # based on Heavy Equipment repository
     conversion: 10800 # btu / kg <- CHECK
     unit: kg
 
-  'Compressed Natural Gas (CNG)': # fueltypeid: 3
+  'Compressed Natural Gas (CNG)': &cng # fueltypeid: 3
     BRIDGE: True
     name: 'Compressed natural gas, disepensed, at pump'
     repo:
@@ -34,3 +34,16 @@ pumped_fuels: # based on Heavy Equipment repository
   'Electricity': # fueltypeid: ??
     repo:
       US Electricity Baseline: 'Electricity, AC, 120 V'
+
+## Nonroad
+  'LPG':
+    BRIDGE: True
+    name: 'Liquefied petroleum gas, disepensed, at pump'
+    repo:
+      Heavy equipment operation: 'Liquefied petroleum gas; dispensed at pump'
+    conversion: 20160 # btu / kg <- CHECK
+    unit: kg
+
+  'Marine Diesel': *diesel
+  'Nonroad Diesel': *diesel
+  'CNG': *cng
