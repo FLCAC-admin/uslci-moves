@@ -86,6 +86,11 @@ df = (mapped_df.reset_index(drop=True)
 temp_df = (df[['yearid', 'fuel', 'scc', 'equipment', 'sector', 'region']]
            .drop_duplicates()
            )
+if 'description' not in df:
+    df['description'] = ''
+else:
+    df['description'] = df['description'].fillna('')
+
 df_olca = pd.concat([df,
                      (temp_df
                       .assign(reference = True)
@@ -124,7 +129,8 @@ df_olca = (df_olca
            ##TODO: ^^ fix this flow name assignment for reference flows
            .assign(FlowUUID = lambda x: np.where(cond1,
                    x['name'].apply(make_uuid), x['FlowUUID']))
-           .assign(Context = np.where(cond1, df_olca['RefFlowCategory'],
+           .assign(Context = lambda x: np.where(cond1,
+                   'Technosphere Flows / ' + df_olca['RefFlowCategory'],
                    df_olca['Context']))
            )
 
@@ -253,7 +259,7 @@ from flcac_utils.util import assign_year_to_meta, \
     extract_actors_from_process_meta, extract_dqsystems,\
     extract_sources_from_process_meta, generate_locations_from_exchange_df
 
-with open(data_path / 'MOVES_onroad_process_metadata.yaml') as f:
+with open(data_path / 'MOVES_nonroad_process_metadata.yaml') as f:
     process_meta = yaml.safe_load(f)
 
 process_meta = assign_year_to_meta(process_meta, moves_inputs['Year'])
@@ -288,25 +294,18 @@ else:
 
 processes = {}
 # loop through each vehicle type and region to adjust metadata before writing processes
-for s in df_olca['source_type'].unique():
-    _df_olca = df_olca.query('source_type == @s')
-    vehicle_desc = process_meta['vehicle_descriptions'].get(
-        re.sub(r'[^a-zA-Z0-9]', '_', s.replace(',','')))
+for s in df_olca['sector'].unique():
+    _df_olca = df_olca.query('sector == @s')
     for r in _df_olca['region'].unique():
         _process_meta = process_meta.copy()
         if r == 'US':
             _process_meta['geography_description'] = _process_meta.get('geography_description_US')
         _process_meta.pop('geography_description_US')
-        _process_meta.pop('vehicle_descriptions')
+        # _process_meta.pop('vehicle_descriptions')
         for k, v in _process_meta.items():
             if not isinstance(v, str): continue
             v = v.replace('[VEHICLE_TYPE]', s.title())
-            v = v.replace('[VEHICLE DESCRIPTION]', vehicle_desc)
-            v = v.replace('[STATES]', ", ".join(regions.get(r, "")))
             v = v.replace('[VEHICLE_CLASS]', s.split(',')[0])
-            v = v.replace('[PAYLOAD]',
-                      str(moves_inputs['payloads'].get(s.split(',')[0])['payload'])
-                      )
             _process_meta[k] = v
         p_dict = build_process_dict(_df_olca.query('region == @r'),
                                     flows, meta=_process_meta,
@@ -321,7 +320,7 @@ bridge_processes = build_process_dict(df_bridge, flows, meta=moves_inputs['Bridg
 
 #%% Write to json
 out_path = parent_path / 'output'
-write_objects('moves', flows, new_flows, processes,
+write_objects('moves_nonroad', flows, new_flows, processes,
               source_objs, actor_objs, dq_objs, location_objs, bridge_processes,
               out_path = out_path)
 ## ^^ Import this file into an empty database with units and flow properties only

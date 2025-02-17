@@ -83,11 +83,11 @@ Agriculture,2265005040,4-Str Tillers > 6 HP,,,
 Agriculture,2265005045,4-Str Swathers,,,
 Agriculture,2265005055,4-Str Other Agricultural Equipment,,,
 Agriculture,2265005060,4-Str Irrigation Sets,,,
-Commercial,2260006005,2-Str Generator Sets,"Gasline equipment operation, 2-stroke generator",23: Construction / 2389: Other Specialty Trade Contractors,23: Construction / 2389: Other Specialty Trade Contractors
+Commercial,2260006005,2-Str Generator Sets,2-stroke generator,23: Construction / 2389: Other Specialty Trade Contractors,23: Construction / 2389: Other Specialty Trade Contractors
 Commercial,2260006010,2-Str Pumps,,,
 Commercial,2260006015,2-Str Air Compressors,,,
 Commercial,2260006035,2-Str Hydro Power Units,,,
-Commercial,2265006005,4-Str Generator Sets,"Gasline equipment operation, 4-stroke generator",23: Construction / 2389: Other Specialty Trade Contractors,23: Construction / 2389: Other Specialty Trade Contractors
+Commercial,2265006005,4-Str Generator Sets,4-stroke generator,23: Construction / 2389: Other Specialty Trade Contractors,23: Construction / 2389: Other Specialty Trade Contractors
 Commercial,2265006010,4-Str Pumps,,,
 Commercial,2265006015,4-Str Air Compressors,,,
 Commercial,2265006025,4-Str Welders,,,
