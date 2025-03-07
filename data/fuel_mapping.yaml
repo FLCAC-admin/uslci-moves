@@ -24,12 +24,13 @@ pumped_fuels: # based on Heavy Equipment repository
     conversion: 20160 # btu / kg <- CHECK
     unit: kg
 
-  # 'E85': # fueltypeid: ??
-  #   name: 'E85, disepensed, at pump'
-  #   repo:
-  #     Heavy equipment operation: 'Compressed natural gas; dispensed at pump'
-  #   conversion: 10000 # btu / kg <- CHECK
-  #   unit: kg
+  'E85': # fueltypeid: ??
+    BRIDGE: True
+    name: 'Ethanol, 85%, dispensed, at pump'
+    repo:
+      USLCI: 'Ethanol, 85%, blended, at service station'
+    conversion: 25590 # btu / kg <- CHECK
+    unit: kg
 
   'Electricity': # fueltypeid: ??
     repo:
