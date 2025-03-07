@@ -38,7 +38,9 @@ energy_flow = moves_inputs['EnergyFlow']
 #%%
 with open(data_path / "moves_regions.yaml", "r") as file:
     regions = yaml.safe_load(file)
-    region_dict = {state: region for region, l in regions.items() for state in l}
+    region_dict = {state: region for region, l in regions.items() for state in l['states']}
+    elec_grid = {region: {'Name': v['electricity'],
+                          'UUID': v['UUID']} for region, v in regions.items()}
 
 df = (df_orig
       .assign(region = lambda x: x['state'].map(region_dict)))
@@ -195,12 +197,32 @@ for k, v in fuel_dict.items():
     else:
         fuel_dict[k]['id'] = make_uuid(fuel_dict[k].get('name'))
 
+def create_bridge_name(repo, flowname):
+    if repo == 'USLCI':
+        return f'{flowname} PROXY'
+    else:
+        return f'{flowname} BRIDGE, USLCI to {repo}'
+
+def create_bridge_category(repo, flowname):
+    if repo == 'USLCI':
+        return 'Bridge Processes'
+    else:
+        return f'Bridge Processes / USLCI to {repo}'
+
 df_olca = (df_olca
+           ## For processes that require a bridge process, tag them and add
+           # the name of the repository.
            .assign(bridge = lambda x: np.where(
                cond2, x['fuel'].map({k: True for k, v in fuel_dict.items()
                                      if v.get('BRIDGE', False)}),
                False))
-           ## TODO: make sure electricity inputs are flagged for eventual default provider
+           .assign(repo = lambda x: np.where(
+               cond2, x['fuel'].map({k: list(v['repo'].keys())[0]
+                                     for k, v in fuel_dict.items()
+                                     if v.get('BRIDGE', False)}),
+               False))
+
+           ## Assign flow information for energy flows
            .assign(FlowName = lambda x: np.where(
                cond2, x['fuel'].map({k: v['name'] for k, v in fuel_dict.items()}),
                x['FlowName']))
@@ -227,8 +249,10 @@ df_bridge = (df_olca[cond2]
                    errors='ignore')
              .reset_index(drop=True)
              .assign(amount = 1)
-             .assign(ProcessCategory = 'Bridge Processes / USLCI to Heavy Equipment Operations')
-             .assign(ProcessName = lambda x: x["FlowName"] + ' BRIDGE, USLCI to Heavy Equipment Operations')
+             .assign(ProcessCategory = lambda x: x.apply(
+                 lambda z: create_bridge_category(z['repo'], z['FlowName']), axis=1))
+             .assign(ProcessName = lambda x: x.apply(
+                 lambda z: create_bridge_name(z['repo'], z['FlowName']), axis=1))
              .assign(ProcessID = lambda x: x['ProcessName'].apply(make_uuid))
              # ^ need more args passed to UUID to avoid duplicates?
              )
@@ -263,12 +287,26 @@ df_bridge = (pd.concat([
 df_olca = (df_olca
            .query('not(FlowUUID.isna())')
            .assign(default_provider_process = lambda x: np.where(
-               x['bridge'] == True, x["FlowName"] + ' BRIDGE, USLCI to Heavy Equipment Operations',
+               x['bridge'] == True,
+               x.apply(lambda z: create_bridge_name(z['repo'], z['FlowName']), axis=1),
                ''))
            .assign(default_provider = lambda x: np.where(
                x['bridge'] == True, x['default_provider_process'].apply(make_uuid)
                ,''))
            .drop(columns=['bridge'], errors='ignore')
+           )
+
+# Assign regional electricity grids as default providers
+df_olca = (df_olca
+           .assign(default_provider_process = lambda x: np.where(
+               x['FlowName'] == 'Electricity, AC, 120 V',
+               x['region'].map({k: 'Electricity; at user; consumption mix - ' +
+                                v['Name'] for k, v in elec_grid.items()}),
+               x['default_provider_process']))
+           .assign(default_provider =  lambda x: np.where(
+               x['FlowName'] == 'Electricity, AC, 120 V',
+               x['region'].map({k: v['UUID'] for k, v in elec_grid.items()}),
+               x['default_provider']))
            )
 
 # df_olca.to_csv(parent_path /'moves_processed_output.csv', index=False)
@@ -337,7 +375,7 @@ for s in df_olca['source_type'].unique():
             if not isinstance(v, str): continue
             v = v.replace('[VEHICLE_TYPE]', s.title())
             v = v.replace('[VEHICLE DESCRIPTION]', vehicle_desc)
-            v = v.replace('[STATES]', ", ".join(regions.get(r, "")))
+            v = v.replace('[STATES]', ", ".join(regions[r]['states']))
             v = v.replace('[VEHICLE_CLASS]', s.split(',')[0])
             v = v.replace('[PAYLOAD]',
                       str(moves_inputs['payloads'].get(s.split(',')[0])['payload'])
