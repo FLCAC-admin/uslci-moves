@@ -101,7 +101,7 @@ df_olca = pd.concat([df,
                       ), ## ^^ reference flow output
                      (temp_df
                       .assign(reference = False)
-                      .assign(Isinput = True)
+                      .assign(IsInput = True)
                       .assign(amount = 1)
                       .assign(FlowName = energy_flow)
                       .assign(description = '')

@@ -1,5 +1,5 @@
 
-Year: 2024
+Year: 2020
 EnergyFlow: 'Total Energy Consumption'
 
 DQI:
@@ -47,16 +47,17 @@ DQI:
 
   Flow:
     Flow reliability:
-      score: 1
+      score: 3
       description: >
         EPA uses extensive in-use measurements through a variety of sources,
         including dynamometer readings over defined drive cycles, real-world portable
         emissions monitoring, and even some remote sensing data (often employing
-        drive-through test sheds).
+        drive-through test sheds). Ultimately the final emission factor is a function
+        of both these emissions monitoring and calculations.
 
     Temporal correlation:
       score: 1
-      description: Data are based on fleet modeling for 2024.
+      description: Data are based on fleet modeling for 2020.
 
     Geographical correlation:
       score: 1
