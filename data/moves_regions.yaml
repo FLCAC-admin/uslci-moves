@@ -1,22 +1,65 @@
+# Electricity baseline grid UUIDs reflect processes for
+# 'Electricity; at user; consumption mix - '
 
-Alaska: [AK]
+Alaska:
+  states: [AK]
+  electricity: US - US # best Alaska grid?
+  UUID: 75d4be66-12a7-30b3-bc57-fa724c941b0e
 
-Central: [KY, IL, IN, MO, OH, TN, WV]
+Central:
+  states: [KY, IL, IN, MO, OH, TN, WV]
+  electricity: MISO - FERC # or PJM
+  UUID: 11b43f23-fa67-3d22-9e80-8951c69d7b5e
 
-East North Central: [IA, MN, MI, WI]
+East North Central:
+  states: [IA, MN, MI, WI]
+  electricity: MISO - FERC
+  UUID: 11b43f23-fa67-3d22-9e80-8951c69d7b5e
 
-Hawaii: [HI]
+Hawaii:
+  states: [HI]
+  electricity: US - US # best Hawaii grid?
+  UUID: 75d4be66-12a7-30b3-bc57-fa724c941b0e
 
-Northeast: [ME, NH, VT, MA, CT, RI, NY, PA, NJ, MD, DE, DC]
+Northeast:
+  states: [ME, NH, VT, MA, CT, RI, NY, PA, NJ, MD, DE, DC]
+  electricity: PJM - FERC
+  UUID: a2522eb7-a557-3242-8d26-042fc4b41195
 
-Northwest: [ID, OR, WA]
+Northwest:
+  states: [ID, OR, WA]
+  electricity: Northwest - FERC
+  UUID: 696cf4c2-3b38-37c2-81dc-187b767b4a1e
 
-South: [AR, LA, KS, MS, OK, TX]
+South:
+  states: [AR, LA, KS, MS, OK, TX]
+  electricity: ERCOT - FERC # and also MISO
+  UUID: b16ca0d0-3f5c-3a24-a398-3bda3ffe06bd
 
-Southeast: [AL, FL, GA, NC, SC, VA]
+Southeast:
+  states: [AL, FL, GA, NC, SC, VA]
+  electricity: Southeast - FERC
+  UUID: 9f6a16c6-3df8-39f0-8b4e-af72c0e663ca
 
-Southwest: [AZ, CO, NM, UT]
+Southwest:
+  states: [AZ, CO, NM, UT]
+  electricity: Southwest - FERC
+  UUID: 820dce70-1ea5-3b8a-b551-e8660e280f9f
 
-West: [CA, NV]
+West:
+  states: [CA, NV]
+  electricity: CAISO - FERC
+  UUID: 1744d0a0-5348-316f-ae28-9543f3a03d1d
 
-West North Central: [MT, NE, ND, SD, WY]
+West North Central:
+  states: [MT, NE, ND, SD, WY]
+  electricity: SPP - FERC # or also Northwest
+  UUID: 37733d38-be37-32eb-a6ad-4f119294136f
+
+US:
+  states: []
+  electricity: US - US
+  UUID: 75d4be66-12a7-30b3-bc57-fa724c941b0e
+
+# ISO-NE 13ef9dff-c849-324e-a964-25fe48907c8c
+# NYISO 8aaa2df9-e6e6-3774-91a1-553bed6a719a

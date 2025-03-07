@@ -139,7 +139,7 @@ data_collection_description: >
 
 use_advice: >
     This process is intended to connect to fuel supply processes from
-    the Heavy Equipment repository.
+    the Heavy Equipment repository or electricity from the U.S. Electricity Baseline.
 
 sources:
  - usepa_motor_2024: USEPA MOVES4

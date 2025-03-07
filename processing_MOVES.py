@@ -38,7 +38,9 @@ energy_flow = moves_inputs['EnergyFlow']
 #%%
 with open(data_path / "moves_regions.yaml", "r") as file:
     regions = yaml.safe_load(file)
-    region_dict = {state: region for region, l in regions.items() for state in l}
+    region_dict = {state: region for region, l in regions.items() for state in l['states']}
+    elec_grid = {region: {'Name': v['electricity'],
+                          'UUID': v['UUID']} for region, v in regions.items()}
 
 df = (df_orig
       .assign(region = lambda x: x['state'].map(region_dict)))
@@ -220,7 +222,6 @@ df_olca = (df_olca
                                      if v.get('BRIDGE', False)}),
                False))
 
-           ## TODO: make sure electricity inputs are flagged for eventual default provider
            ## Assign flow information for energy flows
            .assign(FlowName = lambda x: np.where(
                cond2, x['fuel'].map({k: v['name'] for k, v in fuel_dict.items()}),
@@ -295,6 +296,19 @@ df_olca = (df_olca
            .drop(columns=['bridge'], errors='ignore')
            )
 
+# Assign regional electricity grids as default providers
+df_olca = (df_olca
+           .assign(default_provider_process = lambda x: np.where(
+               x['FlowName'] == 'Electricity, AC, 120 V',
+               x['region'].map({k: 'Electricity; at user; consumption mix - ' +
+                                v['Name'] for k, v in elec_grid.items()}),
+               x['default_provider_process']))
+           .assign(default_provider =  lambda x: np.where(
+               x['FlowName'] == 'Electricity, AC, 120 V',
+               x['region'].map({k: v['UUID'] for k, v in elec_grid.items()}),
+               x['default_provider']))
+           )
+
 # df_olca.to_csv(parent_path /'moves_processed_output.csv', index=False)
 
 ## Consider LCIA validation?
@@ -361,7 +375,7 @@ for s in df_olca['source_type'].unique():
             if not isinstance(v, str): continue
             v = v.replace('[VEHICLE_TYPE]', s.title())
             v = v.replace('[VEHICLE DESCRIPTION]', vehicle_desc)
-            v = v.replace('[STATES]', ", ".join(regions.get(r, "")))
+            v = v.replace('[STATES]', ", ".join(regions[r]['states']))
             v = v.replace('[VEHICLE_CLASS]', s.split(',')[0])
             v = v.replace('[PAYLOAD]',
                       str(moves_inputs['payloads'].get(s.split(',')[0])['payload'])
