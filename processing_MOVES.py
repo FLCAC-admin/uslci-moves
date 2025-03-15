@@ -298,7 +298,6 @@ df_bridge = (pd.concat([
 
 # Assign bridge processes as providers where appropriate
 df_olca = (df_olca
-           .query('not(FlowUUID.isna())')
            .assign(default_provider_process = lambda x: np.where(
                x['bridge'] == True,
                x.apply(lambda z: create_bridge_name(z['repo'], z['FlowName']), axis=1),
@@ -306,11 +305,20 @@ df_olca = (df_olca
            .assign(default_provider = lambda x: np.where(
                x['bridge'] == True, x['default_provider_process'].apply(make_uuid)
                ,''))
-           .drop(columns=['bridge'], errors='ignore')
            )
 
+cond3 = df_olca['bridge'] != True
 # Assign default providers where not a bridge process
 df_olca = (df_olca
+           .assign(unit = lambda x: np.where(cond2 * cond3, 
+               x['fuel'].map(
+               {k: v.get('unit') for k, v in fuel_dict.items()}), x['unit']))
+           .assign(conversion = lambda x: np.where(cond2 * cond3, 
+                x['fuel'].map(
+               {k: v.get('conversion', 1) for k, v in fuel_dict.items()}), 1))
+           .assign(amount = lambda x: x['amount'] * x['conversion'])
+           # ^ apply unit conversion
+           .drop(columns=['conversion'])
            .assign(default_provider_process = lambda x: x['FlowName']
                    .map({v['name']: v['provider'] for k, v in fuel_dict.items()
                          if not pd.isna(v['provider'])})
@@ -333,6 +341,10 @@ df_olca = (df_olca
                x['default_provider']))
            )
 
+df_olca = (df_olca
+           .query('not(FlowUUID.isna())')
+           .drop(columns=['bridge'], errors='ignore')
+           )
 # df_olca.to_csv(parent_path /'moves_processed_output.csv', index=False)
 
 ## Consider LCIA validation?
