@@ -1,0 +1,6 @@
+﻿SourceRepoName,SourceFlowName,SourceFlowUUID,SourceFlowContext,SourceUnit,MatchCondition,ConversionFactor,TargetRepoName,TargetFlowName,Bridge,BridgeFlowName,TargetUnit,Mapper,Verifier,LastUpdated,ConversionSource
+MOVES,Gasoline,,,btu,=,0.00008696,Heavy equipment operation,Gasoline; dispensed at pump,TRUE,"Gasoline, dispensed, at pump",kg,Young,,3/12/2025,11500 btu/kg
+MOVES,Diesel,,,btu,=,0.00009259,Heavy equipment operation,Diesel; dispensed at pump,TRUE,"Diesel, dispensed, at pump",kg,Young,,3/12/2025,10800 btu/kg
+MOVES,Compressed Natural Gas (CNG),,,btu,=,0.0000496,Heavy equipment operation,Compressed natural gas; dispensed at pump,TRUE,"Compressed natural gas, dispensed, at pump",kg,Young,,3/12/2025,20160 btu/kg
+MOVES,E85,,,btu,=,0.00003908,USLCI,"Ethanol, 85%, blended, at service station",TRUE,"Ethanol, 85%, disepensed, at pump",kg,Young,,3/12/2025,25590 btu/kg
+MOVES,Electricity,,,btu,=,1,US Electricity Baseline,"Electricity, AC, 120 V",FALSE,,btu,Young,,3/12/2025,

@@ -172,8 +172,13 @@ df_olca = (df_olca
 from flcac_utils.util import extract_flows
 
 ## Identify mappings for technosphere flows (fuel inputs)
-with open(data_path / "fuel_mapping.yaml", "r") as file:
-    fuel_dict = yaml.safe_load(file)['pumped_fuels']
+fuel_df = pd.read_csv(data_path / 'MOVES_fuel_mapping.csv')
+fuel_dict = {row['SourceFlowName']:
+                  {'BRIDGE': row['Bridge'],
+                   'name': row['BridgeFlowName'] if row['BridgeFlowName'] else row['TargetFlowName'],
+                   'repo': {row['TargetRepoName']: row['TargetFlowName']},
+                   'conversion': row['ConversionFactor'],
+                   'unit': row['TargetUnit']} for _, row in fuel_df.iterrows()}
 
 ## extract fuel objects in fuel_dict from commons via API
 flow_dict = {}
@@ -273,7 +278,7 @@ df_bridge = (pd.concat([
                {k: v.get('unit') for k, v in fuel_dict.items()}))
            .assign(conversion = lambda x: x['fuel'].map(
                {k: v.get('conversion', 1) for k, v in fuel_dict.items()}))
-           .assign(amount = lambda x: x['amount'] / x['conversion'])
+           .assign(amount = lambda x: x['amount'] * x['conversion'])
            # ^ apply unit conversion
            .drop(columns=['conversion'])
            .assign(Tag = lambda x: x['fuel'].map(
