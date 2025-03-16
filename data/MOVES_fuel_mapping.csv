@@ -1,6 +1,6 @@
 ﻿SourceRepoName,SourceFlowName,SourceFlowUUID,SourceFlowContext,SourceUnit,MatchCondition,ConversionFactor,TargetRepoName,TargetFlowName,Provider,Bridge,BridgeFlowName,TargetUnit,Mapper,Verifier,LastUpdated,ConversionSource
-MOVES,Gasoline,,,btu,=,0.00008696,USLCI,"Gasoline, dispensed at pump","Dispensing of gasoline, at pump",FALSE,,kg,Young,,3/12/2025,11500 btu/kg
-MOVES,Diesel,,,btu,=,0.00009259,USLCI,"Diesel, dispensed at pump","Dispensing of diesel, at pump",FALSE,,kg,Young,,3/12/2025,10800 btu/kg
-MOVES,Compressed Natural Gas (CNG),,,btu,=,0.0000496,USLCI,"Compressed natural gas, dispensed at pump","Dispensing of compressed natural gas, at pump",FALSE,,kg,Young,,3/12/2025,20160 btu/kg
+MOVES,Gasoline,,,btu,=,1,USLCI,"Gasoline, dispensed at pump","Dispensing of gasoline, at pump",FALSE,,btu,Young,,3/12/2025,
+MOVES,Diesel,,,btu,=,1,USLCI,"Diesel, dispensed at pump","Dispensing of diesel, at pump",FALSE,,btu,Young,,3/12/2025,
+MOVES,Compressed Natural Gas (CNG),,,btu,=,1,USLCI,"Compressed natural gas, dispensed at pump","Dispensing of compressed natural gas, at pump",FALSE,,btu,Young,,3/12/2025,
 MOVES,E85,,,btu,=,0.00003908,USLCI,"Ethanol, 85%, blended, at service station",,TRUE,"Ethanol, 85%, disepensed, at pump",kg,Young,,3/12/2025,25590 btu/kg
 MOVES,Electricity,,,btu,=,1,US Electricity Baseline,"Electricity, AC, 120 V",,FALSE,,btu,Young,,3/12/2025,
