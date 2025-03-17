@@ -180,6 +180,7 @@ fuel_dict = {row['SourceFlowName']:
                    'repo': {row['TargetRepoName']: row['TargetFlowName']},
                    'conversion': row['ConversionFactor'],
                    'unit': row['TargetUnit']} for _, row in fuel_df.iterrows()}
+            ## swap the flow names for bridge processes?
 
 ## extract fuel objects in fuel_dict from commons via API
 f_dict = {}
@@ -201,7 +202,7 @@ for k, v in fuel_dict.items():
             else:
                 p_dict[repo] = [v['provider']]
 
-flow_dict = extract_flows(f_dict, add_tags=True, auth=auth)
+flow_dict = extract_flows(f_dict, add_tags=False, auth=auth) # don't add tags, all flows are internal
 provider_dict = extract_processes(p_dict, to_ref=True, auth=auth)
 
 for k, v in fuel_dict.items():
@@ -292,6 +293,9 @@ df_bridge = (pd.concat([
            .assign(Tag = lambda x: x['fuel'].map(
                {k: list(v.get('repo').keys())[0] for k, v in fuel_dict.items()}))
          # ^ second chunk is for bridged flows
+
+         ## TODO Need to add default providers for these when they are bridges WITHIN
+         # a database? Would be nice, but not required
         ], ignore_index=True)
         .drop(columns=['bridge'])
     )
