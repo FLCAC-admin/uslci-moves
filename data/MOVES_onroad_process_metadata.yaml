@@ -138,12 +138,12 @@ data_collection_description: >
     MOVES runs were performed using MOVES4.0.1 in 2024.
 
 use_advice: >
-    This process is intended to connect to fuel supply processes from
-    the Heavy Equipment repository or electricity from the U.S. Electricity Baseline.
+    This process is intended to connect to fuel supply processes in the USLCI
+    or electricity from the U.S. Electricity Baseline.
 
 sources:
- - usepa_motor_2024: USEPA MOVES4
- - fhwa_research_2020: FHWA Freight Analysis Framework
+ - usepa_motor_2024: USEPA (2024) MOVES4
+ - fhwa_research_2020: FHWA (2020) Freight Analysis Framework
 
 ## Admin information
 
@@ -167,7 +167,7 @@ data_documentor:
     USLCI: 'Franklin Associates, A Division of ERG'
 
 publication: 
-    flcac_moves_onroad: 'ERG, MOVES data'
+    flcac_moves_onroad: 'ERG (2025) MOVES onroad v1.0'
 
 # creation_date: # Turn off to assign automatically
 
