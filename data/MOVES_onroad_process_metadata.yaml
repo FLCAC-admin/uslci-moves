@@ -4,7 +4,9 @@ description: >
     This dataset represents the movement of goods via a [VEHICLE_TYPE].
     Emissions and fuel consumption data are calculated using EPA's Motor Vehicle
     Emission Simulator (MOVES), the regulatory model to determine emission
-    inventories for highway vehicles, including cars, trucks, and buses.
+    inventories for highway vehicles, including cars, trucks, and buses. The
+    reference flow is the movement of 1 metric ton of goods for a distance of
+    1 km.
 
 # valid_until: 2023 # Assigned in code
 # valid_from: 2023 # Assigned in code
@@ -112,6 +114,8 @@ completeness_description: >
     as well as idling and truck hotelling (both extended engine idling and auxiliary
     power unit use). Particulate matter from brake and tire wear is also included.
     Evaporative emissions while the vehicle is soaking (engine off) are not included.
+    Manufacturing of vehicles, roads, and other infrastructure are not included in
+    this dataset.
 
 data_selection_description: >
     MOVES runs were performed at the default settings at the state level.
@@ -127,8 +131,8 @@ data_treatment_description: >
     Administration.
 
     The mean of the average reported payloads across 2002, 2012, and 2017 are used. 
-    The following distance-weighted payloads in US tons are applied for [VEHICLE_CLASS]s:
-    [PAYLOAD] tons.
+    The distance-weighted payload in US short tons as applied for [VEHICLE_CLASS]s
+    is [PAYLOAD] tons.
 
 sampling_description: >
     Emissions and activity data for each state are combined to generate an activity-weighted
