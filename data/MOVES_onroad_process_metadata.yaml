@@ -141,6 +141,15 @@ use_advice: >
     This process is intended to connect to fuel supply processes in the USLCI
     or electricity from the U.S. Electricity Baseline.
 
+reviews:
+ 1:
+    reviewType: 'Independent external review'
+    report:
+      flcac_moves_onroad: 'ERG (2025) MOVES onroad v1.0'
+    detail: >
+      Review provided by NREL third-party, documentation and response
+      documented in attached source.
+
 sources:
  - usepa_motor_2024: USEPA (2024) MOVES4
  - fhwa_research_2020: FHWA (2020) Freight Analysis Framework

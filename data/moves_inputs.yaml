@@ -47,7 +47,7 @@ DQI:
     Process review:
       score: 2
       description: > 
-        Process data have been internally reviewed and externally reviewed (expected).
+        Process data have been internally reviewed and externally reviewed.
     
     Process completeness:
       score: 1
