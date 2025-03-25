@@ -4,7 +4,9 @@ description: >
     This dataset represents the movement of goods via a [VEHICLE_TYPE].
     Emissions and fuel consumption data are calculated using EPA's Motor Vehicle
     Emission Simulator (MOVES), the regulatory model to determine emission
-    inventories for highway vehicles, including cars, trucks, and buses.
+    inventories for highway vehicles, including cars, trucks, and buses. The
+    reference flow is the movement of 1 metric ton of goods for a distance of
+    1 km.
 
 # valid_until: 2023 # Assigned in code
 # valid_from: 2023 # Assigned in code

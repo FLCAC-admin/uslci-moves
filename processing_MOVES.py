@@ -32,7 +32,7 @@ df_orig = pd.read_csv(data_path / f'{file}.csv', thousands=',')
 with open(data_path / "moves_inputs.yaml", "r") as file:
     moves_inputs = yaml.safe_load(file)
 
-SHORT_TON_to_kg = 907.185
+SHORT_TON_to_metric_tonne = 0.907185
 energy_flow = moves_inputs['EnergyFlow']
 
 #%%
@@ -63,7 +63,7 @@ df = (pd.concat([
         # ^ second chunk aggregates by region
         ignore_index=True)
       .assign(EF = lambda x: x['inventory'] / (x['activity'] * x['payload'] *
-                                               SHORT_TON_to_kg))
+                                               SHORT_TON_to_metric_tonne))
       .assign(Unit = lambda x: np.where(
           x['pollutant'] == energy_flow, 'btu', 'kg'))
       .assign(EF = lambda x: np.where(
@@ -156,7 +156,7 @@ df_olca = (df_olca
            .assign(IsInput = np.where(cond2, True, False))
            .assign(FlowType = np.where(cond1 | cond2, 'PRODUCT_FLOW',
                    'ELEMENTARY_FLOW'))
-           .assign(unit = np.where(cond1, 'kg*km', df_olca['unit']))
+           .assign(unit = np.where(cond1, 't*km', df_olca['unit']))
            .assign(FlowName = lambda x: np.where(cond1,
                    x['ProcessName'].str.rsplit(',', n=1).str.get(0),
                    x['FlowName']))
