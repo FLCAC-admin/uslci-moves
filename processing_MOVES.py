@@ -107,6 +107,8 @@ df = (mapped_df.reset_index(drop=True)
       .query('activity > 0')
       )
 
+df = df.query('FlowName != "Water"') # Drop water emissions, all values are 0.
+
 #%% Update the reference_flow_var for each process
 def remove_parentheses_substring(text):
     # Remove the substring within parentheses
