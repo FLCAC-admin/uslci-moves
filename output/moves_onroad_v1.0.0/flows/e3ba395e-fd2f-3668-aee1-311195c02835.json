@@ -1,0 +1,23 @@
+{
+  "@type": "Flow",
+  "@id": "e3ba395e-fd2f-3668-aee1-311195c02835",
+  "category": "Technosphere Flows/44-45: Retail Trade/4471: Gasoline Stations",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "category": "Technical flow properties",
+        "name": "Mass",
+        "refUnit": "kg"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "isInfrastructureFlow": false,
+  "lastChange": "2025-03-16T13:26:12.270Z",
+  "name": "Ethanol, 85%, blended, at service station",
+  "version": "00.00.006"
+}

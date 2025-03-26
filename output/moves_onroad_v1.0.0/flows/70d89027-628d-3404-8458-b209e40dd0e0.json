@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "70d89027-628d-3404-8458-b209e40dd0e0",
+  "category": "Technosphere Flows / 48-49: Transportation and Warehousing / 4841: General Freight Trucking",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "838aaa20-0117-11db-92e3-0800200c9a66",
+        "name": "Goods transport (mass*distance)"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2025-03-26T01:35:34.803582Z",
+  "name": "Transport, combination truck, electricity powered",
+  "version": "01.00.000"
+}

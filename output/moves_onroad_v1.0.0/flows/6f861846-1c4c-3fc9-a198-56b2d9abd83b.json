@@ -1,0 +1,22 @@
+{
+  "@type": "Flow",
+  "@id": "6f861846-1c4c-3fc9-a198-56b2d9abd83b",
+  "cas": "n.a.",
+  "category": "Elementary flows/emission/air",
+  "description": "From Federal Elementary Flow List v1.3.0, written by fedelemflowlist v1.3.0. Flow Class: Groups. Not a preferred flow.",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "ELEMENTARY_FLOW",
+  "lastChange": "2025-03-25T21:35:36.655896",
+  "name": "Volatile organic compounds",
+  "version": "1.3.0"
+}

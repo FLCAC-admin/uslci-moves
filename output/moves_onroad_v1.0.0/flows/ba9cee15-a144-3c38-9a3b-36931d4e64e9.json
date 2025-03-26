@@ -1,0 +1,24 @@
+{
+  "@type": "Flow",
+  "@id": "ba9cee15-a144-3c38-9a3b-36931d4e64e9",
+  "cas": "107-02-8",
+  "category": "Elementary flows/emission/air",
+  "description": "From Federal Elementary Flow List v1.3.0, written by fedelemflowlist v1.3.0. Flow Class: Chemicals. Not a preferred flow.",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "ELEMENTARY_FLOW",
+  "formula": "C3H4O",
+  "lastChange": "2025-03-25T21:35:36.655896",
+  "name": "Acrolein",
+  "synonyms": "2-Propenal",
+  "version": "1.3.0"
+}

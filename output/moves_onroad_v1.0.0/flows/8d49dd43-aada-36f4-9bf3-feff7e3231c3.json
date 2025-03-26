@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "8d49dd43-aada-36f4-9bf3-feff7e3231c3",
+  "category": "Technosphere Flows / 48-49: Transportation and Warehousing / 4841: General Freight Trucking",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "838aaa20-0117-11db-92e3-0800200c9a66",
+        "name": "Goods transport (mass*distance)"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2025-03-26T01:35:34.820049Z",
+  "name": "Transport, combination truck, long-haul, compressed natural gas powered",
+  "version": "01.00.000"
+}

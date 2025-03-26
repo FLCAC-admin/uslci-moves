@@ -1,0 +1,62 @@
+{
+  "@type": "Process",
+  "@id": "10d44fc8-3120-326c-b57b-531ce9f43013",
+  "category": "Bridge Processes",
+  "defaultAllocationMethod": "PHYSICAL_ALLOCATION",
+  "description": "This process links an input in a USLCI process to a provider from the [REPO] repository on the Federal LCA Commons. The intended provider for this process is \"[PROVIDER]\". Conversion to mass are based on XXXXXX.\n",
+  "exchanges": [
+    {
+      "amount": 1.0,
+      "description": "",
+      "flow": {
+        "@type": "Flow",
+        "@id": "6dd72fbb-80ed-3c19-9a25-4a7d6d7534c1",
+        "category": "Technosphere Flows/44-45: Retail Trade/4471: Gasoline Stations",
+        "name": "Ethanol, 85%, disepensed, at pump"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "f6811440-ee37-11de-8a39-0800200c9a66",
+        "name": "Energy"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": true,
+      "unit": {
+        "@type": "Unit",
+        "@id": "55244053-94ba-404e-9172-cb279d905e00",
+        "name": "btu"
+      }
+    },
+    {
+      "amount": 3.908e-05,
+      "description": "",
+      "flow": {
+        "@type": "Flow",
+        "@id": "e3ba395e-fd2f-3668-aee1-311195c02835",
+        "category": "Technosphere Flows/44-45: Retail Trade/4471: Gasoline Stations",
+        "name": "Ethanol, 85%, blended, at service station"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": true,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    }
+  ],
+  "lastChange": "2025-03-26T01:35:36.404495Z",
+  "name": "Ethanol, 85%, disepensed, at pump PROXY",
+  "processDocumentation": {
+    "creationDate": "2025-03-25T21:35:36"
+  },
+  "processType": "UNIT_PROCESS",
+  "version": "01.00.000"
+}

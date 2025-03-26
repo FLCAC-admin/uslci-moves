@@ -1,0 +1,11 @@
+{
+  "@type": "Source",
+  "@id": "6ead8c12-dfd7-317a-b3a8-b8dabd81e973",
+  "description": "ERG, MOVES modeling for on road transportation datasets, 2025",
+  "lastChange": "2025-03-26T01:35:36.956322Z",
+  "name": "ERG (2025) MOVES onroad v1.0",
+  "textReference": "",
+  "url": "https://github.com/FLCAC-admin/uslci-moves/releases/tag/v1.0.0",
+  "version": "00.00.001",
+  "year": "2025"
+}
