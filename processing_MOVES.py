@@ -117,6 +117,9 @@ def remove_parentheses_substring(text):
     cleaned_text = ' '.join(cleaned_text.split())
     return cleaned_text
 
+def fix_e85(text):
+    return text.replace('e85', 'E85')
+
 # Grab dataset of exisiting UUIDs for processes and technosphere flows to replace
 # those that already exist on the commons instead of creating new, where possible
 flow_uuids = (pd.read_csv(data_path / 'on_road_uuids.csv')
@@ -146,7 +149,9 @@ cond1 = df_olca['FlowName'] == 'reference_flow_var'
 cond2 = df_olca['FlowName'] == energy_flow
 df_olca = (df_olca
            .assign(ProcessName = lambda x: ('Transport, ' + x['source_type'] + ', '
-                                            + x['fuel'].str.lower().apply(remove_parentheses_substring)
+                                            + (x['fuel'].str.lower()
+                                                        .apply(remove_parentheses_substring)
+                                                        .apply(fix_e85))
                                             + ' powered, ' + x['region']))
            .assign(ProcessCategory = moves_inputs.get('ProcessContext'))
            .assign(ProcessID = lambda x: x['ProcessName'].map(process_uuids)
@@ -407,9 +412,9 @@ for s in df_olca['source_type'].unique():
     _df_olca = df_olca.query('source_type == @s')
     vehicle_desc = process_meta['vehicle_descriptions'].get(
         re.sub(r'[^a-zA-Z0-9]', '_', s.replace(',','')))
-    for r in _df_olca['region'].unique():
+    for i in _df_olca[['region', 'fuel']].drop_duplicates().itertuples(index=False):
         _process_meta = process_meta.copy()
-        if r == 'US':
+        if i.region == 'US':
             _process_meta['geography_description'] = _process_meta.get('geography_description_US')
         _process_meta.pop('geography_description_US')
         _process_meta.pop('vehicle_descriptions')
@@ -417,13 +422,15 @@ for s in df_olca['source_type'].unique():
             if not isinstance(v, str): continue
             v = v.replace('[VEHICLE_TYPE]', s.title())
             v = v.replace('[VEHICLE DESCRIPTION]', vehicle_desc)
-            v = v.replace('[STATES]', ", ".join(regions[r]['states']))
+            v = v.replace('[STATES]', ", ".join(regions[i.region]['states']))
             v = v.replace('[VEHICLE_CLASS]', s.split(',')[0])
             v = v.replace('[PAYLOAD]',
                       str(moves_inputs['payloads'].get(s.split(',')[0])['payload'])
                       )
+            v = v.replace('[FUEL]', i.fuel)
             _process_meta[k] = v
-        p_dict = build_process_dict(_df_olca.query('region == @r'),
+        p_dict = build_process_dict(_df_olca.query('region == @i.region '
+                                                   'and fuel == @i.fuel'),
                                     flows, meta=_process_meta,
                                        loc_objs=location_objs,
                                        source_objs=source_objs,

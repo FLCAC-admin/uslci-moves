@@ -1,7 +1,8 @@
 ## General Information
 
 description: >
-    This dataset represents the movement of goods via a [VEHICLE_TYPE].
+    This dataset represents the movement of goods via a [VEHICLE_TYPE] using
+    [FUEL] as a fuel source.
     Emissions and fuel consumption data are calculated using EPA's Motor Vehicle
     Emission Simulator (MOVES), the regulatory model to determine emission
     inventories for highway vehicles, including cars, trucks, and buses. The
@@ -150,8 +151,8 @@ reviews:
     reviewType: 'Independent external review'
     report:
       flcac_moves_onroad: 'ERG (2025) MOVES onroad v1.0'
-    detail: >
-      Review provided by NREL third-party, documentation and response
+    details: >
+      Review provided by NREL third-party; documentation and response
       documented in attached source.
 
 sources:
