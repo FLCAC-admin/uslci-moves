@@ -139,11 +139,19 @@ df_olca = (df_olca
 from flcac_utils.util import extract_flows
 
 ## Identify mappings for technosphere flows (fuel inputs)
-with open(data_path / "fuel_mapping.yaml", "r") as file:
-    fuel_dict = yaml.safe_load(file)['pumped_fuels']
+fuel_df = pd.read_csv(data_path / 'MOVES_fuel_mapping.csv')
+fuel_dict = {row['SourceFlowName']:
+                  {'BRIDGE': row['Bridge'],
+                   'name': row['BridgeFlowName'] if row['BridgeFlowName'] else row['TargetFlowName'],
+                   'provider': row['Provider'] if not row['Bridge'] else np.nan,
+                   'repo': {row['TargetRepoName']: row['TargetFlowName']},
+                   'conversion': row['ConversionFactor'],
+                   'unit': row['TargetUnit']} for _, row in fuel_df.iterrows()}
+            ## swap the flow names for bridge processes?
 
 ## extract fuel objects in fuel_dict from commons via API
-flow_dict = {}
+f_dict = {}
+p_dict = {}
 for k, v in fuel_dict.items():
     if 'repo' in v:
         repo = list(v.get('repo').keys())[0]
@@ -151,12 +159,17 @@ for k, v in fuel_dict.items():
         fuel_dict[k]['target_name'] = flow
         if not fuel_dict[k].get('BRIDGE'):
             fuel_dict[k]['name'] = flow
-        if repo in flow_dict:
-            flow_dict[repo].extend([flow])
+        if repo in f_dict:
+            f_dict[repo].extend([flow])
         else:
-            flow_dict[repo] = [flow]
+            f_dict[repo] = [flow]
+        if not pd.isna(v['provider']):
+            if repo in p_dict:
+                p_dict[repo].extend([v['provider']])
+            else:
+                p_dict[repo] = [v['provider']]
 
-flow_dict = extract_flows(flow_dict, add_tags=True)
+flow_dict = extract_flows(f_dict, add_tags=True)
 
 for k, v in fuel_dict.items():
     if not fuel_dict[k].get('BRIDGE'):
