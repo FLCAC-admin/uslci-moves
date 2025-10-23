@@ -136,10 +136,10 @@ project_description: >
 #     USLCI: 'Franklin Associates, A Division of ERG'
 
 data_generator:
-    USLCI: 'Franklin Associates, A Division of ERG'
+    USLCI: 'ERG'
 
 data_documentor:
-    USLCI: 'Franklin Associates, A Division of ERG'
+    USLCI: 'ERG'
 
 publication: 
     flcac_moves_nonroad: 'ERG, MOVES nonroad data'
