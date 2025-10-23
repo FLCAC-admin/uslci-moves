@@ -4,3 +4,7 @@ MOVES,Diesel,,,btu,=,1,USLCI,"Diesel, dispensed at pump",btu,"Dispensing of dies
 MOVES,Compressed Natural Gas (CNG),,,btu,=,1,USLCI,"Compressed natural gas, dispensed at pump",btu,"Dispensing of compressed natural gas, at pump",FALSE,,Young,,3/12/2025,
 MOVES,E85,,,btu,=,0.00003908,USLCI,"Ethanol, 85%, blended, at service station",kg,,TRUE,"Ethanol, 85%, disepensed, at pump",Young,,3/12/2025,25590 btu/kg
 MOVES,Electricity,,,btu,=,1,US Electricity Baseline,"Electricity, AC, 120 V",btu,,FALSE,,Young,,3/12/2025,
+MOVES,LPG,,,btu,=,1,USLCI,"Liquefied petroleum gas, dispensed at pump",btu,"Dispensing of liquefied petroleum gas, at pump",FALSE,,Young,,10/23/2025,
+MOVES,Marine Diesel,,,btu,=,1,USLCI,"Diesel, dispensed at pump",btu,"Dispensing of diesel, at pump",FALSE,,Young,,10/23/2025,
+MOVES,Nonroad Diesel,,,btu,=,1,USLCI,"Diesel, dispensed at pump",btu,"Dispensing of diesel, at pump",FALSE,,Young,,10/23/2025,
+MOVES,CNG,,,btu,=,1,USLCI,"Compressed natural gas, dispensed at pump",btu,"Dispensing of compressed natural gas, at pump",FALSE,,Young,,10/23/2025,
