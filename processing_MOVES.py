@@ -8,7 +8,7 @@ import numpy as np
 from pathlib import Path
 import re
 
-
+auth = True
 parent_path = Path(__file__).parent
 data_path =  parent_path / 'data'
 
@@ -32,7 +32,7 @@ df_orig = pd.read_csv(data_path / f'{file}.csv', thousands=',')
 with open(data_path / "moves_inputs.yaml", "r") as file:
     moves_inputs = yaml.safe_load(file)
 
-SHORT_TON_to_kg = 907.185
+SHORT_TON_to_metric_tonne = 0.907185
 energy_flow = moves_inputs['EnergyFlow']
 
 #%%
@@ -63,7 +63,7 @@ df = (pd.concat([
         # ^ second chunk aggregates by region
         ignore_index=True)
       .assign(EF = lambda x: x['inventory'] / (x['activity'] * x['payload'] *
-                                               SHORT_TON_to_kg))
+                                               SHORT_TON_to_metric_tonne))
       .assign(Unit = lambda x: np.where(
           x['pollutant'] == energy_flow, 'btu', 'kg'))
       .assign(EF = lambda x: np.where(
@@ -107,6 +107,8 @@ df = (mapped_df.reset_index(drop=True)
       .query('activity > 0')
       )
 
+df = df.query('FlowName != "Water"') # Drop water emissions, all values are 0.
+
 #%% Update the reference_flow_var for each process
 def remove_parentheses_substring(text):
     # Remove the substring within parentheses
@@ -114,6 +116,9 @@ def remove_parentheses_substring(text):
     # Remove any extra spaces
     cleaned_text = ' '.join(cleaned_text.split())
     return cleaned_text
+
+def fix_e85(text):
+    return text.replace('e85', 'E85')
 
 # Grab dataset of exisiting UUIDs for processes and technosphere flows to replace
 # those that already exist on the commons instead of creating new, where possible
@@ -144,7 +149,9 @@ cond1 = df_olca['FlowName'] == 'reference_flow_var'
 cond2 = df_olca['FlowName'] == energy_flow
 df_olca = (df_olca
            .assign(ProcessName = lambda x: ('Transport, ' + x['source_type'] + ', '
-                                            + x['fuel'].str.lower().apply(remove_parentheses_substring)
+                                            + (x['fuel'].str.lower()
+                                                        .apply(remove_parentheses_substring)
+                                                        .apply(fix_e85))
                                             + ' powered, ' + x['region']))
            .assign(ProcessCategory = moves_inputs.get('ProcessContext'))
            .assign(ProcessID = lambda x: x['ProcessName'].map(process_uuids)
@@ -154,7 +161,7 @@ df_olca = (df_olca
            .assign(IsInput = np.where(cond2, True, False))
            .assign(FlowType = np.where(cond1 | cond2, 'PRODUCT_FLOW',
                    'ELEMENTARY_FLOW'))
-           .assign(unit = np.where(cond1, 'kg*km', df_olca['unit']))
+           .assign(unit = np.where(cond1, 't*km', df_olca['unit']))
            .assign(FlowName = lambda x: np.where(cond1,
                    x['ProcessName'].str.rsplit(',', n=1).str.get(0),
                    x['FlowName']))
@@ -169,14 +176,22 @@ df_olca = (df_olca
 
 
 #%% Update the fuel_type_var for each process
-from flcac_utils.util import extract_flows
+from flcac_utils.util import extract_flows, extract_processes
 
 ## Identify mappings for technosphere flows (fuel inputs)
-with open(data_path / "fuel_mapping.yaml", "r") as file:
-    fuel_dict = yaml.safe_load(file)['pumped_fuels']
+fuel_df = pd.read_csv(data_path / 'MOVES_fuel_mapping.csv')
+fuel_dict = {row['SourceFlowName']:
+                  {'BRIDGE': row['Bridge'],
+                   'name': row['BridgeFlowName'] if row['BridgeFlowName'] else row['TargetFlowName'],
+                   'provider': row['Provider'] if not row['Bridge'] else np.nan,
+                   'repo': {row['TargetRepoName']: row['TargetFlowName']},
+                   'conversion': row['ConversionFactor'],
+                   'unit': row['TargetUnit']} for _, row in fuel_df.iterrows()}
+            ## swap the flow names for bridge processes?
 
 ## extract fuel objects in fuel_dict from commons via API
-flow_dict = {}
+f_dict = {}
+p_dict = {}
 for k, v in fuel_dict.items():
     if 'repo' in v:
         repo = list(v.get('repo').keys())[0]
@@ -184,12 +199,18 @@ for k, v in fuel_dict.items():
         fuel_dict[k]['target_name'] = flow
         if not fuel_dict[k].get('BRIDGE'):
             fuel_dict[k]['name'] = flow
-        if repo in flow_dict:
-            flow_dict[repo].extend([flow])
+        if repo in f_dict:
+            f_dict[repo].extend([flow])
         else:
-            flow_dict[repo] = [flow]
+            f_dict[repo] = [flow]
+        if not pd.isna(v['provider']):
+            if repo in p_dict:
+                p_dict[repo].extend([v['provider']])
+            else:
+                p_dict[repo] = [v['provider']]
 
-flow_dict = extract_flows(flow_dict, add_tags=True)
+flow_dict = extract_flows(f_dict, add_tags=False, auth=auth) # don't add tags, all flows are internal
+provider_dict = extract_processes(p_dict, to_ref=True, auth=auth)
 
 for k, v in fuel_dict.items():
     if not fuel_dict[k].get('BRIDGE'):
@@ -273,19 +294,21 @@ df_bridge = (pd.concat([
                {k: v.get('unit') for k, v in fuel_dict.items()}))
            .assign(conversion = lambda x: x['fuel'].map(
                {k: v.get('conversion', 1) for k, v in fuel_dict.items()}))
-           .assign(amount = lambda x: x['amount'] / x['conversion'])
+           .assign(amount = lambda x: x['amount'] * x['conversion'])
            # ^ apply unit conversion
            .drop(columns=['conversion'])
            .assign(Tag = lambda x: x['fuel'].map(
                {k: list(v.get('repo').keys())[0] for k, v in fuel_dict.items()}))
          # ^ second chunk is for bridged flows
+
+         ## TODO Need to add default providers for these when they are bridges WITHIN
+         # a database? Would be nice, but not required
         ], ignore_index=True)
         .drop(columns=['bridge'])
     )
 
 # Assign bridge processes as providers where appropriate
 df_olca = (df_olca
-           .query('not(FlowUUID.isna())')
            .assign(default_provider_process = lambda x: np.where(
                x['bridge'] == True,
                x.apply(lambda z: create_bridge_name(z['repo'], z['FlowName']), axis=1),
@@ -293,7 +316,27 @@ df_olca = (df_olca
            .assign(default_provider = lambda x: np.where(
                x['bridge'] == True, x['default_provider_process'].apply(make_uuid)
                ,''))
-           .drop(columns=['bridge'], errors='ignore')
+           )
+
+cond3 = df_olca['bridge'] != True
+# Assign default providers where not a bridge process
+df_olca = (df_olca
+           .assign(unit = lambda x: np.where(cond2 * cond3, 
+               x['fuel'].map(
+               {k: v.get('unit') for k, v in fuel_dict.items()}), x['unit']))
+           .assign(conversion = lambda x: np.where(cond2 * cond3, 
+                x['fuel'].map(
+               {k: v.get('conversion', 1) for k, v in fuel_dict.items()}), 1))
+           .assign(amount = lambda x: x['amount'] * x['conversion'])
+           # ^ apply unit conversion
+           .drop(columns=['conversion'])
+           .assign(default_provider_process = lambda x: x['FlowName']
+                   .map({v['name']: v['provider'] for k, v in fuel_dict.items()
+                         if not pd.isna(v['provider'])})
+                   .fillna(x['default_provider_process']))
+           .assign(default_provider = lambda x: x['default_provider_process']
+                   .map({k: v.id for k, v in provider_dict.items()})
+                         .fillna(x['default_provider']))
            )
 
 # Assign regional electricity grids as default providers
@@ -303,12 +346,16 @@ df_olca = (df_olca
                x['region'].map({k: 'Electricity; at user; consumption mix - ' +
                                 v['Name'] for k, v in elec_grid.items()}),
                x['default_provider_process']))
-           .assign(default_provider =  lambda x: np.where(
+           .assign(default_provider = lambda x: np.where(
                x['FlowName'] == 'Electricity, AC, 120 V',
                x['region'].map({k: v['UUID'] for k, v in elec_grid.items()}),
                x['default_provider']))
            )
 
+df_olca = (df_olca
+           .query('not(FlowUUID.isna())')
+           .drop(columns=['bridge'], errors='ignore')
+           )
 # df_olca.to_csv(parent_path /'moves_processed_output.csv', index=False)
 
 ## Consider LCIA validation?
@@ -365,9 +412,9 @@ for s in df_olca['source_type'].unique():
     _df_olca = df_olca.query('source_type == @s')
     vehicle_desc = process_meta['vehicle_descriptions'].get(
         re.sub(r'[^a-zA-Z0-9]', '_', s.replace(',','')))
-    for r in _df_olca['region'].unique():
+    for i in _df_olca[['region', 'fuel']].drop_duplicates().itertuples(index=False):
         _process_meta = process_meta.copy()
-        if r == 'US':
+        if i.region == 'US':
             _process_meta['geography_description'] = _process_meta.get('geography_description_US')
         _process_meta.pop('geography_description_US')
         _process_meta.pop('vehicle_descriptions')
@@ -375,13 +422,15 @@ for s in df_olca['source_type'].unique():
             if not isinstance(v, str): continue
             v = v.replace('[VEHICLE_TYPE]', s.title())
             v = v.replace('[VEHICLE DESCRIPTION]', vehicle_desc)
-            v = v.replace('[STATES]', ", ".join(regions[r]['states']))
+            v = v.replace('[STATES]', ", ".join(regions[i.region]['states']))
             v = v.replace('[VEHICLE_CLASS]', s.split(',')[0])
             v = v.replace('[PAYLOAD]',
                       str(moves_inputs['payloads'].get(s.split(',')[0])['payload'])
                       )
+            v = v.replace('[FUEL]', i.fuel)
             _process_meta[k] = v
-        p_dict = build_process_dict(_df_olca.query('region == @r'),
+        p_dict = build_process_dict(_df_olca.query('region == @i.region '
+                                                   'and fuel == @i.fuel'),
                                     flows, meta=_process_meta,
                                        loc_objs=location_objs,
                                        source_objs=source_objs,
