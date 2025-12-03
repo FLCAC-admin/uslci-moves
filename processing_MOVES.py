@@ -8,7 +8,7 @@ import numpy as np
 from pathlib import Path
 import re
 
-auth = True
+auth = False
 parent_path = Path(__file__).parent
 data_path =  parent_path / 'data'
 
@@ -172,6 +172,14 @@ df_olca = (df_olca
                        x.apply(lambda z: make_uuid(z['FlowName'], z['Context']), axis=1)),
                    x['FlowUUID']))
            # ^^ assign these UUIDs to be based on dict from exisiting USLCI
+           # For fuel values assign fuel as the FlowName
+           .assign(FlowName = lambda x: np.where(cond2, x['fuel'], x['FlowName']))
+           .assign(location = lambda x: np.where(
+               x['region'] == 'US', 'US', None))
+           .assign(ProcessName = lambda x: np.where(
+               x['region'] == 'US', x['ProcessName'].str.rsplit(',', n=1).str.get(0),
+               x['ProcessName']))
+           # ^ assign location only for full U.S. process and remove substring
            )
 
 
@@ -181,128 +189,15 @@ from flcac_utils.mapping import prepare_tech_flow_mappings
 ## Identify mappings for technosphere flows (fuel inputs)
 fuel_df = pd.read_csv(data_path / 'MOVES_fuel_mapping.csv')
 
-fuel_dict, flow_dict, provider_dict = prepare_tech_flow_mappings(fuel_df, auth=auth)
+fuel_dict, flow_objs, provider_dict = prepare_tech_flow_mappings(fuel_df, auth=auth)
 
-def create_bridge_name(repo, flowname):
-    if repo == 'USLCI':
-        return f'{flowname} PROXY'
-    else:
-        return f'{flowname} BRIDGE, USLCI to {repo}'
+#%% apply mappings
+from flcac_utils.mapping import apply_tech_flow_mapping, create_bridge_processes
 
-def create_bridge_category(repo, flowname):
-    if repo == 'USLCI':
-        return 'Bridge Processes'
-    else:
-        return f'Bridge Processes / USLCI to {repo}'
+df_olca = apply_tech_flow_mapping(df_olca.rename(columns={'FlowName':'name'}),
+                                  fuel_dict, flow_objs, provider_dict)
 
-df_olca = (df_olca
-           ## For processes that require a bridge process, tag them and add
-           # the name of the repository.
-           .assign(bridge = lambda x: np.where(
-               cond2, x['fuel'].map({k: True for k, v in fuel_dict.items()
-                                     if v.get('BRIDGE', False)}),
-               False))
-           .assign(repo = lambda x: np.where(
-               cond2, x['fuel'].map({k: list(v['repo'].keys())[0]
-                                     for k, v in fuel_dict.items()
-                                     if v.get('BRIDGE', False)}),
-               False))
-
-           ## Assign flow information for energy flows
-           .assign(FlowName = lambda x: np.where(
-               cond2, x['fuel'].map({k: v['name'] for k, v in fuel_dict.items()}),
-               x['FlowName']))
-           .assign(FlowUUID = lambda x: np.where(
-               cond2, x['fuel'].map({k: v['id'] for k, v in fuel_dict.items()}),
-               x['FlowUUID']))
-           # ^ only assign UUIDs where a bridge will not be used
-           .assign(Context = lambda x: np.where(
-               cond2, x['fuel'].map({k: flow_dict.get(v['target_name']).category
-                                     for k, v in fuel_dict.items()}),
-               x['Context']))
-           .assign(location = lambda x: np.where(
-               x['region'] == 'US', 'US', None))
-           .assign(ProcessName = lambda x: np.where(
-               x['region'] == 'US', x['ProcessName'].str.rsplit(',', n=1).str.get(0),
-               x['ProcessName']))
-           # ^ assign location only for full U.S. process and remove substring
-        )
-
-df_bridge = (df_olca[cond2]
-             .query('bridge == True')
-             .drop_duplicates(subset = 'FlowName')
-             .drop(columns=['location', 'payload', 'inventory', 'activity', 'source_type'],
-                   errors='ignore')
-             .reset_index(drop=True)
-             .assign(amount = 1)
-             .assign(ProcessCategory = lambda x: x.apply(
-                 lambda z: create_bridge_category(z['repo'], z['FlowName']), axis=1))
-             .assign(ProcessName = lambda x: x.apply(
-                 lambda z: create_bridge_name(z['repo'], z['FlowName']), axis=1))
-             .assign(ProcessID = lambda x: x['ProcessName'].apply(make_uuid))
-             # ^ need more args passed to UUID to avoid duplicates?
-             )
-df_bridge = (pd.concat([
-        df_bridge
-            .assign(reference = lambda x: ~x['reference'])
-            .assign(IsInput = lambda x: ~x['IsInput'])
-            .assign(FlowUUID = lambda x: x['FlowName'].apply(make_uuid)),
-        # ^ first chunk is for new flows
-        df_bridge
-           .assign(FlowName = lambda x: x['fuel'].map(
-               {k: v['target_name'] for k, v in fuel_dict.items()}))
-           .assign(FlowUUID = lambda x: x['fuel'].map(
-               {k: flow_dict.get(v['target_name']).id
-                for k, v in fuel_dict.items()
-                if v.get('BRIDGE', False)}))
-           .assign(unit = lambda x: x['fuel'].map(
-               {k: v.get('unit') for k, v in fuel_dict.items()}))
-           .assign(conversion = lambda x: x['fuel'].map(
-               {k: v.get('conversion', 1) for k, v in fuel_dict.items()}))
-           .assign(amount = lambda x: x['amount'] * x['conversion'])
-           # ^ apply unit conversion
-           .drop(columns=['conversion'])
-           .assign(Tag = lambda x: x['fuel'].map(
-               {k: list(v.get('repo').keys())[0] for k, v in fuel_dict.items()}))
-         # ^ second chunk is for bridged flows
-
-         ## TODO Need to add default providers for these when they are bridges WITHIN
-         # a database? Would be nice, but not required
-        ], ignore_index=True)
-        .drop(columns=['bridge'])
-    )
-
-# Assign bridge processes as providers where appropriate
-df_olca = (df_olca
-           .assign(default_provider_process = lambda x: np.where(
-               x['bridge'] == True,
-               x.apply(lambda z: create_bridge_name(z['repo'], z['FlowName']), axis=1),
-               ''))
-           .assign(default_provider = lambda x: np.where(
-               x['bridge'] == True, x['default_provider_process'].apply(make_uuid)
-               ,''))
-           )
-
-cond3 = df_olca['bridge'] != True
-# Assign default providers where not a bridge process
-df_olca = (df_olca
-           .assign(unit = lambda x: np.where(cond2 * cond3, 
-               x['fuel'].map(
-               {k: v.get('unit') for k, v in fuel_dict.items()}), x['unit']))
-           .assign(conversion = lambda x: np.where(cond2 * cond3, 
-                x['fuel'].map(
-               {k: v.get('conversion', 1) for k, v in fuel_dict.items()}), 1))
-           .assign(amount = lambda x: x['amount'] * x['conversion'])
-           # ^ apply unit conversion
-           .drop(columns=['conversion'])
-           .assign(default_provider_process = lambda x: x['FlowName']
-                   .map({v['name']: v['provider'] for k, v in fuel_dict.items()
-                         if not pd.isna(v['provider'])})
-                   .fillna(x['default_provider_process']))
-           .assign(default_provider = lambda x: x['default_provider_process']
-                   .map({k: v.id for k, v in provider_dict.items()})
-                         .fillna(x['default_provider']))
-           )
+df_bridge = create_bridge_processes(df_olca, fuel_dict, flow_objs)
 
 # Assign regional electricity grids as default providers
 df_olca = (df_olca
@@ -365,7 +260,7 @@ flows, new_flows = build_flow_dict(
 # pass bridge processes too to ensure those flows get created
 
 # replace newly created flows with those pulled via API
-api_flows = {flow.id: flow for k, flow in flow_dict.items()}
+api_flows = {flow.id: flow for k, flow in flow_objs.items()}
 if not(flows.keys() | api_flows.keys()) == flows.keys():
     print('Warning, some flows not consistent')
 else:
@@ -413,3 +308,10 @@ write_objects('moves', flows, new_flows, processes,
               out_path = out_path)
 ## ^^ Import this file into an empty database with units and flow properties only
 ## or merge into USLCI and overwrite all existing datasets
+
+#%% Unzip files to repo
+from flcac_utils.util import extract_latest_zip
+
+extract_latest_zip(out_path,
+                   parent_path,
+                   output_folder_name = Path('output') / 'moves_onroad_v1.0.0')
