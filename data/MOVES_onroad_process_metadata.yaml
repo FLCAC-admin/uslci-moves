@@ -175,10 +175,10 @@ project_description: >
 #     USLCI: 'Franklin Associates, A Division of ERG'
 
 data_generator:
-    USLCI: 'Franklin Associates, A Division of ERG'
+    USLCI: 'ERG'
 
 data_documentor:
-    USLCI: 'Franklin Associates, A Division of ERG'
+    USLCI: 'ERG'
 
 publication: 
     flcac_moves_onroad: 'ERG (2025) MOVES onroad v1.0'
