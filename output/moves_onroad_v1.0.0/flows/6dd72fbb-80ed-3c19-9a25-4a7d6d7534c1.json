@@ -1,7 +1,7 @@
 {
   "@type": "Flow",
   "@id": "6dd72fbb-80ed-3c19-9a25-4a7d6d7534c1",
-  "category": "Technosphere Flows/44-45: Retail Trade/4471: Gasoline Stations",
+  "category": "Technosphere flows/44-45: Retail Trade/4471: Gasoline Stations",
   "flowProperties": [
     {
       "conversionFactor": 1.0,
@@ -14,7 +14,7 @@
     }
   ],
   "flowType": "PRODUCT_FLOW",
-  "lastChange": "2025-03-27T03:04:31.387457Z",
+  "lastChange": "2025-12-04T12:00:00Z",
   "name": "Ethanol, 85%, disepensed, at pump",
   "version": "01.00.000"
 }

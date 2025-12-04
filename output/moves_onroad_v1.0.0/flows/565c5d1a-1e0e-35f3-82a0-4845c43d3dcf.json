@@ -3,7 +3,7 @@
   "@id": "565c5d1a-1e0e-35f3-82a0-4845c43d3dcf",
   "cas": "71-43-2",
   "category": "Elementary flows/emission/air",
-  "description": "From Federal Elementary Flow List v1.3.0, written by fedelemflowlist v1.3.0. Flow Class: Chemicals. Not a preferred flow.",
+  "description": "From Federal Elementary Flow List v1.3.0, written by fedelemflowlist v1.3.1. Flow Class: Chemicals. Not a preferred flow.",
   "flowProperties": [
     {
       "conversionFactor": 1.0,
@@ -17,7 +17,7 @@
   ],
   "flowType": "ELEMENTARY_FLOW",
   "formula": "C6H6",
-  "lastChange": "2025-03-26T23:04:33.734436",
+  "lastChange": "2025-12-04T09:52:55.077149",
   "name": "Benzene",
   "version": "1.3.0"
 }

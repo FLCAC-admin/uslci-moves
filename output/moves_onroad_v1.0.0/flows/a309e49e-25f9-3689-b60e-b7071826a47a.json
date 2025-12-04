@@ -1,7 +1,7 @@
 {
   "@type": "Flow",
   "@id": "a309e49e-25f9-3689-b60e-b7071826a47a",
-  "category": "Technosphere Flows/44-45: Retail Trade/4471: Gasoline Stations",
+  "category": "Technosphere flows/44-45: Retail Trade/4471: Gasoline Stations",
   "description": "Unit conversions set consistent with flow \"Diesel, at refinery\"",
   "flowProperties": [
     {
