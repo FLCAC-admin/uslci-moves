@@ -1,7 +1,7 @@
 {
   "@type": "Flow",
   "@id": "e3ba395e-fd2f-3668-aee1-311195c02835",
-  "category": "Technosphere Flows/44-45: Retail Trade/4471: Gasoline Stations",
+  "category": "Technosphere flows/44-45: Retail Trade/4471: Gasoline Stations",
   "flowProperties": [
     {
       "conversionFactor": 1.0,
