@@ -199,6 +199,20 @@ df_olca = apply_tech_flow_mapping(df_olca.rename(columns={'FlowName':'name'}),
 
 df_bridge = create_bridge_processes(df_olca, fuel_dict, flow_objs)
 
+# HOT FIX to maintain original UUID prior to name/category adjustment for proxies
+df_bridge = (df_bridge
+             .assign(ProcessID = lambda x: np.where(
+                 x['ProcessName'] == "Ethanol, 85%, disepensed, at pump - PROXY",
+                 '10d44fc8-3120-326c-b57b-531ce9f43013',
+                 x['ProcessID']))
+             )
+df_olca = (df_olca
+           .assign(default_provider = lambda x: np.where(
+               x['default_provider_process'] == "Ethanol, 85%, disepensed, at pump - PROXY",
+               '10d44fc8-3120-326c-b57b-531ce9f43013',
+               x['default_provider']))
+           )
+
 # Assign regional electricity grids as default providers
 df_olca = (df_olca
            .assign(default_provider_process = lambda x: np.where(
@@ -218,7 +232,17 @@ df_olca = (df_olca
            )
 # df_olca.to_csv(parent_path /'moves_processed_output.csv', index=False)
 
-## Consider LCIA validation?
+from flcac_utils.generate_processes import build_flow_dict
+flows, new_flows = build_flow_dict(
+    pd.concat([df_olca, df_bridge], ignore_index=True))
+# pass bridge processes too to ensure those flows get created
+
+# replace newly created flows with those pulled via API
+api_flows = {flow.id: flow for k, flow in flow_objs.items()}
+if not(flows.keys() | api_flows.keys()) == flows.keys():
+    print('Warning, some flows not consistent')
+else:
+    flows.update(api_flows)
 
 #%% Assign exchange dqi
 from flcac_utils.util import format_dqi_score, increment_dqi_value
@@ -251,20 +275,10 @@ locations = generate_locations_from_exchange_df(df_olca)
 location_objs = build_location_dict(df_olca, locations)
 
 #%% Build json file
-from flcac_utils.generate_processes import build_flow_dict, \
+from flcac_utils.generate_processes import \
     build_process_dict, write_objects, validate_exchange_data
 
 validate_exchange_data(df_olca)
-flows, new_flows = build_flow_dict(
-    pd.concat([df_olca, df_bridge], ignore_index=True))
-# pass bridge processes too to ensure those flows get created
-
-# replace newly created flows with those pulled via API
-api_flows = {flow.id: flow for k, flow in flow_objs.items()}
-if not(flows.keys() | api_flows.keys()) == flows.keys():
-    print('Warning, some flows not consistent')
-else:
-    flows.update(api_flows)
 
 processes = {}
 # loop through each vehicle type and region to adjust metadata before writing processes
