@@ -21,14 +21,14 @@ groupby_cols = ['yearid',
                 'pollutant',
                 ]
 
-file = '20250211_flcac_nr_emission_factors'
+file = '20251202_flcac_nr_emission_factors_all_pollutants'
 ## Check Teams (Task 3 Transportation Datasets / MOVES) for the latest file
 df_orig = pd.read_excel(data_path / f'{file}.xlsx', thousands=',', sheet_name='emission_factors')
 
 with open(data_path / "moves_nonroad_inputs.yaml", "r") as file:
     moves_inputs = yaml.safe_load(file)
 
-tech_flows = (pd.read_csv(data_path / 'moves_nonroad_flows.csv')
+tech_flows = (pd.read_csv(data_path / 'moves_nonroad_flows_12032025.csv')
               .filter(['equipment', 'flowname', 'FlowContext', 'ProcessContext'])
               .dropna(subset='flowname')
               )
@@ -249,6 +249,7 @@ process_meta['time_description'] = (process_meta['time_description']
 (process_meta, actor_objs) = extract_actors_from_process_meta(process_meta)
 dq_objs = extract_dqsystems(moves_inputs['DQI']['dqSystem'])
 process_meta['dq_entry'] = format_dqi_score(moves_inputs['DQI']['Process'])
+
 
 # prepare locations
 locations = generate_locations_from_exchange_df(df_olca)
