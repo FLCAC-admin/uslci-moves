@@ -28,7 +28,7 @@ df_orig = pd.read_excel(data_path / f'{file}.xlsx', thousands=',', sheet_name='e
 with open(data_path / "moves_nonroad_inputs.yaml", "r") as file:
     moves_inputs = yaml.safe_load(file)
 
-tech_flows = (pd.read_csv(data_path / 'moves_nonroad_flows_12032025.csv')
+tech_flows = (pd.read_csv(data_path / 'moves_nonroad_flows.csv')
               .filter(['equipment', 'flowname', 'FlowContext', 'ProcessContext'])
               .dropna(subset='flowname')
               )
@@ -43,7 +43,7 @@ energy_flow = moves_inputs['EnergyFlow']
 #%%
 df = (df_orig
       .drop(columns=['load_factor', 'EF(g/MJ)', 'EF(g/hr)'], errors='ignore')
-      .drop(columns=['stateid', 'state'])
+      .drop(columns=['stateid', 'state'], errors='ignore')
       .drop(columns=['fuelsubtypeid', 'fueltypeid', 'pollutantid', 'sectorid'], errors='ignore')
       .groupby(groupby_cols)
       .agg('sum')
