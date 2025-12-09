@@ -1,0 +1,23 @@
+{
+  "@type": "Flow",
+  "@id": "c89c263a-b0b7-34c9-a27c-d9ebf851c3cc",
+  "cas": "206-44-0",
+  "category": "Elementary flows/emission/air",
+  "description": "From Federal Elementary Flow List v1.3.0, written by fedelemflowlist v1.3.1. Flow Class: Chemicals. Not a preferred flow.",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "ELEMENTARY_FLOW",
+  "formula": "C16H10",
+  "lastChange": "2025-12-09T10:07:10.732852",
+  "name": "Fluoranthene",
+  "version": "1.3.0"
+}

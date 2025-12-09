@@ -111,27 +111,33 @@ df_olca = pd.concat([df,
 df_olca['name'] = df_olca['equipment'].map(moves_inputs['tech_flows'])
 df_olca['ProcessCategory'] = df_olca['equipment'].map(moves_inputs['ProcessContext'])
 df_olca['RefFlowCategory'] = df_olca['equipment'].map(moves_inputs['FlowContext'])
+# drop unwanted technologies
+df_olca = df_olca.dropna(subset=['name'])
 
 cond1 = df_olca['FlowName'] == 'reference_flow_var'
 cond2 = df_olca['FlowName'] == energy_flow
 df_olca = (df_olca
-           .assign(ProcessName = lambda x: ('Operation of equipment, ' + x['name'] + ', '
+           .assign(ProcessName = lambda x: ('Operation of equipment; ' + x['name'] + '; '
                                             + x['fuel'].str.lower()
-                                            + ' powered, ' + x['region']))
+                                            + ' powered'))
            .assign(reference = np.where(cond1, True, False))
            .assign(IsInput = np.where(cond2, True, False))
            .assign(FlowType = np.where(cond1 | cond2, 'PRODUCT_FLOW',
                    'ELEMENTARY_FLOW'))
            .assign(unit = np.where(cond1 | cond2, 'MJ', df_olca['unit']))
            .assign(FlowName = lambda x: np.where(cond1,
-                   x['ProcessName'].str.rsplit(',', n=1).str.get(0),
+                   x['ProcessName'].str.rsplit(';', n=1).str.get(0),
                    x['FlowName']))
+           .assign(FlowName = lambda x: np.where(cond2, x['fuel'], x['FlowName']))
            ##TODO: ^^ fix this flow name assignment for reference flows
            .assign(FlowUUID = lambda x: np.where(cond1,
                    x['name'].apply(make_uuid), x['FlowUUID']))
            .assign(Context = lambda x: np.where(cond1,
                    'Technosphere Flows / ' + df_olca['RefFlowCategory'],
                    df_olca['Context']))
+           .assign(location = lambda x: np.where(
+                   x['region'] == 'US', 'US', None))
+           .drop(columns=['name'])
            )
 
 
@@ -140,87 +146,31 @@ from flcac_utils.mapping import prepare_tech_flow_mappings
 
 ## Identify mappings for technosphere flows (fuel inputs)
 fuel_df = pd.read_csv(data_path / 'MOVES_fuel_mapping.csv')
-fuel_dict, flow_dict, provider_dict = prepare_tech_flow_mappings(fuel_df)
+fuel_df = fuel_df.query('SourceFlowName in @df_olca.fuel')
+fuel_dict, flow_objs, provider_dict = prepare_tech_flow_mappings(fuel_df)
 
-df_olca = (df_olca
-           .assign(bridge = lambda x: np.where(
-               cond2, x['fuel'].map({k: True for k, v in fuel_dict.items()
-                                     if v.get('BRIDGE', False)}),
-               False))
-           ## TODO: make sure electricity inputs are flagged for eventual default provider
-           .assign(FlowName = lambda x: np.where(
-               cond2, x['fuel'].map({k: v['name'] for k, v in fuel_dict.items()}),
-               x['FlowName']))
-           .assign(FlowUUID = lambda x: np.where(
-               cond2, x['fuel'].map({k: v['id'] for k, v in fuel_dict.items()}),
-               x['FlowUUID']))
-           # ^ only assign UUIDs where a bridge will not be used
-           .assign(Context = lambda x: np.where(
-               cond2, x['fuel'].map({k: flow_dict.get(v['target_name']).category
-                                     for k, v in fuel_dict.items()}),
-               x['Context']))
-           .assign(location = lambda x: np.where(
-               x['region'] == 'US', 'US', None))
-           .assign(ProcessName = lambda x: np.where(
-               x['region'] == 'US', x['ProcessName'].str.rsplit(',', n=1).str.get(0),
-               x['ProcessName']))
-           # ^ assign location only for full U.S. process and remove substring
-        )
+#%% apply mappings
+from flcac_utils.mapping import apply_tech_flow_mapping, create_bridge_processes
 
-#%% create bridge data
-df_bridge = (df_olca[cond2]
-             .query('bridge == True')
-             .drop_duplicates(subset = 'FlowName')
-             .drop(columns=['location', 'payload', 'inventory', 'activity', 'source_type'],
-                   errors='ignore')
-             .reset_index(drop=True)
-             .assign(amount = 1)
-             .assign(ProcessCategory = 'Bridge Processes / USLCI to Heavy Equipment Operations')
-             .assign(ProcessName = lambda x: x["FlowName"] + ' BRIDGE, USLCI to Heavy Equipment Operations')
-             .assign(ProcessID = lambda x: x['ProcessName'].apply(make_uuid))
-             # ^ need more args passed to UUID to avoid duplicates?
-             )
-df_bridge = (pd.concat([
-        df_bridge
-            .assign(reference = lambda x: ~x['reference'])
-            .assign(IsInput = lambda x: ~x['IsInput'])
-            .assign(FlowUUID = lambda x: x['FlowName'].apply(make_uuid)),
-        # ^ first chunk is for new flows
-        df_bridge
-           .assign(FlowName = lambda x: x['fuel'].map(
-               {k: v['target_name'] for k, v in fuel_dict.items()}))
-           .assign(FlowUUID = lambda x: x['fuel'].map(
-               {k: flow_dict.get(v['target_name']).id
-                for k, v in fuel_dict.items()
-                if v.get('BRIDGE', False)}))
-           .assign(unit = lambda x: x['fuel'].map(
-               {k: v.get('unit') for k, v in fuel_dict.items()}))
-           .assign(conversion = lambda x: x['fuel'].map(
-               {k: v.get('conversion', 1) for k, v in fuel_dict.items()}))
-           .assign(amount = lambda x: x['amount'] / x['conversion'])
-           # ^ apply unit conversion
-           .drop(columns=['conversion'])
-           .assign(Tag = lambda x: x['fuel'].map(
-               {k: list(v.get('repo').keys())[0] for k, v in fuel_dict.items()}))
-         # ^ second chunk is for bridged flows
-        ], ignore_index=True)
-        .drop(columns=['bridge'])
-    )
+df_olca = apply_tech_flow_mapping(df_olca.rename(columns={'FlowName':'name'}),
+                                  fuel_dict, flow_objs, provider_dict)
+df_olca = df_olca.query('not(FlowUUID.isna())')
 
-#%% Assign bridge processes as providers where appropriate
-df_olca = (df_olca
-           .query('not(FlowUUID.isna())')
-           .assign(default_provider_process = lambda x: np.where(
-               x['bridge'] == True, x["FlowName"] + ' BRIDGE, USLCI to Heavy Equipment Operations',
-               ''))
-           .assign(default_provider = lambda x: np.where(
-               x['bridge'] == True, x['default_provider_process'].apply(make_uuid)
-               ,''))
-           .drop(columns=['bridge'], errors='ignore')
-           .query('equipment in @tech_flows.equipment')
-           )
+df_bridge = create_bridge_processes(df_olca, fuel_dict, flow_objs)
 
 # df_olca.to_csv(parent_path /'moves_processed_output.csv', index=False)
+
+from flcac_utils.generate_processes import build_flow_dict
+flows, new_flows = build_flow_dict(
+    pd.concat([df_olca, df_bridge], ignore_index=True))
+# pass bridge processes too to ensure those flows get created
+
+# replace newly created flows with those pulled via API
+api_flows = {flow.id: flow for k, flow in flow_objs.items()}
+if not(flows.keys() | api_flows.keys()) == flows.keys():
+    print('Warning, some flows not consistent')
+else:
+    flows.update(api_flows)
 
 ## Consider LCIA validation?
 
@@ -256,20 +206,10 @@ locations = generate_locations_from_exchange_df(df_olca)
 location_objs = build_location_dict(df_olca, locations)
 
 #%% Build json file
-from flcac_utils.generate_processes import build_flow_dict, \
+from flcac_utils.generate_processes import \
     build_process_dict, write_objects, validate_exchange_data
 
 validate_exchange_data(df_olca)
-flows, new_flows = build_flow_dict(
-    pd.concat([df_olca, df_bridge], ignore_index=True))
-# pass bridge processes too to ensure those flows get created
-
-# replace newly created flows with those pulled via API
-api_flows = {flow.id: flow for k, flow in flow_dict.items()}
-if not(flows.keys() | api_flows.keys()) == flows.keys():
-    print('Warning, some flows not consistent')
-else:
-    flows.update(api_flows)
 
 processes = {}
 # loop through each vehicle type and region to adjust metadata before writing processes
@@ -304,3 +244,10 @@ write_objects('moves_nonroad', flows, new_flows, processes,
               out_path = out_path)
 ## ^^ Import this file into an empty database with units and flow properties only
 ## or merge into USLCI and overwrite all existing datasets
+
+#%% Unzip files to repo
+from flcac_utils.util import extract_latest_zip
+
+extract_latest_zip(out_path,
+                   parent_path,
+                   output_folder_name = Path('output') / 'moves_nonroad_v1.0')

@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "9235fda0-f27e-31d2-9676-337d849e4a79",
+  "category": "Technosphere Flows / 48-49: Transportation and Warehousing / 4881: Support Activities for Air Transportation",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "f6811440-ee37-11de-8a39-0800200c9a66",
+        "name": "Energy"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2025-12-09T12:00:00Z",
+  "name": "Operation of equipment; airport support equipment",
+  "version": "01.00.000"
+}

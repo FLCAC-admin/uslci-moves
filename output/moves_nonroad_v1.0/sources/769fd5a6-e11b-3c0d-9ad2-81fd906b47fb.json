@@ -1,0 +1,11 @@
+{
+  "@type": "Source",
+  "@id": "769fd5a6-e11b-3c0d-9ad2-81fd906b47fb",
+  "description": "ERG, MOVES modeling for non road datasets, 2025",
+  "lastChange": "2025-12-09T12:00:00Z",
+  "name": "ERG, MOVES nonroad data",
+  "textReference": "",
+  "url": "https://github.com/FLCAC-admin/uslci-moves/blob/main/processing_nonroad_MOVES.py",
+  "version": "00.00.001",
+  "year": 2025
+}

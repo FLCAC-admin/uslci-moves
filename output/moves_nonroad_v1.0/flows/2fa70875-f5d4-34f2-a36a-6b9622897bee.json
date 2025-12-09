@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "2fa70875-f5d4-34f2-a36a-6b9622897bee",
+  "category": "Technosphere Flows / 23: Construction / 2382: Building Equipment Contractors",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "f6811440-ee37-11de-8a39-0800200c9a66",
+        "name": "Energy"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2025-12-09T12:00:00Z",
+  "name": "Operation of equipment; rubber tire loaders",
+  "version": "01.00.000"
+}

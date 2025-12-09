@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "1f0898d5-28f2-3d86-a107-b70dc1bc74c8",
+  "category": "Technosphere Flows / 11: Agriculture, Forestry, Fishing and Hunting / 1151: Support Activities for Crop Production",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "f6811440-ee37-11de-8a39-0800200c9a66",
+        "name": "Energy"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2025-12-09T12:00:00Z",
+  "name": "Operation of equipment; agricultural tractors",
+  "version": "01.00.000"
+}

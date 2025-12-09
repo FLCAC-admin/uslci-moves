@@ -1,0 +1,24 @@
+{
+  "@type": "Flow",
+  "@id": "cd0e6ccf-b6af-3faa-aeea-43b548b85479",
+  "cas": "51207-31-9",
+  "category": "Elementary flows/emission/air",
+  "description": "From Federal Elementary Flow List v1.3.0, written by fedelemflowlist v1.3.1. Flow Class: Chemicals. Not a preferred flow.",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "ELEMENTARY_FLOW",
+  "formula": "C12H4Cl4O",
+  "lastChange": "2025-12-09T10:07:10.736931",
+  "name": "2,3,7,8-Tetrachlorodibenzofuran",
+  "synonyms": "Dibenzofuran, 2,3,7,8-tetrachloro-",
+  "version": "1.3.0"
+}

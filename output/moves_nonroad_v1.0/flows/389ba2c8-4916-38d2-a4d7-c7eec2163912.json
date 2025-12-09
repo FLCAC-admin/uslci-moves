@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "389ba2c8-4916-38d2-a4d7-c7eec2163912",
+  "category": "Technosphere Flows / 56: Administrative and Support and Waste Management and Remediation Services / 5612: Facilities Support Services",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "f6811440-ee37-11de-8a39-0800200c9a66",
+        "name": "Energy"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2025-12-09T12:00:00Z",
+  "name": "Operation of equipment; 2-stroke air compressor",
+  "version": "01.00.000"
+}
