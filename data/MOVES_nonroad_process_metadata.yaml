@@ -1,13 +1,19 @@
 ## General Information
 
 description: >
-    To be added.
+    This dataset represents the operation of [equipments] using
+    [FUEL] as a fuel source.
+    Emissions and fuel consumption data are calculated using EPA's Motor Vehicle
+    Emission Simulator (MOVES), the regulatory model to determine emission
+    inventories for equipements used in construction, arguculture, industry and commercial sectors. 
+    The reference flow is the opertation of equipment for 1 MJ of energy provided.
 
 # valid_until: 2023 # Assigned in code
 # valid_from: 2023 # Assigned in code
 
 time_description: >
-    To be added.
+    This process reflects the equipments as estimated in [YEAR]. MOVES estimates daily emissions for weekdays and 
+    weekends by month and year for calendar years 1990 and 1999 through 2060. 
 
 geography_description: >
     This process represents emissions from equipment operated in the following
@@ -16,78 +22,8 @@ geography_description_US: >
     This process represents emissions from equipment operated in all U.S. states.
 
 technology_description: >
-    [EQUIPMENT DESCRIPTION]
-
-# equipment_descriptions:
-#     light_commercial_truck: >
-#         Light-duty trucks include pickups, most sport utility vehicles (SUVs) and vans.
-#         In MOVES, passenger trucks and light commercial trucks are defined using FHWA's
-#         vehicle classification, which specifies that light-duty vehicles are those weighing
-#         less than 10,000 pounds, specifically vehicles with a gross vehicle weight rating (GVWR)
-#         in Class 1 and 2 (including 2a and 2b). An exception to this is that Class 2b
-#         trucks (8,500 to 10,000 lbs) with two axles or more and at least six tires,
-#         colloquially known as "duallies", are classified into the single unit truck
-#         category. A light-duty truck is considered a light commercial truck if it
-#         is registered to an organization or business. 
     
-#     single_unit_truck: >
-#         Single unit source types in MOVES include refuse trucks, single unit short-haul
-#         trucks, single unit long-haul trucks and motor homes. FHWA's vehicle classification
-#         specifies that single unit trucks are singleframe trucks with a gross vehicle
-#         weight rating of greater than 10,000 pounds or with two axles and at least six
-#         tires—colloquially known as "dualies". The single unit truck vehicle category
-#         is quite diverse, including (but not limited to) delivery, box, flatbed,
-#         cement mixers, and tow trucks, among other body styles and vocations. 
-    
-#     single_unit_truck_short_haul: >
-#         FHWA's vehicle classification specifies that single unit trucks are singleframe
-#         trucks with a gross vehicle weight rating of greater than 10,000 pounds or
-#         with two axles and at least six tires—colloquially known as "dualies".
-#         The single unit truck vehicle category is quite diverse, including
-#         (but not limited to) delivery, box, flatbed, cement mixers, and tow trucks,
-#         among other body styles and vocations. This source type includes all single
-#         unit trucks that are not refuse trucks or motor homes, which travel less than
-#         or equal to 200 miles a day.
-    
-#     single_unit_truck_long_haul: >
-#         FHWA's vehicle classification specifies that single unit trucks are singleframe
-#         trucks with a gross vehicle weight rating of greater than 10,000 pounds or
-#         with two axles and at least six tires—colloquially known as "dualies".
-#         The single unit truck vehicle category is quite diverse, including
-#         (but not limited to) delivery, box, flatbed, cement mixers, and tow trucks,
-#         among other body styles and vocations. This source type includes all single
-#         unit trucks that are not refuse trucks or motor homes, which travel more than
-#         200 miles a day.
-    
-#     combination_truck: >
-#         Combination trucks in MOVES include two source types, short-haul and long-haul
-#         combination trucks. These are heavy-duty trucks that are not single-frame.
-#         Instead, they consist of a tractor and one or more trailers. Combination trucks
-#         are categorized in the medium heavy-duty (Class 6 and 7) regulatory class or
-#         the heavy heavy-duty (Class 8) regulatory class.
-    
-#     combination_truck_short_haul: >
-#         Combination trucks in MOVES include two source types, short-haul and long-haul
-#         combination trucks. These are heavy-duty trucks that are not single-frame.
-#         Instead, they consist of a tractor and one or more trailers. Combination trucks
-#         are categorized in the medium heavy-duty (Class 6 and 7) regulatory class or
-#         the heavy heavy-duty (Class 8) regulatory class.
-#         Short-haul combination trucks travel less than or equal to 200 miles a day.
-#         Frequently, these trucks are older than long-haul combination trucks and they
-#         are often purchased in secondary markets, such as for drayage applications,
-#         after being used primarily for long-haul trips.
-    
-#     combination_truck_long_haul: >
-#         Combination trucks in MOVES include two source types, short-haul and long-haul
-#         combination trucks. These are heavy-duty trucks that are not single-frame.
-#         Instead, they consist of a tractor and one or more trailers. Combination trucks
-#         are categorized in the medium heavy-duty (Class 6 and 7) regulatory class or
-#         the heavy heavy-duty (Class 8) regulatory class.
-#         Long-haul combination trucks travel more than 200 miles a day. These trucks
-#         frequently have a sleeper cab, allowing the driver to "hotel" in their truck
-#         during mandated rest times.
-
-## LCI method
+    [Title] reflects the [FUEL] powered [equipments] used in the [sector] sector with an average horsepower of [avg_hp] hp and a load factor of [LOAD_FACTOR]. 
 
 inventory_method_description: >
     Not applicable.
@@ -98,13 +34,21 @@ modeling_constants_description: >
 ## Data Source information
 
 completeness_description: >
-    To be added.
+    The results include emissions from running exhaust, crankcase venting, refueling vapor and spillage, 
+    evaporative tank permeation, evaporative hose permeation, and fuel vapor venting from diurnal, hot soak, and running activity.
+    Evaporative emissions while the vehicle is soaking (engine off) are not included.
+    Manufacturing of vehicles, roads, and other infrastructure are not included in
+    this dataset.
+    The model for nonroad equipments does not include nitrous oxide (N2O).
 
 data_selection_description: >
     MOVES runs were performed at the default settings at the state level.
 
 data_treatment_description: >
-    To be added.
+    Emissions are calculated from an adjusted emission factor multiplied by rated power, load factor, engine population, and activity.
+    The model uses base-year equipment populations by technology type and model year, and applies growth factors to estimate the population in the analysis year.
+    Nonroad emissions by equipment type, fuel type, and age are estimated based on median life at full load, load factors, activity, and age distributions.
+    Equipment populations are allocated to the county level using surrogate data.
 
 sampling_description: >
     Emissions and activity data for each state are combined to generate an activity-weighted

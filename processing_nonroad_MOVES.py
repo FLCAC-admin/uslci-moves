@@ -42,7 +42,7 @@ energy_flow = moves_inputs['EnergyFlow']
 
 #%%
 df = (df_orig
-      .drop(columns=['load_factor', 'EF(g/MJ)', 'EF(g/hr)'], errors='ignore')
+      .drop(columns=['EF(g/MJ)'], errors='ignore')
       .drop(columns=['stateid', 'state'], errors='ignore')
       .drop(columns=['fuelsubtypeid', 'fueltypeid', 'pollutantid', 'sectorid'], errors='ignore')
       .groupby(groupby_cols)
@@ -107,6 +107,16 @@ df_olca = pd.concat([df,
                       .assign(description = '')
                       ) ## ^^ energy inputs
                      ], ignore_index=True)
+
+# fill the nan values for energycontent, energy, source_hrs, population, load_factor, avg_hp, EF(kg/MJ),EF(kg/hr)
+cols_to_fill = [
+    "energycontent", "energy", "source_hrs", "population",
+    "load_factor", "avg_hp", "EF(kg/MJ)", "EF(kg/hr)"]
+
+df_olca[cols_to_fill] = (
+    df_olca.groupby("equipment")[cols_to_fill]
+           .transform(lambda x: x.fillna(method="ffill").fillna(method="bfill")))
+
 # Update syntax for transport types
 df_olca['name'] = df_olca['equipment'].map(moves_inputs['tech_flows'])
 df_olca['ProcessCategory'] = df_olca['equipment'].map(moves_inputs['ProcessContext'])
@@ -212,21 +222,43 @@ from flcac_utils.generate_processes import \
 validate_exchange_data(df_olca)
 
 processes = {}
-# loop through each vehicle type and region to adjust metadata before writing processes
-for s in df_olca['sector'].unique():
-    _df_olca = df_olca.query('sector == @s')
-    for r in _df_olca['region'].unique():
+
+# function used to create process names without fuel description at the beginning
+def get_equipment_desc(s: str) -> str:
+    # Case 1: pattern "XXX - YYYYYY"
+    if re.match(r".+ - .+", s):
+        return s.split(" - ", 1)[1]   # keep only after the dash
+    # Case 2: pattern starts with "2/4-Str"
+    elif re.match(r"a-Str\s+.+", s):
+        return s                      # keep whole string
+    # Default: fallback
+    else:
+        return s.title()
+df_olca['process_name'] = df_olca['equipment'].apply(get_equipment_desc) #add column that has the process name without fuel description at the beginning
+
+   
+    
+# loop through each vehicle type and fuel to adjust metadata before writing processes
+for s in df_olca['equipment'].unique():
+    _df_olca = df_olca.query('equipment == @s')
+    avg_hp = _df_olca['avg_hp']
+    for i in _df_olca[['region', 'fuel','sector','load_factor','avg_hp']].drop_duplicates().itertuples(index=False):
         _process_meta = process_meta.copy()
-        if r == 'US':
+        if i.region == 'US':
             _process_meta['geography_description'] = _process_meta.get('geography_description_US')
         _process_meta.pop('geography_description_US')
-        # _process_meta.pop('vehicle_descriptions')
+        
         for k, v in _process_meta.items():
             if not isinstance(v, str): continue
-            v = v.replace('[VEHICLE_TYPE]', s.title())
-            v = v.replace('[VEHICLE_CLASS]', s.split(',')[0])
+            v = v.replace('[Title]',_df_olca['process_name'].iloc[0])
+            v = v.replace('[equipments]', _df_olca['process_name'].iloc[0].lower())
+            v = v.replace('[FUEL]', i.fuel.lower())
+            v = v.replace ('[LOAD_FACTOR]', format(i.load_factor,".2g"))
+            v = v.replace ('[avg_hp]', format(i.avg_hp, ".2g"))
+            v = v.replace('[sector]', i.sector.lower())
             _process_meta[k] = v
-        p_dict = build_process_dict(_df_olca.query('region == @r'),
+            
+        p_dict = build_process_dict(_df_olca.query('region == @i.region'),
                                     flows, meta=_process_meta,
                                        loc_objs=location_objs,
                                        source_objs=source_objs,
