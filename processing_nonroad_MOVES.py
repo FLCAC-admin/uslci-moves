@@ -174,7 +174,64 @@ from flcac_utils.generate_processes import build_flow_dict
 flows, new_flows = build_flow_dict(
     pd.concat([df_olca, df_bridge], ignore_index=True))
 # pass bridge processes too to ensure those flows get created
+#%%
 
+# import unit converstion file to include hour as an alternative unit for all processes
+df_processes = df_olca[df_olca["FlowType"] == "PRODUCT_FLOW"]
+
+altflowlist = pd.DataFrame(columns=["Flowable", "AltUnit", "Unit", "AltUnitConversionFactor", "InverseConversionFactor"])
+altflowlist["Flowable"] = df_processes["FlowName"]
+altflowlist["AltUnit"] = "h"
+altflowlist["Unit"] = "MJ"
+altflowlist["AltUnitConversionFactor"] = df_processes["energy"]/df_processes["source_hrs"]
+altflowlist["InverseConversionFactor"] = df_processes["source_hrs"]/df_processes["energy"]
+altflowlist.drop(altflowlist[altflowlist["Flowable"] == "Liquefied petroleum gas, dispensed at pump"].index, inplace=True)
+#%%
+# # change converstion factor in the alt_unit attribute in the flows dictionary 
+# for flow_id, flow in flows.items():
+#     altunits = altflowlist[altflowlist['Flowable'] == flow.name]
+#     if not hasattr(flow, "alt_units"):
+#         flow.alt_units = []
+#     for _, alt in altunits.iterrows():
+#         alt_unit_info = {
+#             "unit": alt["AltUnit"],
+#             "conversion_factor": alt["AltUnitConversionFactor"],
+#             "inverse_conversion_factor": alt["InverseConversionFactor"]
+#         }
+#         flow.alt_units.append(alt_unit_info)
+
+
+# change converstion factor in the flow property attribute in the flows dictionary 
+import olca_schema as o
+import olca_schema.units as units
+import logging as log
+for flow_id, flow in flows.items():
+    altunits=altflowlist[altflowlist['Flowable']==flow.name]
+    for i, alternate in altunits.iterrows():
+        altfp = o.FlowPropertyFactor()
+        altfp.is_ref_flow_property = False
+        altfp.conversion_factor = alternate['AltUnitConversionFactor']
+        altfp.flow_property = units.property_ref(alternate["AltUnit"])
+        if altfp.flow_property is None:
+            log.warning(f"unknown altunit {alternate['AltUnit']} "
+                                        f"in flow {flow.name}")
+        else:
+            flow.flow_properties.append(altfp)
+#%%
+# #check if alternative units are created
+# for uuid, flow in flows.items():
+#     if hasattr(flow, "alt_units") and flow.alt_units:
+#         print(f"Flow: {flow.name} ")
+#         print("alt_units:", flow.alt_units)
+        
+#check if flow properties are changed
+if "d9ce3d3b-eb45-3cf2-a28a-5fea57e16694" in flows:
+    flow_obj = flows["d9ce3d3b-eb45-3cf2-a28a-5fea57e16694"]
+    flow_properties = getattr(flow_obj, "flow_properties", None)
+    print("flow_properties:", flow_properties)
+
+    
+#%%
 # replace newly created flows with those pulled via API
 api_flows = {flow.id: flow for k, flow in flow_objs.items()}
 if not(flows.keys() | api_flows.keys()) == flows.keys():
@@ -234,9 +291,10 @@ def get_equipment_desc(s: str) -> str:
     # Default: fallback
     else:
         return s.title()
-df_olca['process_name'] = df_olca['equipment'].apply(get_equipment_desc) #add column that has the process name without fuel description at the beginning
+#df_olca['process_name'] = df_olca['equipment'].apply(get_equipment_desc) #add column that has the process name without fuel description at the beginning
 
-   
+#use this one instead to include fuel information in the process name to avoid overlaps
+df_olca['process_name'] = df_olca['equipment']
     
 # loop through each vehicle type and fuel to adjust metadata before writing processes
 for s in df_olca['equipment'].unique():
@@ -251,7 +309,7 @@ for s in df_olca['equipment'].unique():
         for k, v in _process_meta.items():
             if not isinstance(v, str): continue
             v = v.replace('[Title]',_df_olca['process_name'].iloc[0])
-            v = v.replace('[equipments]', _df_olca['process_name'].iloc[0].lower())
+            v = v.replace('[equipments]', _df_olca['process_name'].apply(get_equipment_desc).iloc[0].lower())
             v = v.replace('[FUEL]', i.fuel.lower())
             v = v.replace ('[LOAD_FACTOR]', format(i.load_factor,".2g"))
             v = v.replace ('[avg_hp]', format(i.avg_hp, ".2g"))
@@ -268,6 +326,7 @@ for s in df_olca['equipment'].unique():
         processes.update(p_dict)
 # build bridge processes
 bridge_processes = build_process_dict(df_bridge, flows, meta=moves_inputs['Bridge'])
+
 
 #%% Write to json
 out_path = parent_path / 'output'
