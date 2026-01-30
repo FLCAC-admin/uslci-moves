@@ -3,7 +3,7 @@
   "@id": "ebf3aeb4-7a46-3029-a8f8-83d68f4d4ce5",
   "cas": "91-20-3",
   "category": "Elementary flows/emission/air",
-  "description": "From Federal Elementary Flow List v1.3.0, written by fedelemflowlist v1.3.1. Flow Class: Chemicals. Not a preferred flow.",
+  "description": "From Federal Elementary Flow List v1.3.0, written by fedelemflowlist v1.3.2. Flow Class: Chemicals. Not a preferred flow.",
   "flowProperties": [
     {
       "conversionFactor": 1.0,
@@ -17,7 +17,7 @@
   ],
   "flowType": "ELEMENTARY_FLOW",
   "formula": "C10H8",
-  "lastChange": "2025-12-09T10:07:10.745292",
+  "lastChange": "2026-01-28T21:22:58.237290",
   "name": "Naphthalene",
   "version": "1.3.0"
 }

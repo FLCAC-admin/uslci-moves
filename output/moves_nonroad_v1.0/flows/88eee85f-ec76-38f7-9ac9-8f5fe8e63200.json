@@ -11,10 +11,19 @@
         "name": "Energy"
       },
       "isRefFlowProperty": true
+    },
+    {
+      "conversionFactor": 1112224.6774572707,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "c0447923-0e60-4b3c-97c2-a86dddd9eea5",
+        "name": "Duration"
+      },
+      "isRefFlowProperty": false
     }
   ],
   "flowType": "PRODUCT_FLOW",
-  "lastChange": "2025-12-09T12:00:00Z",
+  "lastChange": "2026-01-29T12:00:00Z",
   "name": "Operation of equipment; cawler tractor/dozers",
   "version": "01.00.000"
 }

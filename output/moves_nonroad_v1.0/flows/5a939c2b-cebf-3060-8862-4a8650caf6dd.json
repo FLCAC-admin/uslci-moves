@@ -3,7 +3,7 @@
   "@id": "5a939c2b-cebf-3060-8862-4a8650caf6dd",
   "cas": "n.a.",
   "category": "Elementary flows/emission/air",
-  "description": "From Federal Elementary Flow List v1.3.0, written by fedelemflowlist v1.3.1. Flow Class: Groups. Not a preferred flow.",
+  "description": "From Federal Elementary Flow List v1.3.0, written by fedelemflowlist v1.3.2. Flow Class: Groups. Not a preferred flow.",
   "flowProperties": [
     {
       "conversionFactor": 1.0,
@@ -16,7 +16,7 @@
     }
   ],
   "flowType": "ELEMENTARY_FLOW",
-  "lastChange": "2025-12-09T10:07:10.795447",
+  "lastChange": "2026-01-28T21:22:58.242664",
   "name": "Particulate matter, \u2264 10\u03bcm",
   "version": "1.3.0"
 }

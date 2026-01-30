@@ -3,7 +3,7 @@
   "@id": "b330e0bd-997f-3ae9-9bff-244143bf66a6",
   "cas": "19408-74-3",
   "category": "Elementary flows/emission/air",
-  "description": "From Federal Elementary Flow List v1.3.0, written by fedelemflowlist v1.3.1. Flow Class: Chemicals. Not a preferred flow.",
+  "description": "From Federal Elementary Flow List v1.3.0, written by fedelemflowlist v1.3.2. Flow Class: Chemicals. Not a preferred flow.",
   "flowProperties": [
     {
       "conversionFactor": 1.0,
@@ -17,7 +17,7 @@
   ],
   "flowType": "ELEMENTARY_FLOW",
   "formula": "C12H2Cl6O2",
-  "lastChange": "2025-12-09T10:07:10.753730",
+  "lastChange": "2026-01-28T21:22:58.237290",
   "name": "1,2,3,7,8,9-Hexachlorodibenzo-p-dioxin",
   "synonyms": "Dibenzo-p-dioxin, 1,2,3,7,8,9-hexachloro-",
   "version": "1.3.0"
