@@ -147,6 +147,8 @@ df_olca = (df_olca
                    df_olca['Context']))
            .assign(location = lambda x: np.where(
                    x['region'] == 'US', 'US', None))
+           .assign(ProcessID = lambda x: x.apply(
+               lambda z: make_uuid(z['ProcessName'], z['location']), axis=1))
            .drop(columns=['name'])
            )
 

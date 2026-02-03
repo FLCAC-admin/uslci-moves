@@ -1,0 +1,1936 @@
+{
+  "@type": "Process",
+  "@id": "302389bf-850f-3d14-b25d-2b0bbe70b152",
+  "category": "11: Agriculture, Forestry, Fishing and Hunting / 1151: Support Activities for Crop Production",
+  "defaultAllocationMethod": "PHYSICAL_ALLOCATION",
+  "description": "This dataset represents the operation of agricultural mowers using nonroad diesel as a fuel source. Emissions and fuel consumption data are calculated using EPA's Motor Vehicle Emission Simulator (MOVES), the regulatory model to determine emission inventories for equipements used in construction, arguculture, industry and commercial sectors.  The reference flow is the opertation of equipment for 1 MJ of energy provided.",
+  "dqEntry": "(2;1)",
+  "dqSystem": {
+    "@type": "DQSystem",
+    "@id": "70bf370f-9912-4ec1-baa3-fbd4eaf85a10",
+    "name": "US EPA - Process Pedigree Matrix"
+  },
+  "exchangeDqSystem": {
+    "@type": "DQSystem",
+    "@id": "d13b2bc4-5e84-4cc8-a6be-9101ebb252ff",
+    "name": "US EPA - Flow Pedigree Matrix"
+  },
+  "exchanges": [
+    {
+      "amount": 2.960616057039095e-19,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "f308c394-340b-3abb-8c2b-2e829fb36f2b",
+        "name": "1,2,3,4,6,7,8-Heptachlorodibenzo-p-dioxin"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.898577113990801e-19,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "366db8ca-5a41-354b-9847-179eb2759073",
+        "name": "1,2,3,4,6,7,8-Heptachlorodibenzofuran"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 4.703642255876894e-21,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "0adc7aaa-00dd-3ecd-a8db-4ce173a20591",
+        "name": "1,2,3,4,7,8,9-Heptachlorodibenzofuran"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.0,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "a0df9853-65b8-350d-a719-dc21114176ee",
+        "name": "1,2,3,4,7,8-Hexachlorodibenzo-p-dioxin"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 5.842652362359822e-20,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "159f55db-a054-3dec-99be-023f3ec1a4af",
+        "name": "1,2,3,4,7,8-Hexachlorodibenzofuran"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 5.225668971248917e-21,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "ae0dc249-97ae-3575-a2ea-99c3d2d312b0",
+        "name": "1,2,3,6,7,8-Hexachlorodibenzo-p-dioxin"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 4.114314615746977e-20,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "871dc48b-a85c-33ff-98e2-cce2dbd63753",
+        "name": "1,2,3,6,7,8-Hexachlorodibenzofuran"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 2.4188374545620346e-20,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "b330e0bd-997f-3ae9-9bff-244143bf66a6",
+        "name": "1,2,3,7,8,9-Hexachlorodibenzo-p-dioxin"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 2.991268356601345e-20,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "3efad51e-9c16-38ed-ac61-1c75af400df4",
+        "name": "1,2,3,7,8,9-Hexachlorodibenzofuran"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.0,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "66fa486a-a469-3111-81ea-02f3ee6477ba",
+        "name": "1,2,3,7,8-Pentachlorodibenzo-p-dioxin"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 7.892815467072497e-20,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "4bcfae90-6a41-3fed-97a1-919f9e4cedf0",
+        "name": "1,2,3,7,8-Pentachlorodibenzofuran"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 6.16372009900682e-11,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "457411b2-4dac-3eb2-965d-97b60660afa2",
+        "name": "1,3-Butadiene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 2.5471768215273085e-10,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "3b981d82-2f3d-3ac0-89b5-5e38b91ef0f3",
+        "name": "2,2,4-Trimethylpentane"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.0,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "e3650058-0426-3a79-a606-758f352723e1",
+        "name": "2,3,4,6,7,8-Hexachlorodibenzofuran"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.390384591706542e-19,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "90f1b922-1629-368b-a10b-f942f06f26b3",
+        "name": "2,3,4,7,8-Pentachlorodibenzofuran"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.1260394094234988e-20,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "ceb19cad-78ed-3635-902c-d7ac03e5b830",
+        "name": "2,3,7,8-Tetrachlorodibenzo-p-dioxin"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 3.3285141472117548e-19,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "cd0e6ccf-b6af-3faa-aeea-43b548b85479",
+        "name": "2,3,7,8-Tetrachlorodibenzofuran"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 2.0575507288031795e-11,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "43aed9d7-5a9b-3f3e-8d51-cc8bebd9a9a1",
+        "name": "Acenaphthene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.0,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "43aed9d7-5a9b-3f3e-8d51-cc8bebd9a9a1",
+        "name": "Acenaphthene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 2.767605665251054e-11,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "34b07e52-3833-3665-aeec-01aed3f78362",
+        "name": "Acenaphthylene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.0,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "34b07e52-3833-3665-aeec-01aed3f78362",
+        "name": "Acenaphthylene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 2.9668310492401156e-09,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "09dc3fe9-7e57-321f-9e04-34375bf2a0b7",
+        "name": "Acetaldehyde"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 6.8265414195316e-10,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "ba9cee15-a144-3c38-9a3b-36931d4e64e9",
+        "name": "Acrolein"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 6.081586304153312e-10,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "65b5d5dd-95b5-36b2-8cb0-7c5501ff1e32",
+        "name": "Ammonia"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 2.500638851913482e-12,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "5aaca76f-ed8b-3dc6-9cb3-597421c567ac",
+        "name": "Anthracene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.2916053354235494e-12,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "5aaca76f-ed8b-3dc6-9cb3-597421c567ac",
+        "name": "Anthracene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.1661608030129853e-13,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "65d56a65-e766-3e57-8da8-f2accb61e9fc",
+        "name": "Arsenic compounds"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 7.431869424580744e-05,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "b6f010fb-a764-3063-af2d-bcb8309a97b7",
+        "name": "Carbon dioxide"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.7254160996669984e-13,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "248c35a7-7964-3f7b-aff8-9f29e983835e",
+        "name": "Benz[a]anthracene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 2.1416600433911785e-13,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "248c35a7-7964-3f7b-aff8-9f29e983835e",
+        "name": "Benz[a]anthracene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.2116094960183423e-09,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "565c5d1a-1e0e-35f3-82a0-4845c43d3dcf",
+        "name": "Benzene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.0,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "afa16840-ff2c-355c-84b6-6ce028c12439",
+        "name": "Benzo[a]fluoranthene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.628595997653235e-13,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "afa16840-ff2c-355c-84b6-6ce028c12439",
+        "name": "Benzo[a]fluoranthene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.0,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "920c61f8-5c4a-3900-b070-9a437d2738b8",
+        "name": "Benzo(b)fluoranthene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 2.4318570970462354e-13,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "920c61f8-5c4a-3900-b070-9a437d2738b8",
+        "name": "Benzo(b)fluoranthene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.0500602534909158e-13,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "7837257b-ed43-332d-993a-20991cc8f326",
+        "name": "Benzo[ghi]fluoranthene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.6940226348984253e-13,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "7837257b-ed43-332d-993a-20991cc8f326",
+        "name": "Benzo[ghi]fluoranthene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.0,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "fcf65d36-ae15-3066-80c2-b624e04c6380",
+        "name": "Benzo[k]fluoranthene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.8666262991574456e-13,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "fcf65d36-ae15-3066-80c2-b624e04c6380",
+        "name": "Benzo[k]fluoranthene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 2.669945788752612e-07,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "187c525c-3715-388c-b303-a0671524a615",
+        "name": "Carbon monoxide"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 4.643812003913045e-16,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "ac249128-5489-3eb8-bfb8-61c0b93d2e07",
+        "name": "Chromium(VI)"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.7207835880588287e-13,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "993fb955-f686-37f7-96e1-22b8c2a35ced",
+        "name": "Chrysene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 3.732305950270151e-13,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "993fb955-f686-37f7-96e1-22b8c2a35ced",
+        "name": "Chrysene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.0,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "e51f946b-179b-3580-9ba3-37299516be47",
+        "name": "Dibenz[a,h]anthracene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 4.388721999714874e-14,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "e51f946b-179b-3580-9ba3-37299516be47",
+        "name": "Dibenz[a,h]anthracene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.0,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "f9e94137-4a27-3973-a4d2-0d8bdafd2ade",
+        "name": "Ethanol"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.800074315436879e-10,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "7b2a26ef-86ec-39e1-82e6-016b31800e2b",
+        "name": "Ethylbenzene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 2.9359565039576314e-12,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "c89c263a-b0b7-34c9-a27c-d9ebf851c3cc",
+        "name": "Fluoranthene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.3906452508145072e-12,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "c89c263a-b0b7-34c9-a27c-d9ebf851c3cc",
+        "name": "Fluoranthene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 2.6106760313556745e-11,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "c5697dcb-8fd3-3046-b499-f34e33495b61",
+        "name": "Fluorene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 4.312724385848435e-12,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "c5697dcb-8fd3-3046-b499-f34e33495b61",
+        "name": "Fluorene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 8.336860305822983e-09,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "a257b8d3-62dd-37ad-b429-73d96c97165c",
+        "name": "Formaldehyde"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 4.5685821304999584e-11,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "7955b6e2-3ae6-315c-94f1-028d7faada34",
+        "name": "Hexane"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.0,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "e962ef47-cedd-36b6-b962-abacbab62a02",
+        "name": "Indeno[1,2,3-cd]pyrene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.5525323636077532e-13,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "e962ef47-cedd-36b6-b962-abacbab62a02",
+        "name": "Indeno[1,2,3-cd]pyrene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.8983027519746849e-13,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "c33548d3-5ccc-39da-b434-3c558a178cfd",
+        "name": "Manganese compounds"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 4.490806906219993e-16,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "59ebfa04-8747-377a-8e7f-a4392cc83e97",
+        "name": "Mercury(II)"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 8.691891962408819e-16,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "e2c65e04-f613-33db-9a6e-4cb4577b0005",
+        "name": "Mercury"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 2.3178369688762855e-16,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "e2c65e04-f613-33db-9a6e-4cb4577b0005",
+        "name": "Mercury"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.6280247964364162e-09,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "aab83476-ec6c-3742-af85-15d320b7ce80",
+        "name": "Methane"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.2391591520209077e-10,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "ebf3aeb4-7a46-3029-a8f8-83d68f4d4ce5",
+        "name": "Naphthalene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.0,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "ebf3aeb4-7a46-3029-a8f8-83d68f4d4ce5",
+        "name": "Naphthalene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 3.272833819320669e-13,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "d9d3dec9-f636-377d-a044-6b21d995c978",
+        "name": "Nickel compounds"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.3805075458749836e-18,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "07ba9a74-dccc-3f2b-8217-c7439eb41088",
+        "name": "1,2,3,4,6,7,8,9-Octachlorodibenzo-p-dioxin"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 2.3441583115580445e-19,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "13433131-590e-318a-a284-a2f2e05a4a85",
+        "name": "1,2,3,4,6,7,8,9-Octachlorodibenzofuran"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 3.628241575882942e-07,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "4382ba18-dd21-3837-80b2-94283ef5490e",
+        "name": "Nitrogen oxides"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 4.2133887163502874e-11,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "12ae4a71-1402-36e9-ada8-fe6cb98c56ee",
+        "name": "Phenanthrene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.2216154789142074e-11,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "12ae4a71-1402-36e9-ada8-fe6cb98c56ee",
+        "name": "Phenanthrene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 3.913698696183039e-08,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "49a9c581-7c83-36b0-b1bd-455ea4c665a6",
+        "name": "Particulate matter, \u2264 2.5\u03bcm"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 3.796288206103516e-08,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "5a939c2b-cebf-3060-8862-4a8650caf6dd",
+        "name": "Particulate matter, \u2264 10\u03bcm"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 8.319144582908722e-10,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "592fa548-20aa-36e9-b703-68be0ff6f30a",
+        "name": "Propionaldehyde"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 3.2526564619169212e-12,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "b51b5cbd-b0cb-3104-b03b-4fbc12829a9e",
+        "name": "Pyrene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 2.15988896856215e-12,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "b51b5cbd-b0cb-3104-b03b-4fbc12829a9e",
+        "name": "Pyrene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.0,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "69bc8b47-09b5-3a09-b7f4-3e4d2925ce5a",
+        "name": "Styrene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 2.339651733142433e-10,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "f4973035-59f5-3bdc-b257-b274dcc04e0f",
+        "name": "Sulfur dioxide"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 8.938450981785888e-10,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "3f72fe9c-b003-38ee-b8d2-13a84f60506c",
+        "name": "Toluene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 3.04866061413013e-08,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "6a8ca31c-ede5-38b1-8c30-2d50fb499a55",
+        "name": "Hydrocarbons"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 3.321745973906083e-08,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "6f861846-1c4c-3fc9-a198-56b2d9abd83b",
+        "name": "Volatile organic compounds"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 5.238240807205468e-10,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "aef9d0ff-6482-3b1d-a53e-4d738bdcd9b1",
+        "name": "Xylene"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.0,
+      "description": "",
+      "dqEntry": "",
+      "flow": {
+        "@type": "Flow",
+        "@id": "d568fd56-93dc-3db4-90f4-9f6711a53af5",
+        "category": "Technosphere Flows / 11: Agriculture, Forestry, Fishing and Hunting / 1151: Support Activities for Crop Production",
+        "name": "Operation of equipment; agricultural mowers"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "f6811440-ee37-11de-8a39-0800200c9a66",
+        "name": "Energy"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": true,
+      "unit": {
+        "@type": "Unit",
+        "@id": "52765a6c-3896-43c2-b2f4-c679acf13efe",
+        "name": "MJ"
+      }
+    },
+    {
+      "amount": 1.0,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "a309e49e-25f9-3689-b60e-b7071826a47a",
+        "category": "Technosphere flows/44-45: Retail Trade/4471: Gasoline Stations",
+        "name": "Diesel; dispensed at pump"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "f6811440-ee37-11de-8a39-0800200c9a66",
+        "name": "Energy"
+      },
+      "isAvoidedProduct": false,
+      "isInput": true,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "55244053-94ba-404e-9172-cb279d905e00",
+        "name": "btu"
+      }
+    }
+  ],
+  "lastChange": "2026-02-03T12:00:00Z",
+  "location": {
+    "@type": "Location",
+    "@id": "0b3b97fa-6688-3c56-88ee-4ae80ec0c3c2",
+    "name": "United States of America (the)"
+  },
+  "name": "Operation of equipment; agricultural mowers; nonroad diesel powered",
+  "processDocumentation": {
+    "completenessDescription": "The results include emissions from running exhaust, crankcase venting, refueling vapor and spillage,  evaporative tank permeation, evaporative hose permeation, and fuel vapor venting from diurnal, hot soak, and running activity. Evaporative emissions while the vehicle is soaking (engine off) are not included. Manufacturing of vehicles, roads, and other infrastructure are not included in this dataset. The model for nonroad equipments does not include nitrous oxide (N2O).",
+    "creationDate": "2026-02-03T12:00:00",
+    "dataCollectionDescription": "MOVES runs were performed using MOVES4.0.1 in 2024.",
+    "dataDocumentor": {
+      "@type": "Actor",
+      "@id": "38e67478-a915-43d9-ad67-e25db79a4acc",
+      "category": "Organisations",
+      "name": "ERG"
+    },
+    "dataGenerator": {
+      "@type": "Actor",
+      "@id": "38e67478-a915-43d9-ad67-e25db79a4acc",
+      "category": "Organisations",
+      "name": "ERG"
+    },
+    "dataSelectionDescription": "MOVES runs were performed at the default settings at the state level.",
+    "dataTreatmentDescription": "Emissions are calculated from an adjusted emission factor multiplied by rated power, load factor, engine population, and activity. The model uses base-year equipment populations by technology type and model year, and applies growth factors to estimate the population in the analysis year. Nonroad emissions by equipment type, fuel type, and age are estimated based on median life at full load, load factors, activity, and age distributions. Equipment populations are allocated to the county level using surrogate data.",
+    "geographyDescription": "This process represents emissions from equipment operated in all U.S. states.",
+    "inventoryMethodDescription": "Not applicable.",
+    "modelingConstantsDescription": "Not applicable.",
+    "projectDescription": "This dataset was developed by the Federal LCA Commons Data Curator Eastern Research Group, Inc. (ERG) under subcontract (SUB-2024-10066) to the National Renewable Energy Laboratory under Department of Energy (DOE) Prime Contract No. DE-AC36-08GO28308. The work is funded by DOE's Advanced Materials & Manufacturing Technologies Office (AMMTO).",
+    "publication": {
+      "@type": "Source",
+      "@id": "769fd5a6-e11b-3c0d-9ad2-81fd906b47fb",
+      "name": "ERG, MOVES nonroad data"
+    },
+    "restrictionsDescription": "These U.S. LCI Database Project data (\"Data\") are provided by the National Renewable Energy Laboratory (\"NREL\"), operated by the Alliance for Sustainable Energy, LLC (\"Alliance\") for the US Department of Energy (\"DOE\") under Contract No. DE-AC36-08GO28308. The United States Government (the \"Government\") retains and the user acknowledges that the Government retains a non-exclusive, paid-up, irrevocable, worldwide license to publish or reproduce the published form of these data, or allow others to do so, for Government purposes.\nAccess to and use of these Data shall impose the following obligations on the user, as set forth in this Agreement. The user is granted the right, without any fee or cost, to use, copy, modify, alter, enhance and distribute these Data for any purpose whatsoever, provided that this entire notice appears in all copies of the Data. Any modification, alteration or enhancement of these data shall be identified and documented by the user. Further, the user agrees to credit the DOE/NREL/Alliance in any publication that results from the use of these Data. The names DOE/NREL/Alliance, however, may not be used in any advertising or publicity to endorse or promote any products or commercial entities unless specific written permission is obtained from DOE/NREL/Alliance. The user also understands that DOE/NREL/Alliance is not obligated to provide the user with any support, consulting, training or assistance of any kind with regard to the use of these Data or to provide the user with any updates, revisions or new versions of these Data.\nYOU AGREE TO INDEMNIFY THE GOVERNMENT AND DOE/NREL/ALLIANCE, AND ITS SUBSIDIARIES, AFFILIATES, OFFICERS, AGENTS, AND EMPLOYEES AGAINST ANY CLAIM OR DEMAND, INCLUDING REASONABLE ATTORNEYS' FEES, RELATED TO YOUR USE OF THESE DATA. THESE DATA ARE PROVIDED BY DOE/NREL/ALLIANCE \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE GOVERNMENT OR DOE/NREL/ALLIANCE BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER, INCLUDING BUT NOT LIMITED TO CLAIMS ASSOCIATED WITH THE LOSS OF DATA OR PROFITS, WHICH MAY RESULT FROM AN ACTION IN CONTRACT, NEGLIGENCE OR OTHER TORTIOUS CLAIM THAT ARISES OUT OF OR IN CONNECTION WITH THE ACCESS, USE OR PERFORMANCE OF THESE DATA.",
+    "samplingDescription": "Emissions and activity data for each state are combined to generate an activity-weighted average for each region. No uncertainty was assessed.",
+    "sources": [
+      {
+        "@type": "Source",
+        "@id": "3d067546-a4b5-3b06-aafc-7334fdf3117b",
+        "name": "USEPA MOVES4"
+      }
+    ],
+    "technologyDescription": "\nDsl - Agricultural Mowers reflects the nonroad diesel powered agricultural mowers used in the agriculture sector with an average horsepower of 76 hp and a load factor of 0.59.",
+    "timeDescription": "This process reflects the equipments as estimated in 2020. MOVES estimates daily emissions for weekdays and  weekends by month and year for calendar years 1990 and 1999 through 2060.",
+    "useAdvice": "This process is intended to connect to fuel supply processes from the Heavy Equipment repository.",
+    "validFrom": "2020-01-01T00:00:00",
+    "validUntil": "2020-12-31T00:00:00"
+  },
+  "processType": "UNIT_PROCESS",
+  "version": "01.00.000"
+}
