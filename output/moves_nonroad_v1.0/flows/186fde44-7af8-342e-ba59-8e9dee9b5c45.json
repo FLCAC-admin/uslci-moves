@@ -5,17 +5,7 @@
   "description": "Unit conversions set consistent with flow \"Gasoline, at refinery\"",
   "flowProperties": [
     {
-      "conversionFactor": 0.001353,
-      "flowProperty": {
-        "@type": "FlowProperty",
-        "@id": "93a60a56-a3c8-22da-a746-0800200c9a66",
-        "category": "Technical flow properties",
-        "name": "Volume",
-        "refUnit": "m3"
-      }
-    },
-    {
-      "conversionFactor": 46.4,
+      "conversionFactor": 46.2,
       "flowProperty": {
         "@type": "FlowProperty",
         "@id": "f6811440-ee37-11de-8a39-0800200c9a66",
@@ -34,11 +24,21 @@
         "refUnit": "kg"
       },
       "isRefFlowProperty": true
+    },
+    {
+      "conversionFactor": 0.001333333,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-22da-a746-0800200c9a66",
+        "category": "Technical flow properties",
+        "name": "Volume",
+        "refUnit": "m3"
+      }
     }
   ],
   "flowType": "PRODUCT_FLOW",
   "isInfrastructureFlow": false,
-  "lastChange": "2025-03-16T13:41:44.989Z",
-  "name": "Gasoline, dispensed at pump",
-  "version": "00.00.009"
+  "lastChange": "2025-11-10T19:43:41.547Z",
+  "name": "Gasoline; dispensed at pump",
+  "version": "00.00.010"
 }

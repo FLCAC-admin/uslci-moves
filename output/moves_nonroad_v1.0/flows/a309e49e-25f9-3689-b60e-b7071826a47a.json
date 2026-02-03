@@ -5,6 +5,16 @@
   "description": "Unit conversions set consistent with flow \"Diesel, at refinery\"",
   "flowProperties": [
     {
+      "conversionFactor": 45.3,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "f6811440-ee37-11de-8a39-0800200c9a66",
+        "category": "Technical flow properties",
+        "name": "Energy",
+        "refUnit": "MJ"
+      }
+    },
+    {
       "conversionFactor": 1.0,
       "flowProperty": {
         "@type": "FlowProperty",
@@ -16,7 +26,7 @@
       "isRefFlowProperty": true
     },
     {
-      "conversionFactor": 0.001153,
+      "conversionFactor": 0.001177856,
       "flowProperty": {
         "@type": "FlowProperty",
         "@id": "93a60a56-a3c8-22da-a746-0800200c9a66",
@@ -24,21 +34,11 @@
         "name": "Volume",
         "refUnit": "m3"
       }
-    },
-    {
-      "conversionFactor": 42.6,
-      "flowProperty": {
-        "@type": "FlowProperty",
-        "@id": "f6811440-ee37-11de-8a39-0800200c9a66",
-        "category": "Technical flow properties",
-        "name": "Energy",
-        "refUnit": "MJ"
-      }
     }
   ],
   "flowType": "PRODUCT_FLOW",
   "isInfrastructureFlow": false,
-  "lastChange": "2025-03-16T13:38:53.618Z",
-  "name": "Diesel, dispensed at pump",
-  "version": "00.00.010"
+  "lastChange": "2025-12-08T21:53:37.522Z",
+  "name": "Diesel; dispensed at pump",
+  "version": "00.00.012"
 }
