@@ -38,6 +38,13 @@ moves_inputs['FlowContext'] = dict(zip(tech_flows['equipment'], tech_flows['Flow
 
 energy_flow = moves_inputs['EnergyFlow']
 
+# identify fuel types, prepared to be included in process name
+fuel_map = {
+    "LPG": "Liquified Petroleum Fuel",
+    "Gasoline": "Gasoline",
+    "Nonroad Diesel": "Diesel"
+}
+
 ## equipment column is unique identifier; scc, sector, and fuel are additional information
 
 #%%
@@ -185,8 +192,8 @@ altflowlist = pd.DataFrame(columns=["Flowable", "AltUnit", "Unit", "AltUnitConve
 altflowlist["Flowable"] = df_processes["FlowName"]
 altflowlist["AltUnit"] = "h"
 altflowlist["Unit"] = "MJ"
-altflowlist["AltUnitConversionFactor"] = df_processes["energy"]/df_processes["source_hrs"]/1000
-altflowlist["InverseConversionFactor"] = df_processes["source_hrs"]/df_processes["energy"]*1000
+altflowlist["AltUnitConversionFactor"] = df_processes["source_hrs"]/df_processes["energy"]*1000
+altflowlist["InverseConversionFactor"] = df_processes["energy"]/(df_processes["source_hrs"]*1000)
 altflowlist.drop(altflowlist[altflowlist["Flowable"] == "Liquefied petroleum gas, dispensed at pump"].index, inplace=True)
 #%%
 # # change converstion factor in the alt_unit attribute in the flows dictionary 
@@ -281,13 +288,6 @@ from flcac_utils.generate_processes import \
 validate_exchange_data(df_olca)
 
 processes = {}
-
-# identify fuel types, prepared to be included in process name
-fuel_map = {
-    "LPG": "Liquified Petroleum Fuel",
-    "Gasoline": "Gasoline",
-    "Nonroad Diesel": "Diesel"
-}
 
 # function used to create process names without fuel description at the beginning
 def get_equipment_desc(s: str) -> str:
