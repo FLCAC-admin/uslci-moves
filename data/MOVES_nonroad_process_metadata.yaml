@@ -1,18 +1,17 @@
 ## General Information
 
 description: >
-    This dataset represents the operation of [equipments] using
+    This dataset represents the operation of [equipment] using
     [FUEL] as a fuel source.
-    Emissions and fuel consumption data are calculated using EPA's Motor Vehicle
-    Emission Simulator (MOVES), the regulatory model to determine emission
-    inventories for equipements used in construction, arguculture, industry and commercial sectors. 
-    The reference flow is the opertation of equipment for 1 MJ of energy provided.
+    Emissions and fuel‑consumption data are calculated using EPA’s Motor Vehicle Emission Simulator (MOVES), 
+    the regulatory model used to determine emission inventories for equipment used in construction, agriculture, industrial, and commercial sectors.
+    The reference flows are: 1. the operation of equipment providing 1 MJ of energy; and 2. the operation of equipment for 1 hour.
 
 # valid_until: 2023 # Assigned in code
 # valid_from: 2023 # Assigned in code
 
 time_description: >
-    This process reflects the equipments as estimated in [YEAR]. MOVES estimates daily emissions for weekdays and 
+    This process reflects the equipment as estimated in [YEAR]. MOVES estimates daily emissions for weekdays and 
     weekends by month and year for calendar years 1990 and 1999 through 2060. 
 
 geography_description: >
@@ -23,7 +22,8 @@ geography_description_US: >
 
 technology_description: >
     
-    [Title] reflects the [FUEL] powered [equipments] used in the [sector] sector with an average horsepower of [avg_hp] hp and a load factor of [LOAD_FACTOR]. 
+    This process reflects the [FUEL]-powered [equipment] used in the [sector] sector, with an average horsepower of [avg_hp] hp and a load factor of [LOAD_FACTOR].
+
 
 inventory_method_description: >
     Not applicable.
@@ -36,16 +36,16 @@ modeling_constants_description: >
 completeness_description: >
     The results include emissions from running exhaust, crankcase venting, refueling vapor and spillage, 
     evaporative tank permeation, evaporative hose permeation, and fuel vapor venting from diurnal, hot soak, and running activity.
-    Evaporative emissions while the vehicle is soaking (engine off) are not included.
-    Manufacturing of vehicles, roads, and other infrastructure are not included in
+    Evaporative emissions while the equipment is soaking (engine off) are not included.
+    Manufacturing of equipment, roads, and other infrastructure are not included in
     this dataset.
-    The model for nonroad equipments does not include nitrous oxide (N2O).
+    The model for nonroad equipment does not include nitrous oxide (N2O).
 
 data_selection_description: >
     MOVES runs were performed at the default settings at the state level.
 
 data_treatment_description: >
-    Emissions are calculated from an adjusted emission factor multiplied by rated power, load factor, engine population, and activity.
+    Emissions are calculated using an adjusted emission factor multiplied by rated power, load factor, engine population, and activity.
     The model uses base-year equipment populations by technology type and model year, and applies growth factors to estimate the population in the analysis year.
     Nonroad emissions by equipment type, fuel type, and age are estimated based on median life at full load, load factors, activity, and age distributions.
     Equipment populations are allocated to the county level using surrogate data.
@@ -55,14 +55,13 @@ sampling_description: >
     average for each region. No uncertainty was assessed.
 
 data_collection_description: >
-    MOVES runs were performed using MOVES4.0.1 in 2024.
+    MOVES runs were performed using MOVES4.0.1 in 2025.
 
 use_advice: >
-    This process is intended to connect to fuel supply processes from
-    the Heavy Equipment repository.
+    This process has two reference units: MJ of energy delivered by the equipment, hour of equipment use.
 
 sources:
- - usepa_motor_2024: USEPA MOVES4
+ - usepa_motor_2024: ERG (2025) MOVES nonroad data
 
 ## Admin information
 
@@ -73,12 +72,15 @@ project_description: >
     No. DE-AC36-08GO28308. The work is funded by DOE's Advanced Materials &
     Manufacturing Technologies Office (AMMTO).
 
-# intended_application: >
-#     This is intended application.
 
-# data_set_owner: 
-#     USLCI: 'Franklin Associates, A Division of ERG'
+intended_application: >
+    The target audience of this model includes LCA practitioners, industry, and the general public. 
+    A full inventory of environmental flows are included; 
+    thus this unit process can be used for a full range of LCIA impact categories.
 
+data_set_owner:
+    USLCI: 'Franklin Associates, A Division of ERG'
+    
 data_generator:
     USLCI: 'ERG'
 

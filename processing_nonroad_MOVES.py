@@ -128,7 +128,7 @@ cond1 = df_olca['FlowName'] == 'reference_flow_var'
 cond2 = df_olca['FlowName'] == energy_flow
 df_olca = (df_olca
            .assign(ProcessName = lambda x: ('Operation of equipment; ' + x['name'] + '; '
-                                            + x['fuel'].str.lower()
+                                            + x['fuel'].map(fuel_map).str.lower()
                                             + ' powered'))
            .assign(reference = np.where(cond1, True, False))
            .assign(IsInput = np.where(cond2, True, False))
@@ -157,7 +157,7 @@ df_olca = (df_olca
 from flcac_utils.mapping import prepare_tech_flow_mappings
 
 ## Identify mappings for technosphere flows (fuel inputs)
-fuel_df = pd.read_csv(data_path / 'MOVES_fuel_mapping.csv')
+fuel_df = pd.read_csv(data_path / 'MOVES_nonroad_fuel_mapping.csv')
 fuel_df = fuel_df.query('SourceFlowName in @df_olca.fuel')
 fuel_dict, flow_objs, provider_dict = prepare_tech_flow_mappings(fuel_df)
 
@@ -185,8 +185,8 @@ altflowlist = pd.DataFrame(columns=["Flowable", "AltUnit", "Unit", "AltUnitConve
 altflowlist["Flowable"] = df_processes["FlowName"]
 altflowlist["AltUnit"] = "h"
 altflowlist["Unit"] = "MJ"
-altflowlist["AltUnitConversionFactor"] = df_processes["energy"]/df_processes["source_hrs"]
-altflowlist["InverseConversionFactor"] = df_processes["source_hrs"]/df_processes["energy"]
+altflowlist["AltUnitConversionFactor"] = df_processes["energy"]/df_processes["source_hrs"]/1000
+altflowlist["InverseConversionFactor"] = df_processes["source_hrs"]/df_processes["energy"]*1000
 altflowlist.drop(altflowlist[altflowlist["Flowable"] == "Liquefied petroleum gas, dispensed at pump"].index, inplace=True)
 #%%
 # # change converstion factor in the alt_unit attribute in the flows dictionary 
@@ -282,6 +282,13 @@ validate_exchange_data(df_olca)
 
 processes = {}
 
+# identify fuel types, prepared to be included in process name
+fuel_map = {
+    "LPG": "Liquified Petroleum Fuel",
+    "Gasoline": "Gasoline",
+    "Nonroad Diesel": "Diesel"
+}
+
 # function used to create process names without fuel description at the beginning
 def get_equipment_desc(s: str) -> str:
     # Case 1: pattern "XXX - YYYYYY"
@@ -294,9 +301,7 @@ def get_equipment_desc(s: str) -> str:
     else:
         return s.title()
 #df_olca['process_name'] = df_olca['equipment'].apply(get_equipment_desc) #add column that has the process name without fuel description at the beginning
-
-#use this one instead to include fuel information in the process name to avoid overlaps
-df_olca['process_name'] = df_olca['equipment']
+df_olca['process_name'] = df_olca['equipment'].apply(get_equipment_desc) + ", " + df["fuel"].map(fuel_map) + " powered"
     
 # loop through each vehicle type and fuel to adjust metadata before writing processes
 for s in df_olca['equipment'].unique():
@@ -311,7 +316,7 @@ for s in df_olca['equipment'].unique():
         for k, v in _process_meta.items():
             if not isinstance(v, str): continue
             v = v.replace('[Title]',_df_olca['process_name'].iloc[0])
-            v = v.replace('[equipments]', _df_olca['process_name'].apply(get_equipment_desc).iloc[0].lower())
+            v = v.replace('[equipment]', _df_olca['process_name'].iloc[0].lower())
             v = v.replace('[FUEL]', i.fuel.lower())
             v = v.replace ('[LOAD_FACTOR]', format(i.load_factor,".2g"))
             v = v.replace ('[avg_hp]', format(i.avg_hp, ".2g"))
