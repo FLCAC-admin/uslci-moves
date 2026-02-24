@@ -79,7 +79,7 @@ intended_application: >
     thus this unit process can be used for a full range of LCIA impact categories.
 
 data_set_owner:
-    USLCI: 'Franklin Associates, A Division of ERG'
+    USLCI: 'ERG'
     
 data_generator:
     USLCI: 'ERG'
@@ -88,7 +88,7 @@ data_documentor:
     USLCI: 'ERG'
 
 publication: 
-    flcac_moves_nonroad: 'ERG, MOVES nonroad data'
+    flcac_moves_nonroad: 'ERG (2026) MOVES nonroad v1.0'
 
 # creation_date: # Turn off to assign automatically
 
