@@ -13,7 +13,7 @@
       "isRefFlowProperty": true
     },
     {
-      "conversionFactor": 199416.55974347453,
+      "conversionFactor": 0.005014628681220758,
       "flowProperty": {
         "@type": "FlowProperty",
         "@id": "c0447923-0e60-4b3c-97c2-a86dddd9eea5",
@@ -23,7 +23,7 @@
     }
   ],
   "flowType": "PRODUCT_FLOW",
-  "lastChange": "2026-01-29T12:00:00Z",
+  "lastChange": "2026-02-25T12:00:00Z",
   "name": "Operation of equipment; 4-stroke other material handling equipment",
   "version": "01.00.000"
 }

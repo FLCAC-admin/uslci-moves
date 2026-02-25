@@ -203,7 +203,7 @@ Commercial,2270006030,Dsl - Pressure Washers,,,
 Commercial,2270006035,Dsl - Hydro Power Units,,,
 Logging,2270007015,Dsl - Forest Eqp - Feller/Bunch/Skidder,"forest equipment, feller/bunch/skidder","11: Agriculture, Forestry, Fishing and Hunting / 1133: Logging","11: Agriculture, Forestry, Fishing and Hunting / 1133: Logging"
 Airport Support,2270008005,Dsl - Airport Support Equipment,airport support equipment,48-49: Transportation and Warehousing / 4881: Support Activities for Air Transportation,48-49: Transportation and Warehousing / 4881: Support Activities for Air Transportation
-Underground Mining,2270009010,Dsl - Other Underground Mining Equip,,,
+Underground Mining,2270009010,Dsl - Other Underground Mining Equip,other underground mining equipment,"21: Mining, Quarrying, and Oil and Gas Extraction","21: Mining, Quarrying, and Oil and Gas Extraction / 2131: Support Activities for Mining"
 Oil Field,2270010010,Dsl - Other Oil Field Equipment,,,
 Railroad Support,2285002015,Dsl - Railway Maintenance,railway maintenance,48-49: Transportation and Warehousing / 4882: Support Activities for Rail Transportation,48-49: Transportation and Warehousing / 4882: Support Activities for Rail Transportation
 Pleasure Craft,2282020005,Dsl - Inboard/Sterndrive,,,

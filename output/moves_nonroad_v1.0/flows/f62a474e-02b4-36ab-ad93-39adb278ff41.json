@@ -1,0 +1,29 @@
+{
+  "@type": "Flow",
+  "@id": "f62a474e-02b4-36ab-ad93-39adb278ff41",
+  "category": "Technosphere Flows / 21: Mining, Quarrying, and Oil and Gas Extraction",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "f6811440-ee37-11de-8a39-0800200c9a66",
+        "name": "Energy"
+      },
+      "isRefFlowProperty": true
+    },
+    {
+      "conversionFactor": 0.004356460935069157,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "c0447923-0e60-4b3c-97c2-a86dddd9eea5",
+        "name": "Duration"
+      },
+      "isRefFlowProperty": false
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-02-25T12:00:00Z",
+  "name": "Operation of equipment; other underground mining equipment",
+  "version": "01.00.000"
+}
