@@ -1,9 +1,9 @@
 {
   "@type": "Process",
-  "@id": "84462b66-5243-3573-8ccd-948deb9c3c2a",
+  "@id": "bd647347-0e77-3f51-82cd-4b4c062c01ad",
   "category": "23: Construction / 2382: Building Equipment Contractors",
   "defaultAllocationMethod": "PHYSICAL_ALLOCATION",
-  "description": "This dataset represents the operation of concrete/industrial saws using nonroad diesel as a fuel source. Emissions and fuel consumption data are calculated using EPA's Motor Vehicle Emission Simulator (MOVES), the regulatory model to determine emission inventories for equipements used in construction, arguculture, industry and commercial sectors.  The reference flow is the opertation of equipment for 1 MJ of energy provided.",
+  "description": "This dataset represents the operation of crushing and processing equipment using nonroad diesel as a fuel source. Emissions and fuel-consumption data are calculated using EPA's Motor Vehicle Emission Simulator (MOVES), the regulatory model used to determine emission inventories for equipment used in construction, agriculture, industrial, and commercial sectors. The reference flows are: 1. the operation of equipment consuming 1 MJ of fuel; and 2. the operation of equipment for 1 hour.",
   "dqEntry": "(2;1)",
   "dqSystem": {
     "@type": "DQSystem",
@@ -17,7 +17,7 @@
   },
   "exchanges": [
     {
-      "amount": 3.8059696880540425e-19,
+      "amount": 2.443175792156357e-19,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -40,7 +40,7 @@
       }
     },
     {
-      "amount": 2.214264112158646e-19,
+      "amount": 1.705344736846143e-19,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -63,7 +63,7 @@
       }
     },
     {
-      "amount": 3.134590244206154e-21,
+      "amount": 5.664063143786138e-21,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -109,7 +109,7 @@
       }
     },
     {
-      "amount": 7.414398670541361e-20,
+      "amount": 4.880593281560197e-20,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -132,7 +132,7 @@
       }
     },
     {
-      "amount": 8.01567673236368e-21,
+      "amount": 3.5179133123102896e-21,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -155,7 +155,7 @@
       }
     },
     {
-      "amount": 4.6039051199838873e-20,
+      "amount": 3.81462587151704e-20,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -178,7 +178,7 @@
       }
     },
     {
-      "amount": 3.710264230601935e-20,
+      "amount": 1.628357806982225e-20,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -201,7 +201,7 @@
       }
     },
     {
-      "amount": 3.3235942919175346e-20,
+      "amount": 2.787850922597093e-20,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -247,7 +247,7 @@
       }
     },
     {
-      "amount": 1.1354647457922055e-19,
+      "amount": 5.773832956280449e-20,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -270,7 +270,7 @@
       }
     },
     {
-      "amount": 2.1768881941470193e-11,
+      "amount": 1.1047825532708447e-11,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -293,7 +293,7 @@
       }
     },
     {
-      "amount": 9.227044343928632e-11,
+      "amount": 4.8438687812368297e-11,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -339,7 +339,7 @@
       }
     },
     {
-      "amount": 1.9049206919467815e-19,
+      "amount": 1.0754364130787625e-19,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -362,7 +362,7 @@
       }
     },
     {
-      "amount": 1.7272341288675598e-20,
+      "amount": 7.580474284054237e-21,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -385,7 +385,7 @@
       }
     },
     {
-      "amount": 5.069877406467089e-19,
+      "amount": 2.262629457951791e-19,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -408,7 +408,7 @@
       }
     },
     {
-      "amount": 6.766586964710404e-12,
+      "amount": 3.5388236526550775e-12,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -454,7 +454,7 @@
       }
     },
     {
-      "amount": 1.3504400663608624e-11,
+      "amount": 6.593323179445535e-12,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -477,7 +477,7 @@
       }
     },
     {
-      "amount": 1.905749362599328e-18,
+      "amount": 9.255443099059411e-17,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -500,7 +500,7 @@
       }
     },
     {
-      "amount": 1.1957363182931155e-09,
+      "amount": 6.114028802482859e-10,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -523,7 +523,7 @@
       }
     },
     {
-      "amount": 2.1638585052894476e-10,
+      "amount": 1.1447605970642934e-10,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -546,7 +546,7 @@
       }
     },
     {
-      "amount": 6.081588729997737e-10,
+      "amount": 6.081584320611931e-10,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -569,7 +569,7 @@
       }
     },
     {
-      "amount": 9.79640420527952e-13,
+      "amount": 4.975645141118335e-13,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -592,7 +592,7 @@
       }
     },
     {
-      "amount": 2.2826328074086655e-13,
+      "amount": 1.3270543315610273e-13,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -615,7 +615,7 @@
       }
     },
     {
-      "amount": 1.166161509385018e-13,
+      "amount": 1.166161138920519e-13,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -638,7 +638,7 @@
       }
     },
     {
-      "amount": 7.437909737237274e-05,
+      "amount": 7.439519948059064e-05,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -661,7 +661,7 @@
       }
     },
     {
-      "amount": 8.515007459527282e-14,
+      "amount": 4.167977638638093e-14,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -684,7 +684,7 @@
       }
     },
     {
-      "amount": 5.735577696595779e-14,
+      "amount": 3.2823326941326684e-14,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -707,7 +707,7 @@
       }
     },
     {
-      "amount": 5.927048320640554e-10,
+      "amount": 2.8902603985670794e-10,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -753,7 +753,7 @@
       }
     },
     {
-      "amount": 4.876291602250582e-14,
+      "amount": 2.6408111779123036e-14,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -799,7 +799,7 @@
       }
     },
     {
-      "amount": 7.647425707188853e-14,
+      "amount": 4.1520345151859514e-14,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -822,7 +822,7 @@
       }
     },
     {
-      "amount": 6.076262125206158e-14,
+      "amount": 2.9113147735812726e-14,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -845,7 +845,7 @@
       }
     },
     {
-      "amount": 5.353742133352286e-14,
+      "amount": 2.9146109381253005e-14,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -891,7 +891,7 @@
       }
     },
     {
-      "amount": 5.803126349225239e-14,
+      "amount": 3.1525709409151855e-14,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -914,7 +914,7 @@
       }
     },
     {
-      "amount": 6.550727283887394e-08,
+      "amount": 3.050774599626133e-08,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -937,7 +937,7 @@
       }
     },
     {
-      "amount": 4.1980845969254274e-16,
+      "amount": 3.792899710483181e-16,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -960,7 +960,7 @@
       }
     },
     {
-      "amount": 8.457683047544536e-14,
+      "amount": 4.112030688792884e-14,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -983,7 +983,7 @@
       }
     },
     {
-      "amount": 9.807134579897908e-14,
+      "amount": 5.4014993721517256e-14,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1029,7 +1029,7 @@
       }
     },
     {
-      "amount": 7.967478726757543e-15,
+      "amount": 4.4907583898241455e-15,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1075,7 +1075,7 @@
       }
     },
     {
-      "amount": 5.251481183743943e-11,
+      "amount": 3.227243665359024e-11,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1098,7 +1098,7 @@
       }
     },
     {
-      "amount": 1.582309554531211e-12,
+      "amount": 7.642521288017952e-13,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1121,7 +1121,7 @@
       }
     },
     {
-      "amount": 4.1188418974648684e-13,
+      "amount": 2.2324281593554601e-13,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1144,7 +1144,7 @@
       }
     },
     {
-      "amount": 8.863436719683749e-12,
+      "amount": 4.608628875453661e-12,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1167,7 +1167,7 @@
       }
     },
     {
-      "amount": 6.305159929690569e-13,
+      "amount": 3.8314550533635434e-13,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1190,7 +1190,7 @@
       }
     },
     {
-      "amount": 3.3616776936663426e-09,
+      "amount": 1.6863561681274232e-09,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1213,7 +1213,7 @@
       }
     },
     {
-      "amount": 4.842425465668562e-12,
+      "amount": 3.569976363210176e-12,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1259,7 +1259,7 @@
       }
     },
     {
-      "amount": 4.782545042525813e-14,
+      "amount": 2.6089511916222592e-14,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1282,7 +1282,7 @@
       }
     },
     {
-      "amount": 1.595413962920483e-13,
+      "amount": 1.4981066472435397e-13,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1305,7 +1305,7 @@
       }
     },
     {
-      "amount": 4.490809916271228e-16,
+      "amount": 4.490806525726962e-16,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1328,7 +1328,7 @@
       }
     },
     {
-      "amount": 8.691888258419667e-16,
+      "amount": 8.691886732397779e-16,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1351,7 +1351,7 @@
       }
     },
     {
-      "amount": 2.317837706031263e-16,
+      "amount": 2.3178358792956956e-16,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1374,7 +1374,7 @@
       }
     },
     {
-      "amount": 1.2416056988539221e-09,
+      "amount": 5.9808610736366e-10,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1397,7 +1397,7 @@
       }
     },
     {
-      "amount": 5.593029630727414e-11,
+      "amount": 2.801629110824738e-11,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1420,7 +1420,7 @@
       }
     },
     {
-      "amount": 1.9943891789717424e-17,
+      "amount": 9.68593826654335e-16,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1443,7 +1443,7 @@
       }
     },
     {
-      "amount": 2.7116959741933317e-13,
+      "amount": 2.5768745794484116e-13,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1466,7 +1466,7 @@
       }
     },
     {
-      "amount": 1.6274370140722364e-18,
+      "amount": 1.2293614262082743e-18,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1489,7 +1489,7 @@
       }
     },
     {
-      "amount": 2.3759474508541674e-19,
+      "amount": 2.324701406643953e-19,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1512,7 +1512,7 @@
       }
     },
     {
-      "amount": 2.6356292700130034e-07,
+      "amount": 1.5457054680624342e-07,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1535,7 +1535,7 @@
       }
     },
     {
-      "amount": 1.4769807176913925e-11,
+      "amount": 7.603821046361362e-12,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1558,7 +1558,7 @@
       }
     },
     {
-      "amount": 1.9596871522722907e-12,
+      "amount": 1.1464144742816957e-12,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1581,7 +1581,7 @@
       }
     },
     {
-      "amount": 8.60325838384883e-09,
+      "amount": 4.72995278073346e-09,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1604,7 +1604,7 @@
       }
     },
     {
-      "amount": 8.345159430713761e-09,
+      "amount": 4.588053547257951e-09,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1627,7 +1627,7 @@
       }
     },
     {
-      "amount": 2.7573474652635216e-10,
+      "amount": 1.392420019908865e-10,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1650,7 +1650,7 @@
       }
     },
     {
-      "amount": 1.4412101928932057e-12,
+      "amount": 7.138133245583622e-13,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1673,7 +1673,7 @@
       }
     },
     {
-      "amount": 4.694810233285843e-13,
+      "amount": 2.641041208174032e-13,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1719,7 +1719,7 @@
       }
     },
     {
-      "amount": 2.0626883522855735e-10,
+      "amount": 2.0586075760989034e-10,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1742,7 +1742,7 @@
       }
     },
     {
-      "amount": 4.277944778362998e-10,
+      "amount": 2.1501955868672262e-10,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1765,7 +1765,7 @@
       }
     },
     {
-      "amount": 1.1019778437281036e-08,
+      "amount": 5.966931943309512e-09,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1788,7 +1788,7 @@
       }
     },
     {
-      "amount": 1.1918486761389177e-08,
+      "amount": 6.398301441775657e-09,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1811,7 +1811,7 @@
       }
     },
     {
-      "amount": 1.556057085664721e-10,
+      "amount": 1.1221332964476296e-10,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1839,9 +1839,9 @@
       "dqEntry": "",
       "flow": {
         "@type": "Flow",
-        "@id": "eed7a64b-8bd9-3b3e-a39c-e08f8eb42f47",
+        "@id": "03e1072d-355c-3cc7-bc65-25ab7014e323",
         "category": "Technosphere Flows / 23: Construction / 2382: Building Equipment Contractors",
-        "name": "Operation of equipment; concrete/industrial saws"
+        "name": "Operation of equipment; crushing and processing equipment"
       },
       "flowProperty": {
         "@type": "FlowProperty",
@@ -1859,6 +1859,10 @@
     },
     {
       "amount": 1.0,
+      "defaultProvider": {
+        "@type": "Process",
+        "@id": "9caaa37b-636d-41fa-8eb6-0b020ee4ebac"
+      },
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1877,22 +1881,22 @@
       "isQuantitativeReference": false,
       "unit": {
         "@type": "Unit",
-        "@id": "55244053-94ba-404e-9172-cb279d905e00",
-        "name": "btu"
+        "@id": "52765a6c-3896-43c2-b2f4-c679acf13efe",
+        "name": "MJ"
       }
     }
   ],
-  "lastChange": "2026-02-03T12:00:00Z",
+  "lastChange": "2026-02-26T12:00:00Z",
   "location": {
     "@type": "Location",
     "@id": "0b3b97fa-6688-3c56-88ee-4ae80ec0c3c2",
     "name": "United States of America (the)"
   },
-  "name": "Operation of equipment; concrete/industrial saws; nonroad diesel powered",
+  "name": "Operation of equipment; crushing and processing equipment; diesel powered",
   "processDocumentation": {
-    "completenessDescription": "The results include emissions from running exhaust, crankcase venting, refueling vapor and spillage,  evaporative tank permeation, evaporative hose permeation, and fuel vapor venting from diurnal, hot soak, and running activity. Evaporative emissions while the vehicle is soaking (engine off) are not included. Manufacturing of vehicles, roads, and other infrastructure are not included in this dataset. The model for nonroad equipments does not include nitrous oxide (N2O).",
-    "creationDate": "2026-02-03T12:00:00",
-    "dataCollectionDescription": "MOVES runs were performed using MOVES4.0.1 in 2024.",
+    "completenessDescription": "The results include emissions from running exhaust, crankcase venting, refueling vapor and spillage, evaporative tank permeation, evaporative hose permeation, and fuel vapor venting from diurnal, hot soak, and running activity. Evaporative emissions while the equipment is soaking (engine off) are not included. Manufacturing of equipment, roads, and other infrastructure are not included in this dataset. The model for nonroad equipment does not include nitrous oxide (N2O).",
+    "creationDate": "2026-02-26T12:00:00",
+    "dataCollectionDescription": "MOVES runs were performed using MOVES4.0.1 in 2025.",
     "dataDocumentor": {
       "@type": "Actor",
       "@id": "38e67478-a915-43d9-ad67-e25db79a4acc",
@@ -1906,15 +1910,22 @@
       "name": "ERG"
     },
     "dataSelectionDescription": "MOVES runs were performed at the default settings at the state level.",
-    "dataTreatmentDescription": "Emissions are calculated from an adjusted emission factor multiplied by rated power, load factor, engine population, and activity. The model uses base-year equipment populations by technology type and model year, and applies growth factors to estimate the population in the analysis year. Nonroad emissions by equipment type, fuel type, and age are estimated based on median life at full load, load factors, activity, and age distributions. Equipment populations are allocated to the county level using surrogate data.",
+    "dataSetOwner": {
+      "@type": "Actor",
+      "@id": "38e67478-a915-43d9-ad67-e25db79a4acc",
+      "category": "Organisations",
+      "name": "ERG"
+    },
+    "dataTreatmentDescription": "Emissions are calculated using an adjusted emission factor multiplied by rated power, load factor, engine population, and activity. The model uses base-year equipment populations by technology type and model year, and applies growth factors to estimate the population in the analysis year. Nonroad emissions by equipment type, fuel type, and age are estimated based on median life at full load, load factors, activity, and age distributions. Equipment populations are allocated to the county level using surrogate data.",
     "geographyDescription": "This process represents emissions from equipment operated in all U.S. states.",
+    "intendedApplication": "The target audience of this model includes LCA practitioners, industry, and the general public.  A full inventory of environmental flows are included;  thus this unit process can be used for a full range of LCIA impact categories.",
     "inventoryMethodDescription": "Not applicable.",
     "modelingConstantsDescription": "Not applicable.",
     "projectDescription": "This dataset was developed by the Federal LCA Commons Data Curator Eastern Research Group, Inc. (ERG) under subcontract (SUB-2024-10066) to the National Renewable Energy Laboratory under Department of Energy (DOE) Prime Contract No. DE-AC36-08GO28308. The work is funded by DOE's Advanced Materials & Manufacturing Technologies Office (AMMTO).",
     "publication": {
       "@type": "Source",
       "@id": "769fd5a6-e11b-3c0d-9ad2-81fd906b47fb",
-      "name": "ERG, MOVES nonroad data"
+      "name": "ERG (2026) MOVES nonroad v1.0"
     },
     "restrictionsDescription": "These U.S. LCI Database Project data (\"Data\") are provided by the National Renewable Energy Laboratory (\"NREL\"), operated by the Alliance for Sustainable Energy, LLC (\"Alliance\") for the US Department of Energy (\"DOE\") under Contract No. DE-AC36-08GO28308. The United States Government (the \"Government\") retains and the user acknowledges that the Government retains a non-exclusive, paid-up, irrevocable, worldwide license to publish or reproduce the published form of these data, or allow others to do so, for Government purposes.\nAccess to and use of these Data shall impose the following obligations on the user, as set forth in this Agreement. The user is granted the right, without any fee or cost, to use, copy, modify, alter, enhance and distribute these Data for any purpose whatsoever, provided that this entire notice appears in all copies of the Data. Any modification, alteration or enhancement of these data shall be identified and documented by the user. Further, the user agrees to credit the DOE/NREL/Alliance in any publication that results from the use of these Data. The names DOE/NREL/Alliance, however, may not be used in any advertising or publicity to endorse or promote any products or commercial entities unless specific written permission is obtained from DOE/NREL/Alliance. The user also understands that DOE/NREL/Alliance is not obligated to provide the user with any support, consulting, training or assistance of any kind with regard to the use of these Data or to provide the user with any updates, revisions or new versions of these Data.\nYOU AGREE TO INDEMNIFY THE GOVERNMENT AND DOE/NREL/ALLIANCE, AND ITS SUBSIDIARIES, AFFILIATES, OFFICERS, AGENTS, AND EMPLOYEES AGAINST ANY CLAIM OR DEMAND, INCLUDING REASONABLE ATTORNEYS' FEES, RELATED TO YOUR USE OF THESE DATA. THESE DATA ARE PROVIDED BY DOE/NREL/ALLIANCE \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE GOVERNMENT OR DOE/NREL/ALLIANCE BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER, INCLUDING BUT NOT LIMITED TO CLAIMS ASSOCIATED WITH THE LOSS OF DATA OR PROFITS, WHICH MAY RESULT FROM AN ACTION IN CONTRACT, NEGLIGENCE OR OTHER TORTIOUS CLAIM THAT ARISES OUT OF OR IN CONNECTION WITH THE ACCESS, USE OR PERFORMANCE OF THESE DATA.",
     "samplingDescription": "Emissions and activity data for each state are combined to generate an activity-weighted average for each region. No uncertainty was assessed.",
@@ -1922,12 +1933,12 @@
       {
         "@type": "Source",
         "@id": "3d067546-a4b5-3b06-aafc-7334fdf3117b",
-        "name": "USEPA MOVES4"
+        "name": "USEPA (2024) MOVES4"
       }
     ],
-    "technologyDescription": "\nDsl - Concrete/Industrial Saws reflects the nonroad diesel powered concrete/industrial saws used in the construction sector with an average horsepower of 76 hp and a load factor of 0.59.",
-    "timeDescription": "This process reflects the equipments as estimated in 2020. MOVES estimates daily emissions for weekdays and  weekends by month and year for calendar years 1990 and 1999 through 2060.",
-    "useAdvice": "This process is intended to connect to fuel supply processes from the Heavy Equipment repository.",
+    "technologyDescription": "This process reflects the nonroad diesel-powered crushing and processing equipment used in the construction sector, with an average horsepower of 263.0 hp and a load factor of 0.43.",
+    "timeDescription": "This process reflects the equipment as estimated in 2020.",
+    "useAdvice": "This process has two reference units: MJ of energy consumed by the equipment and 1 hour of equipment use.",
     "validFrom": "2020-01-01T00:00:00",
     "validUntil": "2020-12-31T00:00:00"
   },

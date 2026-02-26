@@ -3,7 +3,7 @@
   "@id": "d06dc670-9247-3011-ab1d-4b0e4cedd215",
   "category": "11: Agriculture, Forestry, Fishing and Hunting / 1151: Support Activities for Crop Production",
   "defaultAllocationMethod": "PHYSICAL_ALLOCATION",
-  "description": "This dataset represents the operation of combines, diesel powered using nonroad diesel as a fuel source. Emissions and fuel\u2011consumption data are calculated using EPA\u2019s Motor Vehicle Emission Simulator (MOVES),  the regulatory model used to determine emission inventories for equipment used in construction, agriculture, industrial, and commercial sectors. The reference flows are: 1. the operation of equipment providing 1 MJ of energy; and 2. the operation of equipment for 1 hour.\n",
+  "description": "This dataset represents the operation of combines using nonroad diesel as a fuel source. Emissions and fuel-consumption data are calculated using EPA's Motor Vehicle Emission Simulator (MOVES), the regulatory model used to determine emission inventories for equipment used in construction, agriculture, industrial, and commercial sectors. The reference flows are: 1. the operation of equipment consuming 1 MJ of fuel; and 2. the operation of equipment for 1 hour.",
   "dqEntry": "(2;1)",
   "dqSystem": {
     "@type": "DQSystem",
@@ -1886,7 +1886,7 @@
       }
     }
   ],
-  "lastChange": "2026-02-25T12:00:00Z",
+  "lastChange": "2026-02-26T12:00:00Z",
   "location": {
     "@type": "Location",
     "@id": "0b3b97fa-6688-3c56-88ee-4ae80ec0c3c2",
@@ -1894,9 +1894,9 @@
   },
   "name": "Operation of equipment; combines; diesel powered",
   "processDocumentation": {
-    "completenessDescription": "The results include emissions from running exhaust, crankcase venting, refueling vapor and spillage,  evaporative tank permeation, evaporative hose permeation, and fuel vapor venting from diurnal, hot soak, and running activity. Evaporative emissions while the equipment is soaking (engine off) are not included. Manufacturing of equipment, roads, and other infrastructure are not included in this dataset. The model for nonroad equipment does not include nitrous oxide (N2O).\n",
-    "creationDate": "2026-02-25T12:00:00",
-    "dataCollectionDescription": "MOVES runs were performed using MOVES4.0.1 in 2025.\n",
+    "completenessDescription": "The results include emissions from running exhaust, crankcase venting, refueling vapor and spillage, evaporative tank permeation, evaporative hose permeation, and fuel vapor venting from diurnal, hot soak, and running activity. Evaporative emissions while the equipment is soaking (engine off) are not included. Manufacturing of equipment, roads, and other infrastructure are not included in this dataset. The model for nonroad equipment does not include nitrous oxide (N2O).",
+    "creationDate": "2026-02-26T12:00:00",
+    "dataCollectionDescription": "MOVES runs were performed using MOVES4.0.1 in 2025.",
     "dataDocumentor": {
       "@type": "Actor",
       "@id": "38e67478-a915-43d9-ad67-e25db79a4acc",
@@ -1909,36 +1909,36 @@
       "category": "Organisations",
       "name": "ERG"
     },
-    "dataSelectionDescription": "MOVES runs were performed at the default settings at the state level.\n",
+    "dataSelectionDescription": "MOVES runs were performed at the default settings at the state level.",
     "dataSetOwner": {
       "@type": "Actor",
       "@id": "38e67478-a915-43d9-ad67-e25db79a4acc",
       "category": "Organisations",
       "name": "ERG"
     },
-    "dataTreatmentDescription": "Emissions are calculated using an adjusted emission factor multiplied by rated power, load factor, engine population, and activity. The model uses base-year equipment populations by technology type and model year, and applies growth factors to estimate the population in the analysis year. Nonroad emissions by equipment type, fuel type, and age are estimated based on median life at full load, load factors, activity, and age distributions. Equipment populations are allocated to the county level using surrogate data.\n",
-    "geographyDescription": "This process represents emissions from equipment operated in all U.S. states.\n",
-    "intendedApplication": "The target audience of this model includes LCA practitioners, industry, and the general public.  A full inventory of environmental flows are included;  thus this unit process can be used for a full range of LCIA impact categories.\n",
-    "inventoryMethodDescription": "Not applicable.\n",
-    "modelingConstantsDescription": "Not applicable.\n",
-    "projectDescription": "This dataset was developed by the Federal LCA Commons Data Curator Eastern Research Group, Inc. (ERG) under subcontract (SUB-2024-10066) to the National Renewable Energy Laboratory under Department of Energy (DOE) Prime Contract No. DE-AC36-08GO28308. The work is funded by DOE's Advanced Materials & Manufacturing Technologies Office (AMMTO).\n",
+    "dataTreatmentDescription": "Emissions are calculated using an adjusted emission factor multiplied by rated power, load factor, engine population, and activity. The model uses base-year equipment populations by technology type and model year, and applies growth factors to estimate the population in the analysis year. Nonroad emissions by equipment type, fuel type, and age are estimated based on median life at full load, load factors, activity, and age distributions. Equipment populations are allocated to the county level using surrogate data.",
+    "geographyDescription": "This process represents emissions from equipment operated in all U.S. states.",
+    "intendedApplication": "The target audience of this model includes LCA practitioners, industry, and the general public.  A full inventory of environmental flows are included;  thus this unit process can be used for a full range of LCIA impact categories.",
+    "inventoryMethodDescription": "Not applicable.",
+    "modelingConstantsDescription": "Not applicable.",
+    "projectDescription": "This dataset was developed by the Federal LCA Commons Data Curator Eastern Research Group, Inc. (ERG) under subcontract (SUB-2024-10066) to the National Renewable Energy Laboratory under Department of Energy (DOE) Prime Contract No. DE-AC36-08GO28308. The work is funded by DOE's Advanced Materials & Manufacturing Technologies Office (AMMTO).",
     "publication": {
       "@type": "Source",
       "@id": "769fd5a6-e11b-3c0d-9ad2-81fd906b47fb",
       "name": "ERG (2026) MOVES nonroad v1.0"
     },
-    "restrictionsDescription": "These U.S. LCI Database Project data (\"Data\") are provided by the National Renewable Energy Laboratory (\"NREL\"), operated by the Alliance for Sustainable Energy, LLC (\"Alliance\") for the US Department of Energy (\"DOE\") under Contract No. DE-AC36-08GO28308. The United States Government (the \"Government\") retains and the user acknowledges that the Government retains a non-exclusive, paid-up, irrevocable, worldwide license to publish or reproduce the published form of these data, or allow others to do so, for Government purposes.\nAccess to and use of these Data shall impose the following obligations on the user, as set forth in this Agreement. The user is granted the right, without any fee or cost, to use, copy, modify, alter, enhance and distribute these Data for any purpose whatsoever, provided that this entire notice appears in all copies of the Data. Any modification, alteration or enhancement of these data shall be identified and documented by the user. Further, the user agrees to credit the DOE/NREL/Alliance in any publication that results from the use of these Data. The names DOE/NREL/Alliance, however, may not be used in any advertising or publicity to endorse or promote any products or commercial entities unless specific written permission is obtained from DOE/NREL/Alliance. The user also understands that DOE/NREL/Alliance is not obligated to provide the user with any support, consulting, training or assistance of any kind with regard to the use of these Data or to provide the user with any updates, revisions or new versions of these Data.\nYOU AGREE TO INDEMNIFY THE GOVERNMENT AND DOE/NREL/ALLIANCE, AND ITS SUBSIDIARIES, AFFILIATES, OFFICERS, AGENTS, AND EMPLOYEES AGAINST ANY CLAIM OR DEMAND, INCLUDING REASONABLE ATTORNEYS' FEES, RELATED TO YOUR USE OF THESE DATA. THESE DATA ARE PROVIDED BY DOE/NREL/ALLIANCE \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE GOVERNMENT OR DOE/NREL/ALLIANCE BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER, INCLUDING BUT NOT LIMITED TO CLAIMS ASSOCIATED WITH THE LOSS OF DATA OR PROFITS, WHICH MAY RESULT FROM AN ACTION IN CONTRACT, NEGLIGENCE OR OTHER TORTIOUS CLAIM THAT ARISES OUT OF OR IN CONNECTION WITH THE ACCESS, USE OR PERFORMANCE OF THESE DATA.\n",
-    "samplingDescription": "Emissions and activity data for each state are combined to generate an activity-weighted average for each region. No uncertainty was assessed.\n",
+    "restrictionsDescription": "These U.S. LCI Database Project data (\"Data\") are provided by the National Renewable Energy Laboratory (\"NREL\"), operated by the Alliance for Sustainable Energy, LLC (\"Alliance\") for the US Department of Energy (\"DOE\") under Contract No. DE-AC36-08GO28308. The United States Government (the \"Government\") retains and the user acknowledges that the Government retains a non-exclusive, paid-up, irrevocable, worldwide license to publish or reproduce the published form of these data, or allow others to do so, for Government purposes.\nAccess to and use of these Data shall impose the following obligations on the user, as set forth in this Agreement. The user is granted the right, without any fee or cost, to use, copy, modify, alter, enhance and distribute these Data for any purpose whatsoever, provided that this entire notice appears in all copies of the Data. Any modification, alteration or enhancement of these data shall be identified and documented by the user. Further, the user agrees to credit the DOE/NREL/Alliance in any publication that results from the use of these Data. The names DOE/NREL/Alliance, however, may not be used in any advertising or publicity to endorse or promote any products or commercial entities unless specific written permission is obtained from DOE/NREL/Alliance. The user also understands that DOE/NREL/Alliance is not obligated to provide the user with any support, consulting, training or assistance of any kind with regard to the use of these Data or to provide the user with any updates, revisions or new versions of these Data.\nYOU AGREE TO INDEMNIFY THE GOVERNMENT AND DOE/NREL/ALLIANCE, AND ITS SUBSIDIARIES, AFFILIATES, OFFICERS, AGENTS, AND EMPLOYEES AGAINST ANY CLAIM OR DEMAND, INCLUDING REASONABLE ATTORNEYS' FEES, RELATED TO YOUR USE OF THESE DATA. THESE DATA ARE PROVIDED BY DOE/NREL/ALLIANCE \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE GOVERNMENT OR DOE/NREL/ALLIANCE BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER, INCLUDING BUT NOT LIMITED TO CLAIMS ASSOCIATED WITH THE LOSS OF DATA OR PROFITS, WHICH MAY RESULT FROM AN ACTION IN CONTRACT, NEGLIGENCE OR OTHER TORTIOUS CLAIM THAT ARISES OUT OF OR IN CONNECTION WITH THE ACCESS, USE OR PERFORMANCE OF THESE DATA.",
+    "samplingDescription": "Emissions and activity data for each state are combined to generate an activity-weighted average for each region. No uncertainty was assessed.",
     "sources": [
       {
         "@type": "Source",
         "@id": "3d067546-a4b5-3b06-aafc-7334fdf3117b",
-        "name": "ERG (2025) MOVES nonroad data"
+        "name": "USEPA (2024) MOVES4"
       }
     ],
-    "technologyDescription": "\nThis process reflects the nonroad diesel-powered combines, diesel powered used in the agriculture sector, with an average horsepower of 2e+02 hp and a load factor of 0.59.\n",
-    "timeDescription": "This process reflects the equipment as estimated in 2020. MOVES estimates daily emissions for weekdays and  weekends by month and year for calendar years 1990 and 1999 through 2060. \n",
-    "useAdvice": "This process has two reference units: MJ of energy delivered by the equipment, hour of equipment use.\n",
+    "technologyDescription": "This process reflects the nonroad diesel-powered combines used in the agriculture sector, with an average horsepower of 203.0 hp and a load factor of 0.59.",
+    "timeDescription": "This process reflects the equipment as estimated in 2020.",
+    "useAdvice": "This process has two reference units: MJ of energy consumed by the equipment and 1 hour of equipment use.",
     "validFrom": "2020-01-01T00:00:00",
     "validUntil": "2020-12-31T00:00:00"
   },
