@@ -1,9 +1,9 @@
 {
   "@type": "Process",
-  "@id": "0cbf56b2-0a97-3ed1-af84-bd46a058e7b5",
+  "@id": "60696370-4c81-3fe3-806d-584ecfc87e60",
   "category": "23: Construction / 2382: Building Equipment Contractors",
   "defaultAllocationMethod": "PHYSICAL_ALLOCATION",
-  "description": "This dataset represents the operation of cawler tractor/dozers using nonroad diesel as a fuel source. Emissions and fuel-consumption data are calculated using EPA's Motor Vehicle Emission Simulator (MOVES), the regulatory model used to determine emission inventories for equipment used in construction, agriculture, industrial, and commercial sectors. The reference flows are: 1. the operation of equipment consuming 1 MJ of fuel; and 2. the operation of equipment for 1 hour.",
+  "description": "This dataset represents the operation of crawler tractor/dozers using nonroad diesel as a fuel source. Emissions and fuel-consumption data are calculated using EPA's Motor Vehicle Emission Simulator (MOVES), the regulatory model used to determine emission inventories for equipment used in construction, agriculture, industrial, and commercial sectors. The reference flows are: 1. the operation of equipment consuming 1 MJ of fuel; and 2. the operation of equipment for 1 hour.",
   "dqEntry": "(2;1)",
   "dqSystem": {
     "@type": "DQSystem",
@@ -1839,9 +1839,9 @@
       "dqEntry": "",
       "flow": {
         "@type": "Flow",
-        "@id": "88eee85f-ec76-38f7-9ac9-8f5fe8e63200",
+        "@id": "a34768a6-f651-32e1-a7ea-7cbb5f0929e1",
         "category": "Technosphere Flows / 23: Construction / 2382: Building Equipment Contractors",
-        "name": "Operation of equipment; cawler tractor/dozers"
+        "name": "Operation of equipment; crawler tractor/dozers"
       },
       "flowProperty": {
         "@type": "FlowProperty",
@@ -1892,7 +1892,7 @@
     "@id": "0b3b97fa-6688-3c56-88ee-4ae80ec0c3c2",
     "name": "United States of America (the)"
   },
-  "name": "Operation of equipment; cawler tractor/dozers; diesel powered",
+  "name": "Operation of equipment; crawler tractor/dozers; diesel powered",
   "processDocumentation": {
     "completenessDescription": "The results include emissions from running exhaust, crankcase venting, refueling vapor and spillage, evaporative tank permeation, evaporative hose permeation, and fuel vapor venting from diurnal, hot soak, and running activity. Evaporative emissions while the equipment is soaking (engine off) are not included. Manufacturing of equipment, roads, and other infrastructure are not included in this dataset. The model for nonroad equipment does not include nitrous oxide (N2O).",
     "creationDate": "2026-02-26T12:00:00",
@@ -1936,7 +1936,7 @@
         "name": "USEPA (2024) MOVES4"
       }
     ],
-    "technologyDescription": "This process reflects the nonroad diesel-powered cawler tractor/dozers used in the construction sector, with an average horsepower of 568.0 hp and a load factor of 0.59.",
+    "technologyDescription": "This process reflects the nonroad diesel-powered crawler tractor/dozers used in the construction sector, with an average horsepower of 568.0 hp and a load factor of 0.59.",
     "timeDescription": "This process reflects the equipment as estimated in 2020.",
     "useAdvice": "This process has two reference units: MJ of energy consumed by the equipment and 1 hour of equipment use.",
     "validFrom": "2020-01-01T00:00:00",
