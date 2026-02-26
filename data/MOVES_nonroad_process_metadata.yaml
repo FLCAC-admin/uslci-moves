@@ -3,16 +3,15 @@
 description: >
     This dataset represents the operation of [equipment] using
     [FUEL] as a fuel source.
-    Emissions and fuel‑consumption data are calculated using EPA’s Motor Vehicle Emission Simulator (MOVES), 
+    Emissions and fuel-consumption data are calculated using EPA's Motor Vehicle Emission Simulator (MOVES),
     the regulatory model used to determine emission inventories for equipment used in construction, agriculture, industrial, and commercial sectors.
-    The reference flows are: 1. the operation of equipment providing 1 MJ of energy; and 2. the operation of equipment for 1 hour.
+    The reference flows are: 1. the operation of equipment consuming 1 MJ of fuel; and 2. the operation of equipment for 1 hour.
 
 # valid_until: 2023 # Assigned in code
 # valid_from: 2023 # Assigned in code
 
 time_description: >
-    This process reflects the equipment as estimated in [YEAR]. MOVES estimates daily emissions for weekdays and 
-    weekends by month and year for calendar years 1990 and 1999 through 2060. 
+    This process reflects the equipment as estimated in [YEAR].
 
 geography_description: >
     This process represents emissions from equipment operated in the following
@@ -21,9 +20,7 @@ geography_description_US: >
     This process represents emissions from equipment operated in all U.S. states.
 
 technology_description: >
-    
     This process reflects the [FUEL]-powered [equipment] used in the [sector] sector, with an average horsepower of [avg_hp] hp and a load factor of [LOAD_FACTOR].
-
 
 inventory_method_description: >
     Not applicable.
@@ -34,7 +31,7 @@ modeling_constants_description: >
 ## Data Source information
 
 completeness_description: >
-    The results include emissions from running exhaust, crankcase venting, refueling vapor and spillage, 
+    The results include emissions from running exhaust, crankcase venting, refueling vapor and spillage,
     evaporative tank permeation, evaporative hose permeation, and fuel vapor venting from diurnal, hot soak, and running activity.
     Evaporative emissions while the equipment is soaking (engine off) are not included.
     Manufacturing of equipment, roads, and other infrastructure are not included in
@@ -58,10 +55,10 @@ data_collection_description: >
     MOVES runs were performed using MOVES4.0.1 in 2025.
 
 use_advice: >
-    This process has two reference units: MJ of energy delivered by the equipment, hour of equipment use.
+    This process has two reference units: MJ of energy consumed by the equipment and 1 hour of equipment use.
 
 sources:
- - usepa_motor_2024: ERG (2025) MOVES nonroad data
+ - usepa_motor_2024: USEPA (2024) MOVES4
 
 ## Admin information
 

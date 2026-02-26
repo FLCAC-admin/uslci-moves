@@ -39,7 +39,7 @@ Industrial,2265003020,4-Str Forklifts,4-stroke forklifts,56: Administrative and 
 Industrial,2265003030,4-Str Sweepers/Scrubbers,,,
 Industrial,2265003040,4-Str Other General Industrial Eqp,4-stroke other general industrial equipment,56: Administrative and Support and Waste Management and Remediation Services / 5612: Facilities Support Services,56: Administrative and Support and Waste Management and Remediation Services / 5612: Facilities Support Services
 Industrial,2265003050,4-Str Other Material Handling Eqp,4-stroke other material handling equipment,56: Administrative and Support and Waste Management and Remediation Services / 5612: Facilities Support Services,56: Administrative and Support and Waste Management and Remediation Services / 5612: Facilities Support Services
-Industrial,2265003060,4-Str ACRefrigeration,4-stroke ACrefrigeration,23: Construction / 2382: Building Equipment Contractors,23: Construction / 2382: Building Equipment Contractors
+Industrial,2265003060,4-Str ACRefrigeration,4-stroke AC refrigeration,23: Construction / 2382: Building Equipment Contractors,23: Construction / 2382: Building Equipment Contractors
 Industrial,2265003070,4-Str Terminal Tractors,,,
 Lawn/Garden,2260004015,2-Str Rotary Tillers < 6 HP (res),,,
 Lawn/Garden,2260004016,2-Str Rotary Tillers < 6 HP (com),,,
@@ -162,7 +162,7 @@ Construction,2270002042,Dsl - Cement & Mortar Mixers,cement and mortar mixers,"2
 Construction,2270002045,Dsl - Cranes,cranes,23: Construction / 2382: Building Equipment Contractors,23: Construction / 2382: Building Equipment Contractors
 Construction,2270002048,Dsl - Graders,graders,23: Construction / 2382: Building Equipment Contractors,23: Construction / 2382: Building Equipment Contractors
 Construction,2270002051,Dsl - Off-highway Trucks,,,
-Construction,2270002054,Dsl - Crushing/Proc. Equipment,crushing/proc. equipment,23: Construction / 2382: Building Equipment Contractors,23: Construction / 2382: Building Equipment Contractors
+Construction,2270002054,Dsl - Crushing/Proc. Equipment,crushing and processing equipment,23: Construction / 2382: Building Equipment Contractors,23: Construction / 2382: Building Equipment Contractors
 Construction,2270002057,Dsl - Rough Terrain Forklifts,rough terrian folklifts,23: Construction / 2382: Building Equipment Contractors,23: Construction / 2382: Building Equipment Contractors
 Construction,2270002060,Dsl - Rubber Tire Loaders,rubber tire loaders,23: Construction / 2382: Building Equipment Contractors,23: Construction / 2382: Building Equipment Contractors
 Construction,2270002066,Dsl - Tractors/Loaders/Backhoes,tractors/loaders/backhoes,23: Construction / 2382: Building Equipment Contractors,23: Construction / 2382: Building Equipment Contractors

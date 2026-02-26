@@ -195,20 +195,6 @@ altflowlist["Unit"] = "MJ"
 altflowlist["AltUnitConversionFactor"] = df_processes["source_hrs"]/df_processes["energy"]*1000
 altflowlist["InverseConversionFactor"] = df_processes["energy"]/(df_processes["source_hrs"]*1000)
 altflowlist.drop(altflowlist[altflowlist["Flowable"] == "Liquefied petroleum gas, dispensed at pump"].index, inplace=True)
-#%%
-# # change converstion factor in the alt_unit attribute in the flows dictionary 
-# for flow_id, flow in flows.items():
-#     altunits = altflowlist[altflowlist['Flowable'] == flow.name]
-#     if not hasattr(flow, "alt_units"):
-#         flow.alt_units = []
-#     for _, alt in altunits.iterrows():
-#         alt_unit_info = {
-#             "unit": alt["AltUnit"],
-#             "conversion_factor": alt["AltUnitConversionFactor"],
-#             "inverse_conversion_factor": alt["InverseConversionFactor"]
-#         }
-#         flow.alt_units.append(alt_unit_info)
-
 
 # change converstion factor in the flow property attribute in the flows dictionary 
 import olca_schema as o
@@ -237,18 +223,17 @@ for flow_id, flow in flows.items():
 if "d9ce3d3b-eb45-3cf2-a28a-5fea57e16694" in flows:
     flow_obj = flows["d9ce3d3b-eb45-3cf2-a28a-5fea57e16694"]
     flow_properties = getattr(flow_obj, "flow_properties", None)
-    print("flow_properties:", flow_properties)
+    assert len(flow_properties) > 1
+    # print("flow_properties:", flow_properties)
 
     
-#%%
-# replace newly created flows with those pulled via API
+#%% replace newly created flows with those pulled via API
 api_flows = {flow.id: flow for k, flow in flow_objs.items()}
 if not(flows.keys() | api_flows.keys()) == flows.keys():
     print('Warning, some flows not consistent')
 else:
     flows.update(api_flows)
 
-## Consider LCIA validation?
 
 #%% Assign exchange dqi
 from flcac_utils.util import format_dqi_score, increment_dqi_value
@@ -284,6 +269,7 @@ location_objs = build_location_dict(df_olca, locations)
 #%% Build json file
 from flcac_utils.generate_processes import \
     build_process_dict, write_objects, validate_exchange_data
+from flcac_utils.util import round_to_sig_figs
 
 validate_exchange_data(df_olca)
 
@@ -300,8 +286,7 @@ def get_equipment_desc(s: str) -> str:
     # Default: fallback
     else:
         return s.title()
-#df_olca['process_name'] = df_olca['equipment'].apply(get_equipment_desc) #add column that has the process name without fuel description at the beginning
-df_olca['process_name'] = df_olca['equipment'].apply(get_equipment_desc) + ", " + df["fuel"].map(fuel_map) + " powered"
+df_olca['equipment_name'] = df_olca['equipment'].map(moves_inputs['tech_flows'])
     
 # loop through each vehicle type and fuel to adjust metadata before writing processes
 for s in df_olca['equipment'].unique():
@@ -315,11 +300,10 @@ for s in df_olca['equipment'].unique():
         
         for k, v in _process_meta.items():
             if not isinstance(v, str): continue
-            v = v.replace('[Title]',_df_olca['process_name'].iloc[0])
-            v = v.replace('[equipment]', _df_olca['process_name'].iloc[0].lower())
+            v = v.replace('[equipment]', _df_olca['equipment_name'].iloc[0].lower())
             v = v.replace('[FUEL]', i.fuel.lower())
             v = v.replace ('[LOAD_FACTOR]', format(i.load_factor,".2g"))
-            v = v.replace ('[avg_hp]', format(i.avg_hp, ".2g"))
+            v = v.replace ('[avg_hp]', str(round_to_sig_figs(i.avg_hp, 3)))
             v = v.replace('[sector]', i.sector.lower())
             _process_meta[k] = v
             
