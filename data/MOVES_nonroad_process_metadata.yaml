@@ -5,7 +5,7 @@ description: >
     [FUEL] as a fuel source.
     Emissions and fuel-consumption data are calculated using EPA's Motor Vehicle Emission Simulator (MOVES),
     the regulatory model used to determine emission inventories for equipment used in construction, agriculture, industrial, and commercial sectors.
-    The reference flows are: 1. the operation of equipment consuming 1 MJ of fuel; and 2. the operation of equipment for 1 hour.
+    The reference flow is the operation of equipment consuming 1 MJ of fuel. Additional flow properties are provide to support the use of this process on the basis of 1 hour of equipment operation.
 
 # valid_until: 2023 # Assigned in code
 # valid_from: 2023 # Assigned in code
