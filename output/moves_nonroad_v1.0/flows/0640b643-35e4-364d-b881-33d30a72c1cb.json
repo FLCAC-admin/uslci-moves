@@ -1,0 +1,29 @@
+{
+  "@type": "Flow",
+  "@id": "0640b643-35e4-364d-b881-33d30a72c1cb",
+  "category": "Technosphere Flows / 56: Administrative and Support and Waste Management and Remediation Services / 5612: Facilities Support Services",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "f6811440-ee37-11de-8a39-0800200c9a66",
+        "name": "Energy"
+      },
+      "isRefFlowProperty": true
+    },
+    {
+      "conversionFactor": 0.057924153103006026,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "c0447923-0e60-4b3c-97c2-a86dddd9eea5",
+        "name": "Duration"
+      },
+      "isRefFlowProperty": false
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-02-25T12:00:00Z",
+  "name": "Operation of equipment; 2-stroke other general industrial equipment",
+  "version": "01.00.000"
+}

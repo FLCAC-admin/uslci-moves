@@ -1,0 +1,29 @@
+{
+  "@type": "Flow",
+  "@id": "4aa9e2b6-7826-310a-a0be-37fe716be2ab",
+  "category": "Technosphere Flows / 23: Construction / 2371: Utility System Construction",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "f6811440-ee37-11de-8a39-0800200c9a66",
+        "name": "Energy"
+      },
+      "isRefFlowProperty": true
+    },
+    {
+      "conversionFactor": 0.0018241953192243696,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "c0447923-0e60-4b3c-97c2-a86dddd9eea5",
+        "name": "Duration"
+      },
+      "isRefFlowProperty": false
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-02-25T12:00:00Z",
+  "name": "Operation of equipment; bore/drill rigs",
+  "version": "01.00.000"
+}

@@ -1,0 +1,44 @@
+{
+  "@type": "Flow",
+  "@id": "996ff18b-a044-37b1-a96a-c59d24e4ebd4",
+  "category": "Technosphere flows/44-45: Retail Trade/4471: Gasoline Stations",
+  "description": "Unit conversions set consistent with flow \"Liquefied petroleum gas, at refinery\"",
+  "flowProperties": [
+    {
+      "conversionFactor": 45.5,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "f6811440-ee37-11de-8a39-0800200c9a66",
+        "category": "Technical flow properties",
+        "name": "Energy",
+        "refUnit": "MJ"
+      }
+    },
+    {
+      "conversionFactor": 0.00184,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-22da-a746-0800200c9a66",
+        "category": "Technical flow properties",
+        "name": "Volume",
+        "refUnit": "m3"
+      }
+    },
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "category": "Technical flow properties",
+        "name": "Mass",
+        "refUnit": "kg"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "isInfrastructureFlow": false,
+  "lastChange": "2025-03-16T13:50:22.320Z",
+  "name": "Liquefied petroleum gas, dispensed at pump",
+  "version": "00.00.009"
+}

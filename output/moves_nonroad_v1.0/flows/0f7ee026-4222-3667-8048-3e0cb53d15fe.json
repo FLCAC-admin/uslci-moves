@@ -1,0 +1,29 @@
+{
+  "@type": "Flow",
+  "@id": "0f7ee026-4222-3667-8048-3e0cb53d15fe",
+  "category": "Technosphere Flows / 23: Construction / 2382: Building Equipment Contractors",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "f6811440-ee37-11de-8a39-0800200c9a66",
+        "name": "Energy"
+      },
+      "isRefFlowProperty": true
+    },
+    {
+      "conversionFactor": 0.00929986280616856,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "c0447923-0e60-4b3c-97c2-a86dddd9eea5",
+        "name": "Duration"
+      },
+      "isRefFlowProperty": false
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-02-25T12:00:00Z",
+  "name": "Operation of equipment; skid steer loaders",
+  "version": "01.00.000"
+}
