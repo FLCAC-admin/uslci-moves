@@ -1,9 +1,9 @@
 {
   "@type": "Process",
-  "@id": "859a5b54-f2c2-3e6a-8165-5fc1c53a93a0",
-  "category": "56: Administrative and Support and Waste Management and Remediation Services / 5612: Facilities Support Services",
+  "@id": "d8a33608-b159-3143-aafa-726ece2efb60",
+  "category": "23: Construction / 2382: Building Equipment Contractors",
   "defaultAllocationMethod": "PHYSICAL_ALLOCATION",
-  "description": "This dataset represents the operation of air compressors using lpg as a fuel source. Emissions and fuel-consumption data are calculated using EPA's Motor Vehicle Emission Simulator (MOVES), the regulatory model used to determine emission inventories for equipment used in construction, agriculture, industrial, and commercial sectors. The reference flow is the operation of equipment consuming 1 MJ of fuel. Additional flow properties are provide to support the use of this process on the basis of 1 hour of equipment operation.",
+  "description": "This dataset represents the operation of pumps using lpg as a fuel source. Emissions and fuel-consumption data are calculated using EPA's Motor Vehicle Emission Simulator (MOVES), the regulatory model used to determine emission inventories for equipment used in construction, agriculture, industrial, and commercial sectors. The reference flow is the operation of equipment consuming 1 MJ of fuel. Additional flow properties are provide to support the use of this process on the basis of 1 hour of equipment operation.",
   "dqEntry": "(2;1)",
   "dqSystem": {
     "@type": "DQSystem",
@@ -17,7 +17,7 @@
   },
   "exchanges": [
     {
-      "amount": 9.94018542231389e-19,
+      "amount": 9.940177233404806e-19,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -40,7 +40,7 @@
       }
     },
     {
-      "amount": 2.021452761810486e-18,
+      "amount": 2.021453278056104e-18,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -63,7 +63,7 @@
       }
     },
     {
-      "amount": 6.465298138456866e-20,
+      "amount": 6.465308020959278e-20,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -86,7 +86,7 @@
       }
     },
     {
-      "amount": 6.465298138456866e-20,
+      "amount": 6.465308020959278e-20,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -109,7 +109,7 @@
       }
     },
     {
-      "amount": 1.820981214103499e-19,
+      "amount": 1.8209816151424792e-19,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -132,7 +132,7 @@
       }
     },
     {
-      "amount": 1.3231355443167033e-19,
+      "amount": 1.323134894381416e-19,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -155,7 +155,7 @@
       }
     },
     {
-      "amount": 1.937920442871893e-19,
+      "amount": 1.9379221080426669e-19,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -178,7 +178,7 @@
       }
     },
     {
-      "amount": 8.236163129964108e-20,
+      "amount": 8.236150904471191e-20,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -201,7 +201,7 @@
       }
     },
     {
-      "amount": 5.2958742366350846e-20,
+      "amount": 5.2958744205580456e-20,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -224,7 +224,7 @@
       }
     },
     {
-      "amount": 6.181297317621279e-20,
+      "amount": 6.181301259872575e-20,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -247,7 +247,7 @@
       }
     },
     {
-      "amount": 2.2052189787577883e-19,
+      "amount": 2.2052185378653943e-19,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -270,7 +270,7 @@
       }
     },
     {
-      "amount": 4.605048716726826e-12,
+      "amount": 7.93119073778443e-12,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -316,7 +316,7 @@
       }
     },
     {
-      "amount": 2.272039451076013e-19,
+      "amount": 2.2720406861814573e-19,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -339,7 +339,7 @@
       }
     },
     {
-      "amount": 1.614934134220682e-19,
+      "amount": 1.6149350393670959e-19,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -362,7 +362,7 @@
       }
     },
     {
-      "amount": 1.3816044890732923e-19,
+      "amount": 1.3816060614856654e-19,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -385,7 +385,7 @@
       }
     },
     {
-      "amount": 4.610906608442389e-19,
+      "amount": 4.610913555036176e-19,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -408,7 +408,7 @@
       }
     },
     {
-      "amount": 1.603382914927437e-14,
+      "amount": 2.7614771651837064e-14,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -431,7 +431,7 @@
       }
     },
     {
-      "amount": 6.049979773964121e-14,
+      "amount": 5.933913885452367e-14,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -454,7 +454,7 @@
       }
     },
     {
-      "amount": 5.456398780971866e-14,
+      "amount": 9.397457619029227e-14,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -500,7 +500,7 @@
       }
     },
     {
-      "amount": 5.760831272263928e-11,
+      "amount": 9.92175834934655e-11,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -523,7 +523,7 @@
       }
     },
     {
-      "amount": 6.351620289970982e-11,
+      "amount": 1.0939274225055101e-10,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -546,7 +546,7 @@
       }
     },
     {
-      "amount": 1.5014773884645705e-14,
+      "amount": 2.5859692516379187e-14,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -569,7 +569,7 @@
       }
     },
     {
-      "amount": 8.813256451160261e-15,
+      "amount": 8.644179816299805e-15,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -592,7 +592,7 @@
       }
     },
     {
-      "amount": 4.496460156469205e-13,
+      "amount": 4.496463462736915e-13,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -615,7 +615,7 @@
       }
     },
     {
-      "amount": 6.422737656530276e-05,
+      "amount": 6.420109421639493e-05,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -638,7 +638,7 @@
       }
     },
     {
-      "amount": 2.169662241466373e-15,
+      "amount": 3.736768563416747e-15,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -661,7 +661,7 @@
       }
     },
     {
-      "amount": 3.454931385306196e-14,
+      "amount": 3.388651219899488e-14,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -822,7 +822,7 @@
       }
     },
     {
-      "amount": 1.76466181821911e-14,
+      "amount": 1.7308081060237156e-14,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -891,7 +891,7 @@
       }
     },
     {
-      "amount": 5.816991640602079e-07,
+      "amount": 8.171812502369197e-07,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -914,7 +914,7 @@
       }
     },
     {
-      "amount": 4.783924527202092e-15,
+      "amount": 4.7839173359181634e-15,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -937,7 +937,7 @@
       }
     },
     {
-      "amount": 3.1487197601840236e-15,
+      "amount": 5.422986736993484e-15,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -960,7 +960,7 @@
       }
     },
     {
-      "amount": 7.258369484059484e-14,
+      "amount": 7.119126160377248e-14,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1075,7 +1075,7 @@
       }
     },
     {
-      "amount": 2.4973042729606068e-14,
+      "amount": 4.3010629072934026e-14,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1098,7 +1098,7 @@
       }
     },
     {
-      "amount": 1.0100054534736858e-13,
+      "amount": 9.906293337454237e-14,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1121,7 +1121,7 @@
       }
     },
     {
-      "amount": 3.85173065034931e-14,
+      "amount": 6.633764083966739e-14,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1144,7 +1144,7 @@
       }
     },
     {
-      "amount": 1.0589312163202447e-13,
+      "amount": 1.0386171570891702e-13,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1167,7 +1167,7 @@
       }
     },
     {
-      "amount": 3.163291830987557e-10,
+      "amount": 5.448088183353641e-10,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1259,7 +1259,7 @@
       }
     },
     {
-      "amount": 1.931655333372291e-13,
+      "amount": 1.9316558736125517e-13,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1282,7 +1282,7 @@
       }
     },
     {
-      "amount": 1.208536319934984e-15,
+      "amount": 1.2085368939772853e-15,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1305,7 +1305,7 @@
       }
     },
     {
-      "amount": 1.2796212862974903e-14,
+      "amount": 1.2796218372410911e-14,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1328,7 +1328,7 @@
       }
     },
     {
-      "amount": 4.905220301710586e-17,
+      "amount": 4.905219652844743e-17,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1351,7 +1351,7 @@
       }
     },
     {
-      "amount": 2.954157191118102e-09,
+      "amount": 5.087887174682709e-09,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1374,7 +1374,7 @@
       }
     },
     {
-      "amount": 1.2323991295601362e-13,
+      "amount": 2.1225387291708421e-13,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1397,7 +1397,7 @@
       }
     },
     {
-      "amount": 7.667194919012656e-14,
+      "amount": 7.520114435843573e-14,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1420,7 +1420,7 @@
       }
     },
     {
-      "amount": 6.663783217389835e-13,
+      "amount": 6.66377980910413e-13,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1443,7 +1443,7 @@
       }
     },
     {
-      "amount": 7.85190647302449e-18,
+      "amount": 7.851903696644155e-18,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1466,7 +1466,7 @@
       }
     },
     {
-      "amount": 2.2887509429464525e-18,
+      "amount": 2.2887519076473193e-18,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1489,7 +1489,7 @@
       }
     },
     {
-      "amount": 1.0953173991851151e-07,
+      "amount": 1.619768332362396e-07,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1512,7 +1512,7 @@
       }
     },
     {
-      "amount": 1.0778649623682523e-13,
+      "amount": 1.856388498897705e-13,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1535,7 +1535,7 @@
       }
     },
     {
-      "amount": 7.117626029461098e-14,
+      "amount": 6.981082732123074e-14,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1558,7 +1558,7 @@
       }
     },
     {
-      "amount": 6.70209303373421e-09,
+      "amount": 6.5735204190257554e-09,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1581,7 +1581,7 @@
       }
     },
     {
-      "amount": 6.70209303373421e-09,
+      "amount": 6.5735204190257554e-09,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1627,7 +1627,7 @@
       }
     },
     {
-      "amount": 4.8282099625289364e-14,
+      "amount": 8.315541148243004e-14,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1650,7 +1650,7 @@
       }
     },
     {
-      "amount": 1.9375754650172412e-13,
+      "amount": 1.900406005501578e-13,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1696,7 +1696,7 @@
       }
     },
     {
-      "amount": 3.161047463397351e-10,
+      "amount": 3.1597156529996644e-10,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1742,7 +1742,7 @@
       }
     },
     {
-      "amount": 1.632130682659649e-08,
+      "amount": 2.8109890375261602e-08,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1765,7 +1765,7 @@
       }
     },
     {
-      "amount": 1.2899302509898716e-08,
+      "amount": 2.2216232209832547e-08,
       "description": "",
       "dqEntry": "(3;1;1;1;1)",
       "flow": {
@@ -1816,9 +1816,9 @@
       "dqEntry": "",
       "flow": {
         "@type": "Flow",
-        "@id": "cee57e5e-11c1-35d3-8bf5-849570cae6f1",
-        "category": "Technosphere Flows / 56: Administrative and Support and Waste Management and Remediation Services / 5612: Facilities Support Services",
-        "name": "Operation of equipment; air compressors"
+        "@id": "01d69c65-6015-3ceb-b0a2-35c4bae3684b",
+        "category": "Technosphere Flows / 23: Construction / 2382: Building Equipment Contractors",
+        "name": "Operation of equipment; pumps"
       },
       "flowProperty": {
         "@type": "FlowProperty",
@@ -1869,7 +1869,7 @@
     "@id": "0b3b97fa-6688-3c56-88ee-4ae80ec0c3c2",
     "name": "United States of America (the)"
   },
-  "name": "Operation of equipment; air compressors; liquified petroleum fuel powered",
+  "name": "Operation of equipment; pumps; liquefied petroleum gas powered",
   "processDocumentation": {
     "completenessDescription": "The results include emissions from running exhaust, crankcase venting, refueling vapor and spillage, evaporative tank permeation, evaporative hose permeation, and fuel vapor venting from diurnal, hot soak, and running activity. Evaporative emissions while the equipment is soaking (engine off) are not included. Manufacturing of equipment, roads, and other infrastructure are not included in this dataset. The model for nonroad equipment does not include nitrous oxide (N2O).",
     "creationDate": "2026-03-26T12:00:00",
@@ -1913,7 +1913,7 @@
         "name": "USEPA (2024) MOVES4"
       }
     ],
-    "technologyDescription": "This process reflects the lpg-powered air compressors used in the commercial sector, with an average horsepower of 76.5 hp and a load factor of 0.56.",
+    "technologyDescription": "This process reflects the lpg-powered pumps used in the commercial sector, with an average horsepower of 66.3 hp and a load factor of 0.69.",
     "timeDescription": "This process reflects the equipment as estimated in 2020.",
     "useAdvice": "This process has two reference units: MJ of energy consumed by the equipment and 1 hour of equipment use.",
     "validFrom": "2020-01-01T00:00:00",

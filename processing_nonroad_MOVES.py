@@ -40,7 +40,7 @@ energy_flow = moves_inputs['EnergyFlow']
 
 # identify fuel types, prepared to be included in process name
 fuel_map = {
-    "LPG": "Liquified Petroleum Fuel",
+    "LPG": "Liquefied Petroleum Gas",
     "Gasoline": "Gasoline",
     "Nonroad Diesel": "Diesel"
 }
