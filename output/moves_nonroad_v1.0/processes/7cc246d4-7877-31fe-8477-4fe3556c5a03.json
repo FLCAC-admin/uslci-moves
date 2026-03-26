@@ -3,7 +3,7 @@
   "@id": "7cc246d4-7877-31fe-8477-4fe3556c5a03",
   "category": "23: Construction / 2382: Building Equipment Contractors",
   "defaultAllocationMethod": "PHYSICAL_ALLOCATION",
-  "description": "This dataset represents the operation of pumps using lpg as a fuel source. Emissions and fuel-consumption data are calculated using EPA's Motor Vehicle Emission Simulator (MOVES), the regulatory model used to determine emission inventories for equipment used in construction, agriculture, industrial, and commercial sectors. The reference flows are: 1. the operation of equipment consuming 1 MJ of fuel; and 2. the operation of equipment for 1 hour.",
+  "description": "This dataset represents the operation of pumps using lpg as a fuel source. Emissions and fuel-consumption data are calculated using EPA's Motor Vehicle Emission Simulator (MOVES), the regulatory model used to determine emission inventories for equipment used in construction, agriculture, industrial, and commercial sectors. The reference flow is the operation of equipment consuming 1 MJ of fuel. Additional flow properties are provide to support the use of this process on the basis of 1 hour of equipment operation.",
   "dqEntry": "(2;1)",
   "dqSystem": {
     "@type": "DQSystem",
@@ -1846,7 +1846,7 @@
         "@type": "Flow",
         "@id": "996ff18b-a044-37b1-a96a-c59d24e4ebd4",
         "category": "Technosphere flows/44-45: Retail Trade/4471: Gasoline Stations",
-        "name": "Liquefied petroleum gas, dispensed at pump"
+        "name": "Liquefied petroleum gas; dispensed at pump"
       },
       "flowProperty": {
         "@type": "FlowProperty",
@@ -1863,7 +1863,7 @@
       }
     }
   ],
-  "lastChange": "2026-02-26T12:00:00Z",
+  "lastChange": "2026-03-26T12:00:00Z",
   "location": {
     "@type": "Location",
     "@id": "0b3b97fa-6688-3c56-88ee-4ae80ec0c3c2",
@@ -1872,7 +1872,7 @@
   "name": "Operation of equipment; pumps; liquified petroleum fuel powered",
   "processDocumentation": {
     "completenessDescription": "The results include emissions from running exhaust, crankcase venting, refueling vapor and spillage, evaporative tank permeation, evaporative hose permeation, and fuel vapor venting from diurnal, hot soak, and running activity. Evaporative emissions while the equipment is soaking (engine off) are not included. Manufacturing of equipment, roads, and other infrastructure are not included in this dataset. The model for nonroad equipment does not include nitrous oxide (N2O).",
-    "creationDate": "2026-02-26T12:00:00",
+    "creationDate": "2026-03-26T12:00:00",
     "dataCollectionDescription": "MOVES runs were performed using MOVES4.0.1 in 2025.",
     "dataDocumentor": {
       "@type": "Actor",

@@ -15,6 +15,16 @@
       }
     },
     {
+      "conversionFactor": 0.001333333,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-22da-a746-0800200c9a66",
+        "category": "Technical flow properties",
+        "name": "Volume",
+        "refUnit": "m3"
+      }
+    },
+    {
       "conversionFactor": 1.0,
       "flowProperty": {
         "@type": "FlowProperty",
@@ -24,21 +34,11 @@
         "refUnit": "kg"
       },
       "isRefFlowProperty": true
-    },
-    {
-      "conversionFactor": 0.001333333,
-      "flowProperty": {
-        "@type": "FlowProperty",
-        "@id": "93a60a56-a3c8-22da-a746-0800200c9a66",
-        "category": "Technical flow properties",
-        "name": "Volume",
-        "refUnit": "m3"
-      }
     }
   ],
   "flowType": "PRODUCT_FLOW",
   "isInfrastructureFlow": false,
-  "lastChange": "2025-11-10T19:43:41.547Z",
+  "lastChange": "2026-03-10T01:22:57Z",
   "name": "Gasoline; dispensed at pump",
-  "version": "00.00.010"
+  "version": "00.00.011"
 }

@@ -5,16 +5,6 @@
   "description": "Unit conversions set consistent with flow \"Liquefied petroleum gas, at refinery\"",
   "flowProperties": [
     {
-      "conversionFactor": 45.5,
-      "flowProperty": {
-        "@type": "FlowProperty",
-        "@id": "f6811440-ee37-11de-8a39-0800200c9a66",
-        "category": "Technical flow properties",
-        "name": "Energy",
-        "refUnit": "MJ"
-      }
-    },
-    {
       "conversionFactor": 0.00184,
       "flowProperty": {
         "@type": "FlowProperty",
@@ -22,6 +12,16 @@
         "category": "Technical flow properties",
         "name": "Volume",
         "refUnit": "m3"
+      }
+    },
+    {
+      "conversionFactor": 45.5,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "f6811440-ee37-11de-8a39-0800200c9a66",
+        "category": "Technical flow properties",
+        "name": "Energy",
+        "refUnit": "MJ"
       }
     },
     {
@@ -38,7 +38,7 @@
   ],
   "flowType": "PRODUCT_FLOW",
   "isInfrastructureFlow": false,
-  "lastChange": "2025-03-16T13:50:22.320Z",
-  "name": "Liquefied petroleum gas, dispensed at pump",
-  "version": "00.00.009"
+  "lastChange": "2026-03-10T01:22:57Z",
+  "name": "Liquefied petroleum gas; dispensed at pump",
+  "version": "00.00.010"
 }
