@@ -1,0 +1,29 @@
+{
+  "@type": "Flow",
+  "@id": "e298b51e-f5f8-3949-914a-5c03fc012824",
+  "category": "Technosphere Flows / 23: Construction / 2382: Building Equipment Contractors",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "f6811440-ee37-11de-8a39-0800200c9a66",
+        "name": "Energy"
+      },
+      "isRefFlowProperty": true
+    },
+    {
+      "conversionFactor": 0.000324077329201519,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "c0447923-0e60-4b3c-97c2-a86dddd9eea5",
+        "name": "Duration"
+      },
+      "isRefFlowProperty": false
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-02-25T12:00:00Z",
+  "name": "Operation of equipment; off-highway tractors",
+  "version": "01.00.000"
+}

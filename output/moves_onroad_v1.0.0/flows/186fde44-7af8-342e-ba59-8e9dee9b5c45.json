@@ -1,20 +1,9 @@
 {
   "@type": "Flow",
   "@id": "186fde44-7af8-342e-ba59-8e9dee9b5c45",
-  "category": "Technosphere Flows/44-45: Retail Trade/4471: Gasoline Stations",
+  "category": "Technosphere flows/44-45: Retail Trade/4471: Gasoline Stations",
   "description": "Unit conversions set consistent with flow \"Gasoline, at refinery\"",
   "flowProperties": [
-    {
-      "conversionFactor": 1.0,
-      "flowProperty": {
-        "@type": "FlowProperty",
-        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
-        "category": "Technical flow properties",
-        "name": "Mass",
-        "refUnit": "kg"
-      },
-      "isRefFlowProperty": true
-    },
     {
       "conversionFactor": 0.001353,
       "flowProperty": {
@@ -34,6 +23,17 @@
         "name": "Energy",
         "refUnit": "MJ"
       }
+    },
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "category": "Technical flow properties",
+        "name": "Mass",
+        "refUnit": "kg"
+      },
+      "isRefFlowProperty": true
     }
   ],
   "flowType": "PRODUCT_FLOW",

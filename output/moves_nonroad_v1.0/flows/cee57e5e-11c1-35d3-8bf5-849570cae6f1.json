@@ -1,0 +1,29 @@
+{
+  "@type": "Flow",
+  "@id": "cee57e5e-11c1-35d3-8bf5-849570cae6f1",
+  "category": "Technosphere Flows / 56: Administrative and Support and Waste Management and Remediation Services / 5612: Facilities Support Services",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "f6811440-ee37-11de-8a39-0800200c9a66",
+        "name": "Energy"
+      },
+      "isRefFlowProperty": true
+    },
+    {
+      "conversionFactor": 0.003310072653856008,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "c0447923-0e60-4b3c-97c2-a86dddd9eea5",
+        "name": "Duration"
+      },
+      "isRefFlowProperty": false
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-02-25T12:00:00Z",
+  "name": "Operation of equipment; air compressors",
+  "version": "01.00.000"
+}

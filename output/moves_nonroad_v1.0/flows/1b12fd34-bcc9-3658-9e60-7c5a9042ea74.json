@@ -1,0 +1,29 @@
+{
+  "@type": "Flow",
+  "@id": "1b12fd34-bcc9-3658-9e60-7c5a9042ea74",
+  "category": "Technosphere Flows / 22: Utilities / 2211: Electric Power Generation, Transmission and Distribution",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "f6811440-ee37-11de-8a39-0800200c9a66",
+        "name": "Energy"
+      },
+      "isRefFlowProperty": true
+    },
+    {
+      "conversionFactor": 0.057703120506468336,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "c0447923-0e60-4b3c-97c2-a86dddd9eea5",
+        "name": "Duration"
+      },
+      "isRefFlowProperty": false
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-02-25T12:00:00Z",
+  "name": "Operation of equipment; 2-stroke generator sets",
+  "version": "01.00.000"
+}

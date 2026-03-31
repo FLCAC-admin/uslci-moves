@@ -740,7 +740,7 @@
       "flow": {
         "@type": "Flow",
         "@id": "a309e49e-25f9-3689-b60e-b7071826a47a",
-        "category": "Technosphere Flows/44-45: Retail Trade/4471: Gasoline Stations",
+        "category": "Technosphere flows/44-45: Retail Trade/4471: Gasoline Stations",
         "name": "Diesel, dispensed at pump"
       },
       "flowProperty": {
@@ -805,23 +805,23 @@
       }
     }
   ],
-  "lastChange": "2025-03-27T03:04:31.936664Z",
+  "lastChange": "2025-12-04T12:00:00Z",
   "name": "Transport, combination truck, long-haul, diesel powered, South",
   "processDocumentation": {
     "completenessDescription": "Included in the inventory are emissions from operations (i.e., tailpipe exhaust) as well as idling and truck hotelling (both extended engine idling and auxiliary power unit use). Particulate matter from brake and tire wear is also included. Evaporative emissions while the vehicle is soaking (engine off) are not included. Manufacturing of vehicles, roads, and other infrastructure are not included in this dataset.\n",
-    "creationDate": "2025-03-26T23:04:31",
+    "creationDate": "2025-12-04T12:00:00",
     "dataCollectionDescription": "MOVES runs were performed using MOVES4.0.1 in 2024.\n",
     "dataDocumentor": {
       "@type": "Actor",
       "@id": "38e67478-a915-43d9-ad67-e25db79a4acc",
       "category": "Organisations",
-      "name": "Franklin Associates, A Division of ERG"
+      "name": "ERG"
     },
     "dataGenerator": {
       "@type": "Actor",
       "@id": "38e67478-a915-43d9-ad67-e25db79a4acc",
       "category": "Organisations",
-      "name": "Franklin Associates, A Division of ERG"
+      "name": "ERG"
     },
     "dataSelectionDescription": "MOVES runs were performed at the default settings at the state level.\n",
     "dataTreatmentDescription": "MOVES combines in-use emission rates and detailed fleet populations and activity, frequently in the form of vehicle miles or kilometers traveled, to calculate inventories.\nAverage payload estimates are required to calculate LCI data per unit of good transported. The average payloads by MOVES source type were estimated from the 2002 Vehicle Inventory and Use Survey conducted by the US Census Bureau and 2012 and 2017 Freight Analysis Framework (FAF) statistics collected by the Federal Highway Administration.\nThe mean of the average reported payloads across 2002, 2012, and 2017 are used.  The distance-weighted payload in US short tons as applied for combination trucks is 16.18 tons.\n",
