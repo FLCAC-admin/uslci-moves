@@ -52,6 +52,18 @@ legacy_uuid_name_overrides = {
     "Dsl - Rough Terrain Forklifts": "rough terrian folklifts",
 }
 
+
+def _operation_process_name(equipment_label: pd.Series, fuel: pd.Series) -> pd.Series:
+    """Build the OLCA process name prefix shared by display and UUID seed paths."""
+    return (
+        'Operation of equipment; '
+        + equipment_label.astype(str)
+        + '; '
+        + fuel.map(fuel_map).str.lower()
+        + ' powered'
+    )
+
+
 ## equipment column is unique identifier; scc, sector, and fuel are additional information
 
 #%%
@@ -141,17 +153,13 @@ df_olca = df_olca.dropna(subset=['name'])
 cond1 = df_olca['FlowName'] == 'reference_flow_var'
 cond2 = df_olca['FlowName'] == energy_flow
 df_olca = (df_olca
-           .assign(ProcessName = lambda x: ('Operation of equipment; ' + x['name'] + '; '
-                                            + x['fuel'].map(fuel_map).str.lower()
-                                            + ' powered'))
            .assign(UUIDNameSeed = lambda x: np.where(
                    x['equipment'].isin(legacy_uuid_name_overrides),
                    x['equipment'].map(legacy_uuid_name_overrides),
                    x['name']))
-           .assign(UUIDProcessNameSeed = lambda x: ('Operation of equipment; '
-                                                    + x['UUIDNameSeed'] + '; '
-                                                    + x['fuel'].map(fuel_map).str.lower()
-                                                    + ' powered'))
+           .assign(ProcessName = lambda x: _operation_process_name(x['name'], x['fuel']))
+           .assign(UUIDProcessNameSeed = lambda x: _operation_process_name(
+                   x['UUIDNameSeed'], x['fuel']))
            .assign(reference = np.where(cond1, True, False))
            .assign(IsInput = np.where(cond2, True, False))
            .assign(FlowType = np.where(cond1 | cond2, 'PRODUCT_FLOW',
