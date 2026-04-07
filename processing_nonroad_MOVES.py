@@ -45,6 +45,13 @@ fuel_map = {
     "Nonroad Diesel": "Diesel"
 }
 
+# Keep this map limited to typo corrections where UUID continuity is required.
+# Key: equipment label from MOVES output/flows file
+# Value: legacy flowname used previously to generate UUIDs
+legacy_uuid_name_overrides = {
+    "Dsl - Rough Terrain Forklifts": "rough terrian folklifts",
+}
+
 ## equipment column is unique identifier; scc, sector, and fuel are additional information
 
 #%%
@@ -137,6 +144,14 @@ df_olca = (df_olca
            .assign(ProcessName = lambda x: ('Operation of equipment; ' + x['name'] + '; '
                                             + x['fuel'].map(fuel_map).str.lower()
                                             + ' powered'))
+           .assign(UUIDNameSeed = lambda x: np.where(
+                   x['equipment'].isin(legacy_uuid_name_overrides),
+                   x['equipment'].map(legacy_uuid_name_overrides),
+                   x['name']))
+           .assign(UUIDProcessNameSeed = lambda x: ('Operation of equipment; '
+                                                    + x['UUIDNameSeed'] + '; '
+                                                    + x['fuel'].map(fuel_map).str.lower()
+                                                    + ' powered'))
            .assign(reference = np.where(cond1, True, False))
            .assign(IsInput = np.where(cond2, True, False))
            .assign(FlowType = np.where(cond1 | cond2, 'PRODUCT_FLOW',
@@ -148,15 +163,15 @@ df_olca = (df_olca
            .assign(FlowName = lambda x: np.where(cond2, x['fuel'], x['FlowName']))
            ##TODO: ^^ fix this flow name assignment for reference flows
            .assign(FlowUUID = lambda x: np.where(cond1,
-                   x['name'].apply(make_uuid), x['FlowUUID']))
+                   x['UUIDNameSeed'].apply(make_uuid), x['FlowUUID']))
            .assign(Context = lambda x: np.where(cond1,
                    'Technosphere Flows / ' + df_olca['RefFlowCategory'],
                    df_olca['Context']))
            .assign(location = lambda x: np.where(
                    x['region'] == 'US', 'US', None))
            .assign(ProcessID = lambda x: x.apply(
-               lambda z: make_uuid(z['ProcessName'], z['location']), axis=1))
-           .drop(columns=['name'])
+               lambda z: make_uuid(z['UUIDProcessNameSeed'], z['location']), axis=1))
+           .drop(columns=['name', 'UUIDNameSeed', 'UUIDProcessNameSeed'])
            )
 
 
