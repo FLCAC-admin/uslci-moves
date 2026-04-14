@@ -45,6 +45,25 @@ fuel_map = {
     "Nonroad Diesel": "Diesel"
 }
 
+# Keep this map limited to typo corrections where UUID continuity is required.
+# Key: equipment label from MOVES output/flows file
+# Value: legacy flowname used previously to generate UUIDs
+legacy_uuid_name_overrides = {
+    "Dsl - Rough Terrain Forklifts": "rough terrian folklifts",
+}
+
+
+def _operation_process_name(equipment_label: pd.Series, fuel: pd.Series) -> pd.Series:
+    """Build the OLCA process name prefix shared by display and UUID seed paths."""
+    return (
+        'Operation of equipment; '
+        + equipment_label.astype(str)
+        + '; '
+        + fuel.map(fuel_map).str.lower()
+        + ' powered'
+    )
+
+
 ## equipment column is unique identifier; scc, sector, and fuel are additional information
 
 #%%
@@ -134,9 +153,13 @@ df_olca = df_olca.dropna(subset=['name'])
 cond1 = df_olca['FlowName'] == 'reference_flow_var'
 cond2 = df_olca['FlowName'] == energy_flow
 df_olca = (df_olca
-           .assign(ProcessName = lambda x: ('Operation of equipment; ' + x['name'] + '; '
-                                            + x['fuel'].map(fuel_map).str.lower()
-                                            + ' powered'))
+           .assign(UUIDNameSeed = lambda x: np.where(
+                   x['equipment'].isin(legacy_uuid_name_overrides),
+                   x['equipment'].map(legacy_uuid_name_overrides),
+                   x['name']))
+           .assign(ProcessName = lambda x: _operation_process_name(x['name'], x['fuel']))
+           .assign(UUIDProcessNameSeed = lambda x: _operation_process_name(
+                   x['UUIDNameSeed'], x['fuel']))
            .assign(reference = np.where(cond1, True, False))
            .assign(IsInput = np.where(cond2, True, False))
            .assign(FlowType = np.where(cond1 | cond2, 'PRODUCT_FLOW',
@@ -148,15 +171,15 @@ df_olca = (df_olca
            .assign(FlowName = lambda x: np.where(cond2, x['fuel'], x['FlowName']))
            ##TODO: ^^ fix this flow name assignment for reference flows
            .assign(FlowUUID = lambda x: np.where(cond1,
-                   x['name'].apply(make_uuid), x['FlowUUID']))
+                   x['UUIDNameSeed'].apply(make_uuid), x['FlowUUID']))
            .assign(Context = lambda x: np.where(cond1,
                    'Technosphere Flows / ' + df_olca['RefFlowCategory'],
                    df_olca['Context']))
            .assign(location = lambda x: np.where(
                    x['region'] == 'US', 'US', None))
            .assign(ProcessID = lambda x: x.apply(
-               lambda z: make_uuid(z['ProcessName'], z['location']), axis=1))
-           .drop(columns=['name'])
+               lambda z: make_uuid(z['UUIDProcessNameSeed'], z['location']), axis=1))
+           .drop(columns=['name', 'UUIDNameSeed', 'UUIDProcessNameSeed'])
            )
 
 
