@@ -3,7 +3,7 @@
   "@id": "a3b74362-ce47-3a49-bfb0-70defcc3cf7a",
   "category": "23: Construction / 2382: Building Equipment Contractors",
   "defaultAllocationMethod": "PHYSICAL_ALLOCATION",
-  "description": "This dataset represents the operation of rough terrian folklifts using nonroad diesel as a fuel source. Emissions and fuel-consumption data are calculated using EPA's Motor Vehicle Emission Simulator (MOVES), the regulatory model used to determine emission inventories for equipment used in construction, agriculture, industrial, and commercial sectors. The reference flow is the operation of equipment consuming 1 MJ of fuel. Additional flow properties are provide to support the use of this process on the basis of 1 hour of equipment operation.",
+  "description": "This dataset represents the operation of rough terrain forklifts using nonroad diesel as a fuel source. Emissions and fuel-consumption data are calculated using EPA's Motor Vehicle Emission Simulator (MOVES), the regulatory model used to determine emission inventories for equipment used in construction, agriculture, industrial, and commercial sectors. The reference flow is the operation of equipment consuming 1 MJ of fuel. Additional flow properties are provide to support the use of this process on the basis of 1 hour of equipment operation.",
   "dqEntry": "(2;1)",
   "dqSystem": {
     "@type": "DQSystem",
@@ -1841,7 +1841,7 @@
         "@type": "Flow",
         "@id": "41533024-0d14-3c99-9cbe-42376232b2ac",
         "category": "Technosphere Flows / 23: Construction / 2382: Building Equipment Contractors",
-        "name": "Operation of equipment; rough terrian folklifts"
+        "name": "Operation of equipment; rough terrain forklifts"
       },
       "flowProperty": {
         "@type": "FlowProperty",
@@ -1886,16 +1886,16 @@
       }
     }
   ],
-  "lastChange": "2026-03-26T12:00:00Z",
+  "lastChange": "2026-04-07T12:00:00Z",
   "location": {
     "@type": "Location",
     "@id": "0b3b97fa-6688-3c56-88ee-4ae80ec0c3c2",
     "name": "United States of America (the)"
   },
-  "name": "Operation of equipment; rough terrian folklifts; diesel powered",
+  "name": "Operation of equipment; rough terrain forklifts; diesel powered",
   "processDocumentation": {
     "completenessDescription": "The results include emissions from running exhaust, crankcase venting, refueling vapor and spillage, evaporative tank permeation, evaporative hose permeation, and fuel vapor venting from diurnal, hot soak, and running activity. Evaporative emissions while the equipment is soaking (engine off) are not included. Manufacturing of equipment, roads, and other infrastructure are not included in this dataset. The model for nonroad equipment does not include nitrous oxide (N2O).",
-    "creationDate": "2026-03-26T12:00:00",
+    "creationDate": "2026-04-07T12:00:00",
     "dataCollectionDescription": "MOVES runs were performed using MOVES4.0.1 in 2025.",
     "dataDocumentor": {
       "@type": "Actor",
@@ -1936,7 +1936,7 @@
         "name": "USEPA (2024) MOVES4"
       }
     ],
-    "technologyDescription": "This process reflects the nonroad diesel-powered rough terrian folklifts used in the construction sector, with an average horsepower of 107.0 hp and a load factor of 0.59.",
+    "technologyDescription": "This process reflects the nonroad diesel-powered rough terrain forklifts used in the construction sector, with an average horsepower of 107.0 hp and a load factor of 0.59.",
     "timeDescription": "This process reflects the equipment as estimated in 2020.",
     "useAdvice": "This process has two reference units: MJ of energy consumed by the equipment and 1 hour of equipment use.",
     "validFrom": "2020-01-01T00:00:00",
