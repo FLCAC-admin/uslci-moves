@@ -1,0 +1,49 @@
+# Refuse-specific metadata overrides only.
+# Merged onto MOVES_onroad_process_metadata.yaml in processing_MOVES.py.
+
+description: >
+    This dataset represents the movement of refuse via a [VEHICLE_TYPE] using
+    [FUEL] as a fuel source.
+    Emissions and fuel consumption data are calculated using EPA's Motor Vehicle
+    Emission Simulator (MOVES), the regulatory model to determine emission
+    inventories for highway vehicles, including cars, trucks, and buses. The
+    reference flow is the movement of 1 metric ton of refuse for a distance of
+    1 km.
+
+geography_description_US: >
+    This process represents emissions from refuse trucks operating in all U.S. states
+    (national totals).
+
+vehicle_descriptions:
+    refuse_truck: >
+        Refuse trucks are a distinct MOVES single-unit source type (source type ID 51)
+        used for solid waste collection and related vocational duty cycles. This process
+        represents refuse truck operation only, separate from other single unit truck
+        vocations such as delivery, box, flatbed, and tow trucks.
+
+completeness_description: >
+    Included in the inventory are emissions from operations (i.e., tailpipe exhaust)
+    as well as idling. Particulate matter from brake and tire wear is also included.
+    Evaporative emissions while the vehicle is soaking (engine off) are not included.
+    Manufacturing of vehicles, roads, and other infrastructure are not included in
+    this dataset.
+
+data_selection_description: >
+    MOVES runs for refuse trucks were performed at the default settings and reported
+    as national totals.
+
+data_treatment_description: >
+    MOVES combines in-use emission rates and detailed fleet populations and activity,
+    frequently in the form of vehicle miles or kilometers traveled, to calculate inventories.
+
+    Average payload estimates are required to calculate LCI data per unit of refuse
+    transported. An average refuse payload of [PAYLOAD] US short tons is assumed based
+    on the National Waste & Recycling Association white paper on electric vehicle
+    truck weights (NWRA 2023).
+
+sampling_description: >
+    Refuse truck emission factors are national totals. No uncertainty was assessed.
+
+sources:
+ - usepa_motor_2024: USEPA (2024) MOVES4
+ - nwra_ev_truck_weights_2023: NWRA (2023) Electric Vehicle Truck Weights

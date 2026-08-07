@@ -20,6 +20,9 @@ payloads:
   light commercial truck:
     payload: 1.0 # no data for light-duty trucks, assume 1 ton
     units: tons
+  refuse truck:
+    payload: 9 # short tons; assumed average based on NWRA (2023) EV Truck Weights
+    units: tons
 
 tech_flows:
   'Combination Trucks': 'combination truck'
@@ -30,6 +33,7 @@ tech_flows:
   'Single Unit Trucks': 'single unit truck'
   'Single Unit Trucks, Long-Haul': 'single unit truck, long-haul'
   'Single Unit Trucks, Short-Haul': 'single unit truck, short-haul'
+  'Refuse Trucks': 'refuse truck'
 
 Year: 2024
 EnergyFlow: 'Total Energy Consumption'
