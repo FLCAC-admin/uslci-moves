@@ -16,5 +16,5 @@ Run [processing_nonroad_MOVES.py](processing_nonroad_MOVES.py)
 
 | Datasts            | Version | flcac-utils | Release        |
 |--------------------|---------|-------------|----------------|
-| Non-road equipment | v1.0.0  | v0.3.0      | 2026 Q1, USLCI |
+| Non-road equipment | v1.1    | v0.4.0      | 2026 Q3, USLCI |
 | On-road Trucking   | v1.0.0  | v0.1.0      | 2025 Q1, USLCI |

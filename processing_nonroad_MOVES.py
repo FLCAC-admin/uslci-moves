@@ -11,6 +11,8 @@ import re
 
 parent_path = Path(__file__).parent
 data_path =  parent_path / 'data'
+PROCESS_VERSION = "1.1"
+OUTPUT_FOLDER = Path('output') / 'moves_nonroad_v1'
 
 ## Read in MOVES data
 
@@ -75,7 +77,7 @@ df = (df_orig
       .agg('sum')
       .assign(region = 'US')
       .reset_index()
-      .assign(EF = lambda x: x['inv_mass'] / x['energy'])
+      .assign(EF = lambda x: x['inv_mass'] / (x['energy'] / 1000))
       .assign(Unit = 'kg')
       .assign(Context = 'air')
       )
@@ -141,7 +143,7 @@ cols_to_fill = [
 
 df_olca[cols_to_fill] = (
     df_olca.groupby("equipment")[cols_to_fill]
-           .transform(lambda x: x.fillna(method="ffill").fillna(method="bfill")))
+           .transform(lambda x: x.ffill().bfill()))
 
 # Update syntax for transport types
 df_olca['name'] = df_olca['equipment'].map(moves_inputs['tech_flows'])
@@ -336,10 +338,12 @@ for s in df_olca['equipment'].unique():
                                        source_objs=source_objs,
                                        actor_objs=actor_objs,
                                        dq_objs=dq_objs,
+                                       version=PROCESS_VERSION,
                                        )
         processes.update(p_dict)
 # build bridge processes
-bridge_processes = build_process_dict(df_bridge, flows, meta=moves_inputs['Bridge'])
+bridge_processes = build_process_dict(
+    df_bridge, flows, meta=moves_inputs['Bridge'], version=PROCESS_VERSION)
 
 
 #%% Write to json
@@ -355,4 +359,4 @@ from flcac_utils.util import extract_latest_zip
 
 extract_latest_zip(out_path,
                    parent_path,
-                   output_folder_name = Path('output') / 'moves_nonroad_v1.0')
+                   output_folder_name=OUTPUT_FOLDER)
