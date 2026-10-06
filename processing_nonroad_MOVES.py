@@ -11,6 +11,8 @@ import re
 
 parent_path = Path(__file__).parent
 data_path =  parent_path / 'data'
+PROCESS_VERSION = "1.1"
+OUTPUT_FOLDER = Path('output') / 'moves_nonroad_v1'
 
 ## Read in MOVES data
 
@@ -21,9 +23,15 @@ groupby_cols = ['yearid',
                 'pollutant',
                 ]
 
-file = '20251202_flcac_nr_emission_factors_all_pollutants'
+file = '20261001_flcac_nr_emission_factors_all_pollutants'
 ## Check Teams (Task 3 Transportation Datasets / MOVES) for the latest file
 df_orig = pd.read_excel(data_path / f'{file}.xlsx', thousands=',', sheet_name='emission_factors')
+# Newer export includes units in headers; normalize to legacy names used below.
+df_orig = df_orig.rename(columns={
+    'inv_mass (kg)': 'inv_mass',
+    'energycontent (MJ/kg)': 'energycontent',
+    'energy (MJ)': 'energy',
+})
 
 with open(data_path / "moves_nonroad_inputs.yaml", "r") as file:
     moves_inputs = yaml.safe_load(file)
@@ -68,13 +76,14 @@ def _operation_process_name(equipment_label: pd.Series, fuel: pd.Series) -> pd.S
 
 #%%
 df = (df_orig
-      .drop(columns=['EF(g/MJ)'], errors='ignore')
-      .drop(columns=['stateid', 'state'], errors='ignore')
+      .drop(columns=['stateid', 'state', 'BSFC (kg)', 'EF(g/MJ)', 'EF(g/hr)'],
+            errors='ignore')
       .drop(columns=['fuelsubtypeid', 'fueltypeid', 'pollutantid', 'sectorid'], errors='ignore')
       .groupby(groupby_cols)
       .agg('sum')
       .assign(region = 'US')
       .reset_index()
+      # energy is in MJ; inv_mass is in kg -> EF in kg/MJ
       .assign(EF = lambda x: x['inv_mass'] / x['energy'])
       .assign(Unit = 'kg')
       .assign(Context = 'air')
@@ -134,14 +143,14 @@ df_olca = pd.concat([df,
                       ) ## ^^ energy inputs
                      ], ignore_index=True)
 
-# fill the nan values for energycontent, energy, source_hrs, population, load_factor, avg_hp, EF(kg/MJ),EF(kg/hr)
+# fill the nan values for energycontent, energy, source_hrs, population, load_factor, avg_hp
 cols_to_fill = [
     "energycontent", "energy", "source_hrs", "population",
-    "load_factor", "avg_hp", "EF(kg/MJ)", "EF(kg/hr)"]
+    "load_factor", "avg_hp"]
 
 df_olca[cols_to_fill] = (
     df_olca.groupby("equipment")[cols_to_fill]
-           .transform(lambda x: x.fillna(method="ffill").fillna(method="bfill")))
+           .transform(lambda x: x.ffill().bfill()))
 
 # Update syntax for transport types
 df_olca['name'] = df_olca['equipment'].map(moves_inputs['tech_flows'])
@@ -215,8 +224,9 @@ altflowlist = pd.DataFrame(columns=["Flowable", "AltUnit", "Unit", "AltUnitConve
 altflowlist["Flowable"] = df_processes["FlowName"]
 altflowlist["AltUnit"] = "h"
 altflowlist["Unit"] = "MJ"
-altflowlist["AltUnitConversionFactor"] = df_processes["source_hrs"]/df_processes["energy"]*1000
-altflowlist["InverseConversionFactor"] = df_processes["energy"]/(df_processes["source_hrs"]*1000)
+# energy is MJ; conversion between hours and MJ of work
+altflowlist["AltUnitConversionFactor"] = df_processes["source_hrs"] / df_processes["energy"]
+altflowlist["InverseConversionFactor"] = df_processes["energy"] / df_processes["source_hrs"]
 altflowlist.drop(altflowlist[altflowlist["Flowable"] == "Liquefied petroleum gas, dispensed at pump"].index, inplace=True)
 
 # change converstion factor in the flow property attribute in the flows dictionary 
@@ -336,10 +346,12 @@ for s in df_olca['equipment'].unique():
                                        source_objs=source_objs,
                                        actor_objs=actor_objs,
                                        dq_objs=dq_objs,
+                                       version=PROCESS_VERSION,
                                        )
         processes.update(p_dict)
 # build bridge processes
-bridge_processes = build_process_dict(df_bridge, flows, meta=moves_inputs['Bridge'])
+bridge_processes = build_process_dict(
+    df_bridge, flows, meta=moves_inputs['Bridge'], version=PROCESS_VERSION)
 
 
 #%% Write to json
@@ -355,4 +367,4 @@ from flcac_utils.util import extract_latest_zip
 
 extract_latest_zip(out_path,
                    parent_path,
-                   output_folder_name = Path('output') / 'moves_nonroad_v1.0')
+                   output_folder_name=OUTPUT_FOLDER)
