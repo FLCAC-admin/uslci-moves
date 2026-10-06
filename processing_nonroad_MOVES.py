@@ -23,9 +23,15 @@ groupby_cols = ['yearid',
                 'pollutant',
                 ]
 
-file = '20251202_flcac_nr_emission_factors_all_pollutants'
+file = '20261001_flcac_nr_emission_factors_all_pollutants'
 ## Check Teams (Task 3 Transportation Datasets / MOVES) for the latest file
 df_orig = pd.read_excel(data_path / f'{file}.xlsx', thousands=',', sheet_name='emission_factors')
+# Newer export includes units in headers; normalize to legacy names used below.
+df_orig = df_orig.rename(columns={
+    'inv_mass (kg)': 'inv_mass',
+    'energycontent (MJ/kg)': 'energycontent',
+    'energy (MJ)': 'energy',
+})
 
 with open(data_path / "moves_nonroad_inputs.yaml", "r") as file:
     moves_inputs = yaml.safe_load(file)
@@ -70,14 +76,15 @@ def _operation_process_name(equipment_label: pd.Series, fuel: pd.Series) -> pd.S
 
 #%%
 df = (df_orig
-      .drop(columns=['EF(g/MJ)'], errors='ignore')
-      .drop(columns=['stateid', 'state'], errors='ignore')
+      .drop(columns=['stateid', 'state', 'BSFC (kg)', 'EF(g/MJ)', 'EF(g/hr)'],
+            errors='ignore')
       .drop(columns=['fuelsubtypeid', 'fueltypeid', 'pollutantid', 'sectorid'], errors='ignore')
       .groupby(groupby_cols)
       .agg('sum')
       .assign(region = 'US')
       .reset_index()
-      .assign(EF = lambda x: x['inv_mass'] / (x['energy'] / 1000))
+      # energy is in MJ; inv_mass is in kg -> EF in kg/MJ
+      .assign(EF = lambda x: x['inv_mass'] / x['energy'])
       .assign(Unit = 'kg')
       .assign(Context = 'air')
       )
@@ -136,10 +143,10 @@ df_olca = pd.concat([df,
                       ) ## ^^ energy inputs
                      ], ignore_index=True)
 
-# fill the nan values for energycontent, energy, source_hrs, population, load_factor, avg_hp, EF(kg/MJ),EF(kg/hr)
+# fill the nan values for energycontent, energy, source_hrs, population, load_factor, avg_hp
 cols_to_fill = [
     "energycontent", "energy", "source_hrs", "population",
-    "load_factor", "avg_hp", "EF(kg/MJ)", "EF(kg/hr)"]
+    "load_factor", "avg_hp"]
 
 df_olca[cols_to_fill] = (
     df_olca.groupby("equipment")[cols_to_fill]
@@ -217,8 +224,9 @@ altflowlist = pd.DataFrame(columns=["Flowable", "AltUnit", "Unit", "AltUnitConve
 altflowlist["Flowable"] = df_processes["FlowName"]
 altflowlist["AltUnit"] = "h"
 altflowlist["Unit"] = "MJ"
-altflowlist["AltUnitConversionFactor"] = df_processes["source_hrs"]/df_processes["energy"]*1000
-altflowlist["InverseConversionFactor"] = df_processes["energy"]/(df_processes["source_hrs"]*1000)
+# energy is MJ; conversion between hours and MJ of work
+altflowlist["AltUnitConversionFactor"] = df_processes["source_hrs"] / df_processes["energy"]
+altflowlist["InverseConversionFactor"] = df_processes["energy"] / df_processes["source_hrs"]
 altflowlist.drop(altflowlist[altflowlist["Flowable"] == "Liquefied petroleum gas, dispensed at pump"].index, inplace=True)
 
 # change converstion factor in the flow property attribute in the flows dictionary 
