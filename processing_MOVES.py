@@ -109,6 +109,13 @@ df = (mapped_df.reset_index(drop=True)
 
 df = df.query('FlowName != "Water"') # Drop water emissions, all values are 0.
 
+# Split gross Atmospheric CO2 into FEDEFL fossil vs biogenic by fuel fossilFraction
+from co2_split import split_co2_by_fossil_fraction
+df = split_co2_by_fossil_fraction(
+    df,
+    data_path / 'MOVES_fuel_fossil_fraction.csv',
+    data_path / 'MOVES_fedefl_flow_mapping.csv')
+
 #%% Update the reference_flow_var for each process
 def remove_parentheses_substring(text):
     # Remove the substring within parentheses

@@ -117,6 +117,13 @@ df = (mapped_df.reset_index(drop=True)
                        'Unit': 'unit'})
       )
 
+# Split gross Atmospheric CO2 into FEDEFL fossil vs biogenic by fuel fossilFraction
+from co2_split import split_co2_by_fossil_fraction
+df = split_co2_by_fossil_fraction(
+    df,
+    data_path / 'MOVES_fuel_fossil_fraction.csv',
+    data_path / 'MOVES_nonroad_fedefl_flow_mapping.csv')
+
 #%% Update the reference_flow_var for each process
 temp_df = (df[['yearid', 'fuel', 'scc', 'equipment', 'sector', 'region']]
            .drop_duplicates()

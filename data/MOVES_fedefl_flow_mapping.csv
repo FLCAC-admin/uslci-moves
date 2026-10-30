@@ -6,6 +6,7 @@ MOVES,Aluminum,,air,kg,=,1,Aluminum,314e4cef-5385-3262-bdb6-a756c7817579,emissio
 MOVES,Ammonia (NH3),,air,kg,=,1,Ammonia,65b5d5dd-95b5-36b2-8cb0-7c5501ff1e32,emission/air,kg,Young,,11/12/2024
 MOVES,Ammonium (NH4),,air,kg,=,1,Ammonium,24248309-5f3a-3134-9227-e9084be9102d,emission/air,kg,Young,,11/12/2024
 MOVES,Atmospheric CO2,,air,kg,=,1,Carbon dioxide,b6f010fb-a764-3063-af2d-bcb8309a97b7,emission/air,kg,Young,,11/12/2024
+MOVES,"Atmospheric CO2, biogenic",,air,kg,=,1,"Carbon dioxide, biogenic",ab6fe427-b217-3249-9f99-398bdb85cce0,emission/air,kg,Young,,10/30/2026
 MOVES,Benzene,,air,kg,=,1,Benzene,565c5d1a-1e0e-35f3-82a0-4845c43d3dcf,emission/air,kg,Young,,11/12/2024
 MOVES,CMAQ5.0 Unspeciated (PMOTHR),,air,kg,=,,,,emission/air,kg,,,
 MOVES,CO2 Equivalent,,air,kg,=,,,,emission/air,kg,,,

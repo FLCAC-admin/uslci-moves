@@ -1,0 +1,9 @@
+fuel,fossilFraction,notes,source
+Gasoline,0.94,E10/E15 gasohol as modern US gasoline default,"MOVES4 Fuel Effects / Table 8-2 subtypes 12/15 (pp. 23-25)"
+E85,0.26,Ethanol (E85) blend,"MOVES4 Fuel Effects / Table 8-2 subtype 51 (p. 25)"
+Diesel,0.966,"Onroad diesel national-average B3.4 (2011+): ~3.4% biogenic / ~96.6% fossil. Do not use Table 8-2 BD20 value 0.81.","MOVES4 Fuel Effects section 7.1 / Table 7-1 (pp. 20-21)"
+Nonroad Diesel,1,Assuming not using B5,MOVES4 Fuel Effects / Table 8-2 subtype 23
+Marine Diesel,1,Assuming not using B5,MOVES4 Fuel Effects / Table 8-2 subtype 24
+Compressed Natural Gas (CNG),1,Fully fossil,MOVES4 Fuel Effects / Table 8-2 subtype 30
+CNG,1,Fully fossil,MOVES4 Fuel Effects / Table 8-2 subtype 30
+LPG,1,Fully fossil,MOVES4 Fuel Effects / Table 8-2 subtype 40

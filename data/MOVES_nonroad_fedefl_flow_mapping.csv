@@ -27,6 +27,7 @@ MOVES,Anthracene gas,,air,kg,=,1,Anthracene,5aaca76f-ed8b-3dc6-9cb3-597421c567ac
 MOVES,Anthracene particle,,air,kg,=,1,Anthracene,5aaca76f-ed8b-3dc6-9cb3-597421c567ac,emission/air,kg,Chen,,12/8/2025
 MOVES,Arsenic Compounds,,air,kg,=,1,Arsenic compounds,65d56a65-e766-3e57-8da8-f2accb61e9fc,emission/air,kg,Chen,,12/8/2025
 MOVES,Atmospheric CO2,,air,kg,=,1,Carbon dioxide,b6f010fb-a764-3063-af2d-bcb8309a97b7,emission/air,kg,Chen,,12/8/2025
+MOVES,"Atmospheric CO2, biogenic",,air,kg,=,1,"Carbon dioxide, biogenic",ab6fe427-b217-3249-9f99-398bdb85cce0,emission/air,kg,Chen,,10/30/2026
 MOVES,Benz(a)anthracene gas,,air,kg,=,1,Benz[a]anthracene,248c35a7-7964-3f7b-aff8-9f29e983835e,emission/air,kg,Chen,,12/8/2025
 MOVES,Benz(a)anthracene particle,,air,kg,=,1,Benz[a]anthracene,248c35a7-7964-3f7b-aff8-9f29e983835e,emission/air,kg,Chen,,12/8/2025
 MOVES,Benzene,,air,kg,=,1,Benzene,565c5d1a-1e0e-35f3-82a0-4845c43d3dcf,emission/air,kg,Chen,,12/8/2025

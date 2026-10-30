@@ -135,6 +135,14 @@ data_treatment_description: >
     The distance-weighted payload in US short tons as applied for [VEHICLE_CLASS]s
     is [PAYLOAD] tons.
 
+    MOVES Atmospheric CO2 is gross (total fuel carbon): energy x carbon content x
+    oxidation fraction x 44/12, with no fossil/biogenic adjustment in that equation.
+    After FEDEFL mapping, Atmospheric CO2 is split using fuel fossilFraction shares:
+    Gasoline 0.94 fossil / 0.06 biogenic (Table 8-2 E10/E15); E85 0.26 / 0.74
+    (Table 8-2 subtype 51); onroad Diesel 0.966 / 0.034 from the 2011+
+    national-average B3.4 biodiesel blend in fuel supply §7.1; CNG remains fully
+    fossil.
+
 sampling_description: >
     Emissions and activity data for each state are combined to generate an activity-weighted
     average for each region. No uncertainty was assessed.

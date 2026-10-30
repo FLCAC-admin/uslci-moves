@@ -47,6 +47,13 @@ data_treatment_description: >
     Nonroad emissions by equipment type, fuel type, and age are estimated based on median life at full load, load factors, activity, and age distributions.
     Equipment populations are allocated to the county level using surrogate data.
 
+    MOVES Atmospheric CO2 is gross (total fuel carbon): energy x carbon content x
+    oxidation fraction x 44/12, with no fossil/biogenic adjustment in that equation.
+    After FEDEFL mapping, Atmospheric CO2 is split using fuel fossilFraction shares:
+    Gasoline 0.94 fossil / 0.06 biogenic (Table 8-2 E10/E15); E85 0.26 / 0.74 when
+    present (Table 8-2 subtype 51); Nonroad Diesel and Marine Diesel remain fully
+    fossil (Table 8-2 subtypes 23/24 = 1.0); CNG and LPG remain fully fossil.
+
 sampling_description: >
     Emissions and activity data for each state are combined to generate an activity-weighted
     average for each region. No uncertainty was assessed.
