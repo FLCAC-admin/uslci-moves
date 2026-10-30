@@ -237,6 +237,10 @@ df_olca = (df_olca
            .query('not(FlowUUID.isna())')
            .drop(columns=['bridge'], errors='ignore')
            )
+# np.where above can leave string 'nan' on reference flows
+df_olca['default_provider'] = df_olca['default_provider'].replace(
+    ['nan', 'None', ''], np.nan)
+df_olca.loc[df_olca['reference'] == True, 'default_provider'] = np.nan
 # df_olca.to_csv(parent_path /'moves_processed_output.csv', index=False)
 
 from flcac_utils.generate_processes import build_flow_dict
