@@ -3,7 +3,7 @@
   "@id": "3631420d-233a-3cfe-a093-5a0b09ec9e5e",
   "category": "48-49: Transportation and Warehousing / 4841: General Freight Trucking",
   "defaultAllocationMethod": "PHYSICAL_ALLOCATION",
-  "description": "This dataset represents the movement of goods via a Combination Truck using Gasoline as a fuel source. Emissions and fuel consumption data are calculated using EPA's Motor Vehicle Emission Simulator (MOVES), the regulatory model to determine emission inventories for highway vehicles, including cars, trucks, and buses. The reference flow is the movement of 1 metric ton of goods for a distance of 1 km.\n",
+  "description": "This dataset represents the movement of goods via a Combination Truck using Gasoline as a fuel source. Emissions and fuel consumption data are calculated using EPA's Motor Vehicle Emission Simulator (MOVES), the regulatory model to determine emission inventories for highway vehicles, including cars, trucks, and buses. The reference flow is the movement of 1 metric ton of goods for a distance of 1 km.",
   "dqEntry": "(2;1)",
   "dqSystem": {
     "@type": "DQSystem",
@@ -139,29 +139,6 @@
         "@type": "Flow",
         "@id": "24248309-5f3a-3134-9227-e9084be9102d",
         "name": "Ammonium"
-      },
-      "flowProperty": {
-        "@type": "FlowProperty",
-        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
-        "name": "Mass"
-      },
-      "isAvoidedProduct": false,
-      "isInput": false,
-      "isQuantitativeReference": false,
-      "unit": {
-        "@type": "Unit",
-        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
-        "name": "kg"
-      }
-    },
-    {
-      "amount": 0.06749605184489992,
-      "description": "",
-      "dqEntry": "(3;1;1;1;1)",
-      "flow": {
-        "@type": "Flow",
-        "@id": "b6f010fb-a764-3063-af2d-bcb8309a97b7",
-        "name": "Carbon dioxide"
       },
       "flowProperty": {
         "@type": "FlowProperty",
@@ -764,7 +741,7 @@
         "@type": "Flow",
         "@id": "186fde44-7af8-342e-ba59-8e9dee9b5c45",
         "category": "Technosphere flows/44-45: Retail Trade/4471: Gasoline Stations",
-        "name": "Gasoline, dispensed at pump"
+        "name": "Gasoline; dispensed at pump"
       },
       "flowProperty": {
         "@type": "FlowProperty",
@@ -788,6 +765,52 @@
         "@type": "Flow",
         "@id": "6f861846-1c4c-3fc9-a198-56b2d9abd83b",
         "name": "Volatile organic compounds"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.06344628873420592,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "b6f010fb-a764-3063-af2d-bcb8309a97b7",
+        "name": "Carbon dioxide"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isAvoidedProduct": false,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.004049763110693999,
+      "description": "",
+      "dqEntry": "(3;1;1;1;1)",
+      "flow": {
+        "@type": "Flow",
+        "@id": "ab6fe427-b217-3249-9f99-398bdb85cce0",
+        "name": "Carbon dioxide, biogenic"
       },
       "flowProperty": {
         "@type": "FlowProperty",
@@ -828,12 +851,12 @@
       }
     }
   ],
-  "lastChange": "2025-12-04T12:00:00Z",
+  "lastChange": "2026-10-31T12:00:00Z",
   "name": "Transport, combination truck, gasoline powered, Southwest",
   "processDocumentation": {
-    "completenessDescription": "Included in the inventory are emissions from operations (i.e., tailpipe exhaust) as well as idling and truck hotelling (both extended engine idling and auxiliary power unit use). Particulate matter from brake and tire wear is also included. Evaporative emissions while the vehicle is soaking (engine off) are not included. Manufacturing of vehicles, roads, and other infrastructure are not included in this dataset.\n",
-    "creationDate": "2025-12-04T12:00:00",
-    "dataCollectionDescription": "MOVES runs were performed using MOVES4.0.1 in 2024.\n",
+    "completenessDescription": "Included in the inventory are emissions from operations (i.e., tailpipe exhaust) as well as idling and truck hotelling (both extended engine idling and auxiliary power unit use). Particulate matter from brake and tire wear is also included. Evaporative emissions while the vehicle is soaking (engine off) are not included. Manufacturing of vehicles, roads, and other infrastructure are not included in this dataset.",
+    "creationDate": "2026-10-30T12:00:00",
+    "dataCollectionDescription": "MOVES runs were performed using MOVES4.0.1 in 2024.",
     "dataDocumentor": {
       "@type": "Actor",
       "@id": "38e67478-a915-43d9-ad67-e25db79a4acc",
@@ -846,18 +869,18 @@
       "category": "Organisations",
       "name": "ERG"
     },
-    "dataSelectionDescription": "MOVES runs were performed at the default settings at the state level.\n",
-    "dataTreatmentDescription": "MOVES combines in-use emission rates and detailed fleet populations and activity, frequently in the form of vehicle miles or kilometers traveled, to calculate inventories.\nAverage payload estimates are required to calculate LCI data per unit of good transported. The average payloads by MOVES source type were estimated from the 2002 Vehicle Inventory and Use Survey conducted by the US Census Bureau and 2012 and 2017 Freight Analysis Framework (FAF) statistics collected by the Federal Highway Administration.\nThe mean of the average reported payloads across 2002, 2012, and 2017 are used.  The distance-weighted payload in US short tons as applied for combination trucks is 16.18 tons.\n",
-    "geographyDescription": "This process represents emissions from vehicles operating in the following U.S. states: AZ, CO, NM, UT.\n",
-    "inventoryMethodDescription": "Not applicable.\n",
-    "modelingConstantsDescription": "Not applicable.\n",
-    "projectDescription": "This dataset was developed by the Federal LCA Commons Data Curator Eastern Research Group, Inc. (ERG) under subcontract (SUB-2024-10066) to the National Renewable Energy Laboratory under Department of Energy (DOE) Prime Contract No. DE-AC36-08GO28308. The work is funded by DOE's Advanced Materials & Manufacturing Technologies Office (AMMTO).\n",
+    "dataSelectionDescription": "MOVES runs were performed at the default settings at the state level.",
+    "dataTreatmentDescription": "MOVES combines in-use emission rates and detailed fleet populations and activity, frequently in the form of vehicle miles or kilometers traveled, to calculate inventories.\nAverage payload estimates are required to calculate LCI data per unit of good transported. The average payloads by MOVES source type were estimated from the 2002 Vehicle Inventory and Use Survey conducted by the US Census Bureau and 2012 and 2017 Freight Analysis Framework (FAF) statistics collected by the Federal Highway Administration.\nThe mean of the average reported payloads across 2002, 2012, and 2017 are used.  The distance-weighted payload in US short tons as applied for combination trucks is 16.18 tons.\nMOVES Atmospheric CO2 is gross (total fuel carbon): energy x carbon content x oxidation fraction x 44/12, with no fossil/biogenic adjustment in that equation. After FEDEFL mapping, Atmospheric CO2 is split using fuel fossilFraction shares: Gasoline 0.94 fossil / 0.06 biogenic (Table 8-2 E10/E15); E85 0.26 / 0.74 (Table 8-2 subtype 51); onroad Diesel 0.966 / 0.034 from the 2011+ national-average B3.4 biodiesel blend in fuel supply \u00c2\u00a77.1; CNG remains fully fossil.",
+    "geographyDescription": "This process represents emissions from vehicles operating in the following U.S. states: AZ, CO, NM, UT.",
+    "inventoryMethodDescription": "Not applicable.",
+    "modelingConstantsDescription": "Not applicable.",
+    "projectDescription": "This dataset was developed by the Federal LCA Commons Data Curator Eastern Research Group, Inc. (ERG) under subcontract (SUB-2024-10066) to the National Renewable Energy Laboratory under Department of Energy (DOE) Prime Contract No. DE-AC36-08GO28308. The work is funded by DOE's Advanced Materials & Manufacturing Technologies Office (AMMTO).",
     "publication": {
       "@type": "Source",
       "@id": "6ead8c12-dfd7-317a-b3a8-b8dabd81e973",
       "name": "ERG (2025) MOVES onroad v1.0"
     },
-    "restrictionsDescription": "These U.S. LCI Database Project data (\"Data\") are provided by the National Renewable Energy Laboratory (\"NREL\"), operated by the Alliance for Sustainable Energy, LLC (\"Alliance\") for the US Department of Energy (\"DOE\") under Contract No. DE-AC36-08GO28308. The United States Government (the \"Government\") retains and the user acknowledges that the Government retains a non-exclusive, paid-up, irrevocable, worldwide license to publish or reproduce the published form of these data, or allow others to do so, for Government purposes.\nAccess to and use of these Data shall impose the following obligations on the user, as set forth in this Agreement. The user is granted the right, without any fee or cost, to use, copy, modify, alter, enhance and distribute these Data for any purpose whatsoever, provided that this entire notice appears in all copies of the Data. Any modification, alteration or enhancement of these data shall be identified and documented by the user. Further, the user agrees to credit the DOE/NREL/Alliance in any publication that results from the use of these Data. The names DOE/NREL/Alliance, however, may not be used in any advertising or publicity to endorse or promote any products or commercial entities unless specific written permission is obtained from DOE/NREL/Alliance. The user also understands that DOE/NREL/Alliance is not obligated to provide the user with any support, consulting, training or assistance of any kind with regard to the use of these Data or to provide the user with any updates, revisions or new versions of these Data.\nYOU AGREE TO INDEMNIFY THE GOVERNMENT AND DOE/NREL/ALLIANCE, AND ITS SUBSIDIARIES, AFFILIATES, OFFICERS, AGENTS, AND EMPLOYEES AGAINST ANY CLAIM OR DEMAND, INCLUDING REASONABLE ATTORNEYS' FEES, RELATED TO YOUR USE OF THESE DATA. THESE DATA ARE PROVIDED BY DOE/NREL/ALLIANCE \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE GOVERNMENT OR DOE/NREL/ALLIANCE BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER, INCLUDING BUT NOT LIMITED TO CLAIMS ASSOCIATED WITH THE LOSS OF DATA OR PROFITS, WHICH MAY RESULT FROM AN ACTION IN CONTRACT, NEGLIGENCE OR OTHER TORTIOUS CLAIM THAT ARISES OUT OF OR IN CONNECTION WITH THE ACCESS, USE OR PERFORMANCE OF THESE DATA.\n",
+    "restrictionsDescription": "These U.S. LCI Database Project data (\"Data\") are provided by the National Renewable Energy Laboratory (\"NREL\"), operated by the Alliance for Sustainable Energy, LLC (\"Alliance\") for the US Department of Energy (\"DOE\") under Contract No. DE-AC36-08GO28308. The United States Government (the \"Government\") retains and the user acknowledges that the Government retains a non-exclusive, paid-up, irrevocable, worldwide license to publish or reproduce the published form of these data, or allow others to do so, for Government purposes.\nAccess to and use of these Data shall impose the following obligations on the user, as set forth in this Agreement. The user is granted the right, without any fee or cost, to use, copy, modify, alter, enhance and distribute these Data for any purpose whatsoever, provided that this entire notice appears in all copies of the Data. Any modification, alteration or enhancement of these data shall be identified and documented by the user. Further, the user agrees to credit the DOE/NREL/Alliance in any publication that results from the use of these Data. The names DOE/NREL/Alliance, however, may not be used in any advertising or publicity to endorse or promote any products or commercial entities unless specific written permission is obtained from DOE/NREL/Alliance. The user also understands that DOE/NREL/Alliance is not obligated to provide the user with any support, consulting, training or assistance of any kind with regard to the use of these Data or to provide the user with any updates, revisions or new versions of these Data.\nYOU AGREE TO INDEMNIFY THE GOVERNMENT AND DOE/NREL/ALLIANCE, AND ITS SUBSIDIARIES, AFFILIATES, OFFICERS, AGENTS, AND EMPLOYEES AGAINST ANY CLAIM OR DEMAND, INCLUDING REASONABLE ATTORNEYS' FEES, RELATED TO YOUR USE OF THESE DATA. THESE DATA ARE PROVIDED BY DOE/NREL/ALLIANCE \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE GOVERNMENT OR DOE/NREL/ALLIANCE BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER, INCLUDING BUT NOT LIMITED TO CLAIMS ASSOCIATED WITH THE LOSS OF DATA OR PROFITS, WHICH MAY RESULT FROM AN ACTION IN CONTRACT, NEGLIGENCE OR OTHER TORTIOUS CLAIM THAT ARISES OUT OF OR IN CONNECTION WITH THE ACCESS, USE OR PERFORMANCE OF THESE DATA.",
     "reviews": [
       {
         "details": "Review provided by NREL third-party; documentation and response documented in attached source.\n",
@@ -869,7 +892,7 @@
         "reviewType": "Independent external review"
       }
     ],
-    "samplingDescription": "Emissions and activity data for each state are combined to generate an activity-weighted average for each region. No uncertainty was assessed.\n",
+    "samplingDescription": "Emissions and activity data for each state are combined to generate an activity-weighted average for each region. No uncertainty was assessed.",
     "sources": [
       {
         "@type": "Source",
@@ -882,9 +905,9 @@
         "name": "FHWA (2020) Freight Analysis Framework"
       }
     ],
-    "technologyDescription": "Combination trucks in MOVES include two source types, short-haul and long-haul combination trucks. These are heavy-duty trucks that are not single-frame. Instead, they consist of a tractor and one or more trailers. Combination trucks are categorized in the medium heavy-duty (Class 6 and 7) regulatory class or the heavy heavy-duty (Class 8) regulatory class.\n\n",
-    "timeDescription": "This process reflects the vehicle fleet as estimated in 2024. MOVES calculates an age distribution by vehicle type, where age is defined as the difference between a vehicle's model year and the year of analysis. MOVES employs a number of different age dependent factors, including deterioration of engine and emission after-treatment technology due to tampering and mal-maintenance, vehicle scrappage and fleet turnover and mileage accumulation over the lifetime of the vehicle.\n",
-    "useAdvice": "This process is intended to connect to fuel supply processes in the USLCI or electricity from the U.S. Electricity Baseline.\n",
+    "technologyDescription": "Combination trucks in MOVES include two source types, short-haul and long-haul combination trucks. These are heavy-duty trucks that are not single-frame. Instead, they consist of a tractor and one or more trailers. Combination trucks are categorized in the medium heavy-duty (Class 6 and 7) regulatory class or the heavy heavy-duty (Class 8) regulatory class.",
+    "timeDescription": "This process reflects the vehicle fleet as estimated in 2024. MOVES calculates an age distribution by vehicle type, where age is defined as the difference between a vehicle's model year and the year of analysis. MOVES employs a number of different age dependent factors, including deterioration of engine and emission after-treatment technology due to tampering and mal-maintenance, vehicle scrappage and fleet turnover and mileage accumulation over the lifetime of the vehicle.",
+    "useAdvice": "This process is intended to connect to fuel supply processes in the USLCI or electricity from the U.S. Electricity Baseline.",
     "validFrom": "2024-01-01T00:00:00",
     "validUntil": "2024-12-31T00:00:00"
   },

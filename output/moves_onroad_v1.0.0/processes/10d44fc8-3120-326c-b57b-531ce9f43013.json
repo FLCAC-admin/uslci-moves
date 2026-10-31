@@ -3,7 +3,7 @@
   "@id": "10d44fc8-3120-326c-b57b-531ce9f43013",
   "category": "Proxy Processes",
   "defaultAllocationMethod": "PHYSICAL_ALLOCATION",
-  "description": "This process links an input in a USLCI process to a provider from the [REPO] repository on the Federal LCA Commons. The intended provider for this process is \"[PROVIDER]\". Conversion to mass are based on XXXXXX.\n",
+  "description": "This process links an input in a USLCI process to a provider from the [REPO] repository on the Federal LCA Commons. The intended provider for this process is \"[PROVIDER]\". Conversion to mass are based on XXXXXX.",
   "exchanges": [
     {
       "amount": 1.0,
@@ -35,7 +35,7 @@
         "@type": "Flow",
         "@id": "e3ba395e-fd2f-3668-aee1-311195c02835",
         "category": "Technosphere flows/44-45: Retail Trade/4471: Gasoline Stations",
-        "name": "Ethanol, 85%, blended, at service station"
+        "name": "Ethanol; 85%, blended; at service station"
       },
       "flowProperty": {
         "@type": "FlowProperty",
@@ -52,10 +52,10 @@
       }
     }
   ],
-  "lastChange": "2025-12-04T12:00:00Z",
+  "lastChange": "2026-10-31T12:00:00Z",
   "name": "Ethanol, 85%, disepensed, at pump - PROXY",
   "processDocumentation": {
-    "creationDate": "2025-12-04T12:00:00"
+    "creationDate": "2026-10-30T12:00:00"
   },
   "processType": "UNIT_PROCESS",
   "version": "01.00.000"

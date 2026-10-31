@@ -1,0 +1,24 @@
+{
+  "@type": "Flow",
+  "@id": "ab6fe427-b217-3249-9f99-398bdb85cce0",
+  "cas": "124-38-9",
+  "category": "Elementary flows/emission/air",
+  "description": "From Federal Elementary Flow List v1.4.0, written by fedelemflowlist v1.4.0. Flow Class: Chemicals. Not a preferred flow.",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "ELEMENTARY_FLOW",
+  "formula": "CO2",
+  "lastChange": "2026-10-30T21:34:30.448692",
+  "name": "Carbon dioxide, biogenic",
+  "synonyms": "Carbon dioxide, non-fossil",
+  "version": "1.4.0"
+}
