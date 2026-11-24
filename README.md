@@ -8,13 +8,16 @@ Requires [flcac-utils](https://github.com/FLCAC-admin/flcac-utils).
 
 > pip install git+https://github.com/FLCAC-admin/flcac-utils.git
 
-Run [process_MOVES.py](processing_MOVES.py)
+Run [processing_MOVES.py](processing_MOVES.py)
 
 Run [processing_nonroad_MOVES.py](processing_nonroad_MOVES.py)
 
+Run [processing_vehicle_infra.py](processing_vehicle_infra.py)
+
 ## Datasets
 
-| Datasts            | Version | flcac-utils | Release        |
-|--------------------|---------|-------------|----------------|
-| Non-road equipment | v1.1    | v0.4.0      | 2026 Q3, USLCI |
-| On-road Trucking   | v1.0.0  | v0.1.0      | 2025 Q1, USLCI |
+| Datasets               | Version | flcac-utils | Release        |
+|------------------------|---------|-------------|----------------|
+| Non-road equipment     | v1.1    | v0.4.0      | 2026 Q3, USLCI |
+| On-road Trucking       | v1.0.0  | v0.1.0      | 2025 Q1, USLCI |
+| Vehicle infrastructure | v1.0    |             | draft          |

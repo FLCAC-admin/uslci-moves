@@ -1,0 +1,120 @@
+# Vehicle infrastructure (GREET MHDV vehicle-cycle materials) - Phase A inputs
+# Dataset version: v1
+# Functional unit: 1 vehicle (absolute material inventory; lb -> kg in processing)
+
+Version: v1
+Year: 2021  # GREET MHDV vehicle-cycle report year
+
+# openLCA / FLCAC categorization (4-digit NAICS). Revisit before Commons publish.
+ProcessCategory: '31-33: Manufacturing / 3361: Motor Vehicle Manufacturing'
+FlowContext: 'Technosphere Flows / 31-33: Manufacturing / 3361: Motor Vehicle Manufacturing'
+ProductUnit: Item(s)
+
+# Naming: ILCD pattern; no acronyms in process or product-flow names.
+# Pattern: Base name; class, powertrain, vehicle materials
+# Product reference flow name == process name (no temporal/geographic qualifiers).
+NamePattern: 'Heavy-duty truck; {class_label}, {powertrain_label}, vehicle materials'
+
+# Class keys match GREET / inventory `vehicle_class` labels (human-readable).
+# lifetime_vmt_mi / gvwr_lbs feed process metadata only; Phase B amortization uses
+# MOVES payload x lifetime_km, not GVWR-based ton/tkm.
+vehicle_classes:
+  Class 6 pickup and delivery:
+    fhwa_class: Class 6
+    source_classtype: Class 6 PnD truck
+    lifetime_vmt_mi: 300000
+    gvwr_lbs: 22750.5
+  Class 8 day cab:
+    fhwa_class: Class 8
+    source_classtype: Class 8 day-cab truck
+    lifetime_vmt_mi: 1000000
+    gvwr_lbs: 46500.5
+  Class 8 sleeper cab:
+    fhwa_class: Class 8
+    source_classtype: Class 8 sleeper-cab truck
+    lifetime_vmt_mi: 1000000
+    gvwr_lbs: 46500.5
+
+# Used to fill [LIFETIME_KM] in process metadata from lifetime_vmt_mi
+MI_TO_KM: 1.609344
+
+# New product flows for materials with no USLCI target (no default provider)
+CUTOFF_CONTEXT: 'Technosphere flows / CUTOFF Flows'
+
+# Powertrain CSV columns -> labels (no acronyms in process/product names)
+powertrains:
+  ICEV:
+    label: internal combustion engine
+  EV:
+    label: battery electric
+  HEV:
+    label: hybrid electric
+  FCV:
+    label: fuel cell
+
+# Phase B fuel -> infra powertrain (combustion fuels -> ICEV column; electricity -> EV)
+fuel_to_powertrain:
+  diesel: ICEV
+  gasoline: ICEV
+  compressed natural gas: ICEV
+  cng: ICEV
+  electricity: EV
+
+# Mass unit conversion applied in processing (inventory stays in source lb)
+LB_TO_KG: 0.45359237
+
+# Drop exchanges where the selected powertrain amount is zero
+drop_zero_amount_rows: true
+
+# Draft Flow DQI for vehicle-infra technosphere exchanges (review before Commons).
+# Same pedigree path as onroad (format_dqi_score / exchange_dqi).
+DQI:
+  dqSystem:
+    Process:
+      Federal LCA Commons Core Database: 'US EPA - Process Pedigree Matrix'
+    Flow:
+      Federal LCA Commons Core Database: 'US EPA - Flow Pedigree Matrix'
+
+  Process:
+    Process review:
+      score: 3
+      description: >
+        Process constructed from published GREET MHDV vehicle-cycle component
+        tables and USLCI material proxies; internally reviewed for this build,
+        not yet externally reviewed as a vehicle-materials dataset.
+    Process completeness:
+      score: 3
+      description: >
+        Vehicle material (component BoM) inventories only. Traction and
+        lead-acid batteries, fluids, tire and other lifetime replacements,
+        forming, assembly, paint, and end-of-life are excluded in v1.
+
+  Flow:
+    Flow reliability:
+      score: 3
+      description: >
+        Secondary literature and GREET component composition tables with
+        name-based USLCI material proxies; weaker than measured in-use
+        emission factors.
+    Temporal correlation:
+      score: 3
+      description: >
+        GREET MHDV vehicle-cycle material data circa 2021; may not match the
+        MOVES activity year used in linked transport processes.
+    Geographical correlation:
+      score: 2
+      description: >
+        US-average vehicle bill of materials applied nationally and regionally.
+    Technological correlation:
+      score: 4
+      description: >
+        Material production proxies (including weak proxies such as wood fuel
+        for structural wood or cotton paper), Class-to-haul bridging for Phase B,
+        and missing batteries, fluids, and tires.
+    Data collection:
+      score: 3
+      description: >
+        Secondary data and PDF table transcription / reconstruction; not direct
+        vehicle tear-down measurements. Some composite and each-of rows use
+        equal-split assumptions.
+

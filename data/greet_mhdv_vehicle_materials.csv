@@ -1,0 +1,295 @@
+vehicle_class,component,material,unit,ICEV,HEV,EV,FCV
+Class 6 pickup and delivery,Body and Glass,glass fiber-reinforced plastic,lbs,424.46,424.46,424.46,424.46
+Class 6 pickup and delivery,Body and Glass,steel,lbs,245.74,245.74,245.74,245.74
+Class 6 pickup and delivery,Body and Glass,glass,lbs,223.4,223.4,223.4,223.4
+Class 6 pickup and delivery,Body and Glass,wrought aluminum,lbs,178.72,178.72,178.72,178.72
+Class 6 pickup and delivery,Body and Glass,plastic (average),lbs,44.68,44.68,44.68,44.68
+Class 6 pickup and delivery,Interior,steel,lbs,611.22,611.22,611.22,611.22
+Class 6 pickup and delivery,Interior,plastic (average),lbs,210.42,210.42,210.42,210.42
+Class 6 pickup and delivery,Interior,cast aluminum,lbs,80.16,80.16,80.16,80.16
+Class 6 pickup and delivery,Interior,rubber,lbs,50.1,50.1,50.1,50.1
+Class 6 pickup and delivery,Interior,leather,lbs,30.06,30.06,30.06,30.06
+Class 6 pickup and delivery,Interior,wrought aluminum,lbs,10.02,10.02,10.02,10.02
+Class 6 pickup and delivery,Interior,"others (copper/brass, damask, latex, and cotton paper)",lbs,10.02,10.02,10.02,10.02
+Class 6 pickup and delivery,Exterior and Auxiliary,plastic,lbs,109.44,109.44,109.44,109.44
+Class 6 pickup and delivery,Exterior and Auxiliary,steel,lbs,86.4,86.4,86.4,86.4
+Class 6 pickup and delivery,Exterior and Auxiliary,rubber,lbs,28.8,28.8,28.8,28.8
+Class 6 pickup and delivery,Exterior and Auxiliary,cast aluminum,lbs,25.92,25.92,25.92,25.92
+Class 6 pickup and delivery,Exterior and Auxiliary,glass,lbs,23.04,23.04,23.04,23.04
+Class 6 pickup and delivery,Exterior and Auxiliary,copper/brass,lbs,14.4,14.4,14.4,14.4
+Class 6 pickup and delivery,Exterior and Auxiliary,wrought aluminum,lbs,0.0,0.0,0.0,0.0
+Class 6 pickup and delivery,Tires,rubber,lbs,340.17,340.17,340.17,340.17
+Class 6 pickup and delivery,Tires,steel,lbs,168.3,168.3,168.3,168.3
+Class 6 pickup and delivery,Wheels,aluminum,lbs,510.0,510.0,510.0,510.0
+Class 6 pickup and delivery,Steer Axle (includes brakes),steel,lbs,462.99,462.99,462.99,462.99
+Class 6 pickup and delivery,Steer Axle (includes brakes),cast iron,lbs,296.01,296.01,296.01,296.01
+Class 6 pickup and delivery,Steer Axle (includes brakes),"others (cast and wrought aluminum, rubber, plastic, brass, copper, and magnet)",lbs,0.0,0.0,0.0,0.0
+Class 6 pickup and delivery,Drive Axle (includes brakes and differential assembly),steel,lbs,728.08,728.08,728.08,728.08
+Class 6 pickup and delivery,Drive Axle (includes brakes and differential assembly),cast iron,lbs,220.34,220.34,220.34,220.34
+Class 6 pickup and delivery,Drive Axle (includes brakes and differential assembly),"others (cast aluminum, rubber, plastic, brass, and magnet)",lbs,9.58,9.58,9.58,9.58
+Class 6 pickup and delivery,Suspensions (steer and drive axles),steel,lbs,1004.64,1004.64,1004.64,1004.64
+Class 6 pickup and delivery,Suspensions (steer and drive axles),cast iron,lbs,33.12,33.12,33.12,33.12
+Class 6 pickup and delivery,Suspensions (steer and drive axles),rubber,lbs,66.24,66.24,66.24,66.24
+Class 6 pickup and delivery,Suspensions (steer and drive axles),plastic,lbs,0.0,0.0,0.0,0.0
+Class 6 pickup and delivery,"Shafts (driveshaft, axle, and inter-axle shaft)",steel,lbs,107.35,107.35,107.35,107.35
+Class 6 pickup and delivery,"Shafts (driveshaft, axle, and inter-axle shaft)",cast iron,lbs,5.65,5.65,5.65,5.65
+Class 6 pickup and delivery,"Shafts (driveshaft, axle, and inter-axle shaft)","others (rubber, plastic, and grease)",lbs,0.0,0.0,0.0,0.0
+Class 6 pickup and delivery,"Cradle (frame rails, cross-members), Fifth-wheel, and Auxiliary",steel,lbs,2207.0,2207.0,2207.0,2207.0
+Class 6 pickup and delivery,Engine Unit,cast iron,lbs,525.76,474.35,0.0,0.0
+Class 6 pickup and delivery,Engine Unit,steel,lbs,367.04,331.15,0.0,0.0
+Class 6 pickup and delivery,Engine Unit,cast aluminum,lbs,59.52,53.7,0.0,0.0
+Class 6 pickup and delivery,Engine Unit,wrought aluminum,lbs,19.84,17.9,0.0,0.0
+Class 6 pickup and delivery,Engine Unit,plastic,lbs,9.92,8.95,0.0,0.0
+Class 6 pickup and delivery,Engine Unit,"others (stainless steel, rubber, nichrome, and others)",lbs,9.92,8.95,0.0,0.0
+Class 6 pickup and delivery,Fuel-cell Stack,stainless steel,lbs,0.0,0.0,0.0,223.2
+Class 6 pickup and delivery,Fuel-cell Stack,PP,lbs,0.0,0.0,0.0,66.96
+Class 6 pickup and delivery,Fuel-cell Stack,steel,lbs,0.0,0.0,0.0,61.38
+Class 6 pickup and delivery,Fuel-cell Stack,wrought aluminum,lbs,0.0,0.0,0.0,44.64
+Class 6 pickup and delivery,Fuel-cell Stack,cast aluminum,lbs,0.0,0.0,0.0,39.06
+Class 6 pickup and delivery,Fuel-cell Stack,average plastic,lbs,0.0,0.0,0.0,22.32
+Class 6 pickup and delivery,Fuel-cell Stack,"each of glass fiber-reinforced plastic, rubber, polyethylene terephthalate (PET), and copper/brass",lbs,0.0,0.0,0.0,16.74
+Class 6 pickup and delivery,Fuel-cell Stack,plastic [polyphenylene sulfide (PPS) and other plastics],lbs,0.0,0.0,0.0,11.16
+Class 6 pickup and delivery,Fuel-cell Stack,carbon,lbs,0.0,0.0,0.0,8.37
+Class 6 pickup and delivery,Fuel-cell Stack,each of carbon paper and perfluoro sulfonic acid (PFSA),lbs,0.0,0.0,0.0,5.58
+Class 6 pickup and delivery,Fuel-cell Stack,"others [polytetrafluoroethylene (PTFE), nickel, iron, nylon, chromium, platinum, high-density polyethylene (HDPE), molybdenum, glass, ceramic, niobium, titanium, cast iron, bronze, graphite, fiberglass, nichrome, PFSA Nafion, and others]",lbs,0.0,0.0,0.0,0.0
+Class 6 pickup and delivery,Engine Fuel Storage + Exhaust Systems,wrought aluminum,lbs,141.9,141.9,0.0,0.0
+Class 6 pickup and delivery,Engine Fuel Storage + Exhaust Systems,ceramic,lbs,103.2,103.2,0.0,0.0
+Class 6 pickup and delivery,Engine Fuel Storage + Exhaust Systems,plastic (average),lbs,81.7,81.7,0.0,0.0
+Class 6 pickup and delivery,Engine Fuel Storage + Exhaust Systems,stainless steel,lbs,60.2,60.2,0.0,0.0
+Class 6 pickup and delivery,Engine Fuel Storage + Exhaust Systems,steel,lbs,43.0,43.0,0.0,0.0
+Class 6 pickup and delivery,Engine Fuel Storage + Exhaust Systems,others (rubber and platinum),lbs,0.0,0.0,0.0,0.0
+Class 6 pickup and delivery,Clutch,steel,lbs,37.95,37.95,0.0,0.0
+Class 6 pickup and delivery,Clutch,cast iron,lbs,13.2,13.2,0.0,0.0
+Class 6 pickup and delivery,Clutch,cast aluminum,lbs,3.3,3.3,0.0,0.0
+Class 6 pickup and delivery,Clutch,"others (wrought aluminum, rubber, plastic, copper, brass, magnet, and grease)",lbs,0.55,0.55,0.0,0.0
+Class 6 pickup and delivery,Gearbox,steel,lbs,252.54,251.16,106.26,106.26
+Class 6 pickup and delivery,Gearbox,cast iron,lbs,87.84,87.36,36.96,36.96
+Class 6 pickup and delivery,Gearbox,cast aluminum,lbs,21.96,21.84,9.24,9.24
+Class 6 pickup and delivery,Gearbox,"others (wrought aluminum, rubber, plastic, copper, brass, magnet, and grease)",lbs,3.66,3.64,1.54,1.54
+Class 6 pickup and delivery,Final Drive and Coupling,steel,lbs,45.54,45.54,30.36,37.95
+Class 6 pickup and delivery,Final Drive and Coupling,cast iron,lbs,15.84,15.84,10.56,13.2
+Class 6 pickup and delivery,Final Drive and Coupling,cast aluminum,lbs,3.96,3.96,2.64,3.3
+Class 6 pickup and delivery,Final Drive and Coupling,"others (wrought aluminum, rubber, plastic, copper, brass, magnet, and grease)",lbs,0.66,0.66,0.44,0.55
+Class 6 pickup and delivery,Traction Motor,steel,lbs,0.0,37.8,106.2,106.2
+Class 6 pickup and delivery,Traction Motor,cast aluminum,lbs,0.0,37.8,106.2,106.2
+Class 6 pickup and delivery,Traction Motor,copper and brass,lbs,0.0,29.4,82.6,82.6
+Class 6 pickup and delivery,Electronic Controller,steel,lbs,0.0,0.5,1.45,1.45
+Class 6 pickup and delivery,Electronic Controller,cast aluminum,lbs,0.0,4.7,13.63,13.63
+Class 6 pickup and delivery,Electronic Controller,copper and brass,lbs,0.0,0.8,2.32,2.32
+Class 6 pickup and delivery,Electronic Controller,rubber,lbs,0.0,0.4,1.16,1.16
+Class 6 pickup and delivery,Electronic Controller,average plastic,lbs,0.0,2.4,6.96,6.96
+Class 6 pickup and delivery,Electronic Controller,others,lbs,0.0,1.2,3.48,3.48
+Class 6 pickup and delivery,Fuel-cell Onboard Storage,carbon fiber-reinforced composite,lbs,0.0,0.0,0.0,356.97
+Class 6 pickup and delivery,Fuel-cell Onboard Storage,stainless steel,lbs,0.0,0.0,0.0,63.57
+Class 6 pickup and delivery,Fuel-cell Onboard Storage,wrought aluminum,lbs,0.0,0.0,0.0,29.34
+Class 6 pickup and delivery,Fuel-cell Onboard Storage,each of HDPE and steel,lbs,0.0,0.0,0.0,14.67
+Class 6 pickup and delivery,Fuel-cell Onboard Storage,PP,lbs,0.0,0.0,0.0,9.78
+Class 6 pickup and delivery,Fuel-cell Onboard Storage,others,lbs,0.0,0.0,0.0,0.0
+Class 6 pickup and delivery,Van-box,wrought aluminum,lbs,2195.12,2195.12,2195.12,2195.12
+Class 6 pickup and delivery,Van-box,wood,lbs,1956.52,1956.52,1956.52,1956.52
+Class 6 pickup and delivery,Van-box,steel,lbs,524.92,524.92,524.92,524.92
+Class 6 pickup and delivery,Van-box,rubber,lbs,47.72,47.72,47.72,47.72
+Class 6 pickup and delivery,Van-box,"others (cast aluminum, stainless steel, plastic, copper, brass)",lbs,47.72,47.72,47.72,47.72
+Class 6 pickup and delivery,Lift-gates,steel,lbs,1325.0,1325.0,1325.0,1325.0
+Class 8 day cab,Body and Glass,glass fiber-reinforced plastic,lbs,478.04,478.04,478.04,478.04
+Class 8 day cab,Body and Glass,wrought aluminum,lbs,314.5,314.5,314.5,314.5
+Class 8 day cab,Body and Glass,glass,lbs,239.02,239.02,239.02,239.02
+Class 8 day cab,Body and Glass,steel,lbs,188.7,188.7,188.7,188.7
+Class 8 day cab,Body and Glass,plastic (average),lbs,50.32,50.32,50.32,50.32
+Class 8 day cab,Interior,steel,lbs,742.98,742.98,742.98,742.98
+Class 8 day cab,Interior,plastic (average),lbs,422.73,422.73,422.73,422.73
+Class 8 day cab,Interior,cast aluminum,lbs,64.05,64.05,64.05,64.05
+Class 8 day cab,Interior,rubber,lbs,38.43,38.43,38.43,38.43
+Class 8 day cab,Interior,wrought aluminum,lbs,12.81,12.81,12.81,12.81
+Class 8 day cab,Interior,"others (copper/brass, damask, latex, cotton paper, and leather)",lbs,0.0,0.0,0.0,0.0
+Class 8 day cab,Exterior and Auxiliary,plastic,lbs,74.9,74.9,74.9,74.9
+Class 8 day cab,Exterior and Auxiliary,steel,lbs,72.76,72.76,72.76,72.76
+Class 8 day cab,Exterior and Auxiliary,rubber,lbs,25.68,25.68,25.68,25.68
+Class 8 day cab,Exterior and Auxiliary,glass,lbs,14.98,14.98,14.98,14.98
+Class 8 day cab,Exterior and Auxiliary,cast aluminum,lbs,12.84,12.84,12.84,12.84
+Class 8 day cab,Exterior and Auxiliary,copper/brass,lbs,12.84,12.84,12.84,12.84
+Class 8 day cab,Exterior and Auxiliary,wrought aluminum,lbs,0.0,0.0,0.0,0.0
+Class 8 day cab,Steer Axle (includes brakes),steel,lbs,470.58,470.58,470.58,470.58
+Class 8 day cab,Steer Axle (includes brakes),cast iron,lbs,280.83,280.83,280.83,280.83
+Class 8 day cab,Steer Axle (includes brakes),"others (cast and wrought aluminum, rubber, plastic, brass, copper, and magnet)",lbs,7.59,7.59,7.59,7.59
+Class 8 day cab,Drive Axle (includes brakes and differential assembly),steel,lbs,785.56,785.56,785.56,785.56
+Class 8 day cab,Drive Axle (includes brakes and differential assembly),cast iron,lbs,162.86,162.86,162.86,162.86
+Class 8 day cab,Drive Axle (includes brakes and differential assembly),"others (cast aluminum, rubber, plastic, brass, and magnet)",lbs,9.58,9.58,9.58,9.58
+Class 8 day cab,Suspensions (steer and drive axles),steel,lbs,1015.68,1015.68,1015.68,1015.68
+Class 8 day cab,Suspensions (steer and drive axles),rubber,lbs,66.24,66.24,66.24,66.24
+Class 8 day cab,Suspensions (steer and drive axles),cast iron,lbs,22.08,22.08,22.08,22.08
+Class 8 day cab,Suspensions (steer and drive axles),plastic,lbs,0.0,0.0,0.0,0.0
+Class 8 day cab,"Shafts (driveshaft, axle, and inter-axle shaft)",steel,lbs,108.48,108.48,108.48,108.48
+Class 8 day cab,"Shafts (driveshaft, axle, and inter-axle shaft)",cast iron,lbs,4.52,4.52,4.52,4.52
+Class 8 day cab,"Shafts (driveshaft, axle, and inter-axle shaft)","others (rubber, plastic, and grease)",lbs,0.0,0.0,0.0,0.0
+Class 8 day cab,Wheels,aluminum,lbs,510.0,510.0,510.0,510.0
+Class 8 day cab,Tires,rubber,lbs,340.17,340.17,340.17,340.17
+Class 8 day cab,Tires,steel,lbs,168.3,168.3,168.3,168.3
+Class 8 day cab,"Cradle (frame rails, cross-members), Fifth-wheel, and Auxiliary",steel,lbs,2207.0,2207.0,2207.0,2207.0
+Class 8 day cab,Engine Unit,steel,lbs,1200.6,1187.72,0.0,0.0
+Class 8 day cab,Engine Unit,cast iron,lbs,965.7,955.34,0.0,0.0
+Class 8 day cab,Engine Unit,cast aluminum,lbs,208.8,206.56,0.0,0.0
+Class 8 day cab,Engine Unit,wrought aluminum,lbs,78.3,77.46,0.0,0.0
+Class 8 day cab,Engine Unit,plastic,lbs,78.3,77.46,0.0,0.0
+Class 8 day cab,Engine Unit,each rubber and copper,lbs,26.1,25.82,0.0,0.0
+Class 8 day cab,Engine Unit,"others (stainless steel, iron, nichrome, and others)",lbs,26.1,25.82,0.0,0.0
+Class 8 day cab,Fuel-cell Stack,stainless steel,lbs,0.0,0.0,0.0,796.64
+Class 8 day cab,Fuel-cell Stack,PP,lbs,0.0,0.0,0.0,153.2
+Class 8 day cab,Fuel-cell Stack,cast aluminum,lbs,0.0,0.0,0.0,107.24
+Class 8 day cab,Fuel-cell Stack,each of steel and wrought aluminum,lbs,0.0,0.0,0.0,91.92
+Class 8 day cab,Fuel-cell Stack,glass fiber-reinforced plastic,lbs,0.0,0.0,0.0,61.28
+Class 8 day cab,Fuel-cell Stack,PET,lbs,0.0,0.0,0.0,45.96
+Class 8 day cab,Fuel-cell Stack,plastic (polyphenylene sulfide and other plastics),lbs,0.0,0.0,0.0,30.64
+Class 8 day cab,Fuel-cell Stack,"each of average plastic, copper/brass, and carbon",lbs,0.0,0.0,0.0,30.64
+Class 8 day cab,Fuel-cell Stack,"each of carbon paper, rubber, and PFSA",lbs,0.0,0.0,0.0,15.32
+Class 8 day cab,Fuel-cell Stack,"others (PTFE, nickel, iron, nylon, chromium, platinum, HDPE, molybdenum, glass, ceramic, niobium, titanium, cast iron, bronze, graphite, fiberglass, nichrome, PFSA Nafion, and others)",lbs,0.0,0.0,0.0,0.0
+Class 8 day cab,Engine Fuel Storage + Exhaust Systems,wrought aluminum,lbs,175.12,175.12,0.0,0.0
+Class 8 day cab,Engine Fuel Storage + Exhaust Systems,ceramic,lbs,91.54,91.54,0.0,0.0
+Class 8 day cab,Engine Fuel Storage + Exhaust Systems,plastic (average),lbs,63.68,63.68,0.0,0.0
+Class 8 day cab,Engine Fuel Storage + Exhaust Systems,stainless steel,lbs,51.74,51.74,0.0,0.0
+Class 8 day cab,Engine Fuel Storage + Exhaust Systems,steel,lbs,15.92,15.92,0.0,0.0
+Class 8 day cab,Engine Fuel Storage + Exhaust Systems,(rubber and platinum),lbs,0.0,0.0,0.0,0.0
+Class 8 day cab,Clutch,steel,lbs,47.3,47.3,0.0,0.0
+Class 8 day cab,Clutch,cast iron,lbs,3.85,3.85,0.0,0.0
+Class 8 day cab,Clutch,plastic,lbs,2.75,2.75,0.0,0.0
+Class 8 day cab,Clutch,"others (cast and wrought aluminum, rubber, plastic, copper, brass, magnet, and grease)",lbs,1.1,1.1,0.0,0.0
+Class 8 day cab,Gearbox,steel,lbs,669.08,669.08,270.9,278.64
+Class 8 day cab,Gearbox,cast iron,lbs,54.46,54.46,22.05,22.68
+Class 8 day cab,Gearbox,plastic,lbs,38.9,38.9,15.75,16.2
+Class 8 day cab,Gearbox,"others (cast and wrought aluminum, rubber, plastic, copper, brass, magnet, and grease)",lbs,15.56,15.56,6.3,6.48
+Class 8 day cab,Final Drive and Coupling,steel,lbs,94.6,94.6,75.68,75.68
+Class 8 day cab,Final Drive and Coupling,cast iron,lbs,7.7,7.7,6.16,6.16
+Class 8 day cab,Final Drive and Coupling,plastic,lbs,5.5,5.5,4.4,4.4
+Class 8 day cab,Final Drive and Coupling,"others (cast and wrought aluminum, rubber, plastic, copper, brass, magnet, and grease)",lbs,2.2,2.2,1.76,1.76
+Class 8 day cab,Traction Motor,steel,lbs,0.0,65.88,225.36,231.12
+Class 8 day cab,Traction Motor,cast aluminum,lbs,0.0,65.88,225.36,231.12
+Class 8 day cab,Traction Motor,copper and brass,lbs,0.0,51.24,175.28,179.76
+Class 8 day cab,Electronic Controller,steel,lbs,0.0,0.95,3.3,3.4
+Class 8 day cab,Electronic Controller,cast aluminum,lbs,0.0,8.93,31.02,31.96
+Class 8 day cab,Electronic Controller,copper and brass,lbs,0.0,1.52,5.28,5.44
+Class 8 day cab,Electronic Controller,rubber,lbs,0.0,0.76,2.64,2.72
+Class 8 day cab,Electronic Controller,average plastic,lbs,0.0,4.56,15.84,16.32
+Class 8 day cab,Electronic Controller,others,lbs,0.0,2.28,7.92,8.16
+Class 8 day cab,Fuel-cell Onboard Storage,carbon fiber-reinforced composite,lbs,0.0,0.0,0.0,1413.76
+Class 8 day cab,Fuel-cell Onboard Storage,stainless steel,lbs,0.0,0.0,0.0,640.61
+Class 8 day cab,Fuel-cell Onboard Storage,wrought aluminum,lbs,0.0,0.0,0.0,66.27
+Class 8 day cab,Fuel-cell Onboard Storage,each of HDPE and PP,lbs,0.0,0.0,0.0,44.18
+Class 8 day cab,Fuel-cell Onboard Storage,steel,lbs,0.0,0.0,0.0,22.09
+Class 8 day cab,Fuel-cell Onboard Storage,others,lbs,0.0,0.0,0.0,0.0
+Class 8 day cab,Trailer Body,wrought aluminum,lbs,2834.58,2834.58,2834.58,2834.58
+Class 8 day cab,Trailer Body,wood,lbs,2112.04,2112.04,2112.04,2112.04
+Class 8 day cab,Trailer Body,steel,lbs,611.38,611.38,611.38,611.38
+Class 8 day cab,Trailer Body,(cast aluminum and rubber),lbs,0.0,0.0,0.0,0.0
+Class 8 day cab,Trailer Chassis,steel,lbs,2521.11,2521.11,2521.11,2521.11
+Class 8 day cab,Trailer Chassis,rubber,lbs,840.37,840.37,840.37,840.37
+Class 8 day cab,Trailer Chassis,cast iron,lbs,574.99,574.99,574.99,574.99
+Class 8 day cab,Trailer Chassis,cast aluminum,lbs,398.07,398.07,398.07,398.07
+Class 8 day cab,Trailer Chassis,ceramic,lbs,88.46,88.46,88.46,88.46
+Class 8 day cab,Trailer Chassis,"others (stainless steel, wrought aluminum, plastic, grease, and magnets)",lbs,0.0,0.0,0.0,0.0
+Class 8 day cab,Trailer Auxiliary,steel,lbs,409.86,409.86,409.86,409.86
+Class 8 day cab,Trailer Auxiliary,glass fiber-reinforced plastic,lbs,100.98,100.98,100.98,100.98
+Class 8 day cab,Trailer Auxiliary,wrought aluminum,lbs,35.64,35.64,35.64,35.64
+Class 8 day cab,Trailer Auxiliary,rubber,lbs,29.7,29.7,29.7,29.7
+Class 8 day cab,Trailer Auxiliary,"others (stainless steel, plastic, copper, brass, and others)",lbs,17.82,17.82,17.82,17.82
+Class 8 sleeper cab,Body and Glass,glass fiber-reinforced plastic,lbs,519.84,519.84,519.84,519.84
+Class 8 sleeper cab,Body and Glass,wrought aluminum,lbs,332.12,332.12,332.12,332.12
+Class 8 sleeper cab,Body and Glass,steel,lbs,274.36,274.36,274.36,274.36
+Class 8 sleeper cab,Body and Glass,glass,lbs,259.92,259.92,259.92,259.92
+Class 8 sleeper cab,Body and Glass,plastic (average),lbs,43.32,43.32,43.32,43.32
+Class 8 sleeper cab,Interior,steel,lbs,763.91,763.91,763.91,763.91
+Class 8 sleeper cab,Interior,plastic (average),lbs,389.75,389.75,389.75,389.75
+Class 8 sleeper cab,Interior,damask,lbs,109.13,109.13,109.13,109.13
+Class 8 sleeper cab,Interior,each of latex and cast aluminum,lbs,77.95,77.95,77.95,77.95
+Class 8 sleeper cab,Interior,leather,lbs,62.36,62.36,62.36,62.36
+Class 8 sleeper cab,Interior,rubber,lbs,46.77,46.77,46.77,46.77
+Class 8 sleeper cab,Interior,wrought aluminum,lbs,15.59,15.59,15.59,15.59
+Class 8 sleeper cab,Interior,others (copper/brass and cotton paper),lbs,0.0,0.0,0.0,0.0
+Class 8 sleeper cab,Exterior and Auxiliary,plastic,lbs,147.49,147.49,147.49,147.49
+Class 8 sleeper cab,Exterior and Auxiliary,steel,lbs,82.32,82.32,82.32,82.32
+Class 8 sleeper cab,Exterior and Auxiliary,each of cast aluminum and glass,lbs,34.3,34.3,34.3,34.3
+Class 8 sleeper cab,Exterior and Auxiliary,rubber,lbs,27.44,27.44,27.44,27.44
+Class 8 sleeper cab,Exterior and Auxiliary,copper/brass,lbs,13.72,13.72,13.72,13.72
+Class 8 sleeper cab,Exterior and Auxiliary,wrought aluminum,lbs,0.0,0.0,0.0,0.0
+Class 8 sleeper cab,Wheels,aluminum,lbs,510.0,510.0,510.0,510.0
+Class 8 sleeper cab,Tires,rubber,lbs,340.17,340.17,340.17,340.17
+Class 8 sleeper cab,Tires,steel,lbs,168.3,168.3,168.3,168.3
+Class 8 sleeper cab,Steer Axle (includes brakes),steel,lbs,470.58,470.58,470.58,470.58
+Class 8 sleeper cab,Steer Axle (includes brakes),cast iron,lbs,280.83,280.83,280.83,280.83
+Class 8 sleeper cab,Steer Axle (includes brakes),"others (cast and wrought aluminum, rubber, plastic, brass, copper, and magnet)",lbs,7.59,7.59,7.59,7.59
+Class 8 sleeper cab,Drive Axle (includes brakes and differential assembly),steel,lbs,785.56,785.56,785.56,785.56
+Class 8 sleeper cab,Drive Axle (includes brakes and differential assembly),cast iron,lbs,162.86,162.86,162.86,162.86
+Class 8 sleeper cab,Drive Axle (includes brakes and differential assembly),"others (cast aluminum, rubber, plastic, brass, and magnet)",lbs,9.58,9.58,9.58,9.58
+Class 8 sleeper cab,Suspensions (steer and drive axles),steel,lbs,1015.68,1015.68,1015.68,1015.68
+Class 8 sleeper cab,Suspensions (steer and drive axles),cast iron,lbs,22.08,22.08,22.08,22.08
+Class 8 sleeper cab,Suspensions (steer and drive axles),rubber,lbs,66.24,66.24,66.24,66.24
+Class 8 sleeper cab,Suspensions (steer and drive axles),plastic,lbs,0.0,0.0,0.0,0.0
+Class 8 sleeper cab,"Shafts (driveshaft, axle, and inter-axle shaft)",steel,lbs,108.48,108.48,108.48,108.48
+Class 8 sleeper cab,"Shafts (driveshaft, axle, and inter-axle shaft)",cast iron,lbs,4.52,4.52,4.52,4.52
+Class 8 sleeper cab,"Shafts (driveshaft, axle, and inter-axle shaft)","others (rubber, plastic, and grease)",lbs,0.0,0.0,0.0,0.0
+Class 8 sleeper cab,"Cradle (frame rails, cross-members), Fifth-wheel, and Auxiliary",steel,lbs,2162.86,2162.86,2162.86,2162.86
+Class 8 sleeper cab,"Cradle (frame rails, cross-members), Fifth-wheel, and Auxiliary",rubber,lbs,44.14,44.14,44.14,44.14
+Class 8 sleeper cab,Engine Unit,steel,lbs,1200.6,1187.72,0.0,0.0
+Class 8 sleeper cab,Engine Unit,cast iron,lbs,965.7,955.34,0.0,0.0
+Class 8 sleeper cab,Engine Unit,cast aluminum,lbs,208.8,206.56,0.0,0.0
+Class 8 sleeper cab,Engine Unit,wrought aluminum,lbs,78.3,77.46,0.0,0.0
+Class 8 sleeper cab,Engine Unit,plastic,lbs,78.3,77.46,0.0,0.0
+Class 8 sleeper cab,Engine Unit,"(rubber, copper, stainless steel, iron, nichrome, and others)",lbs,78.3,77.46,0.0,0.0
+Class 8 sleeper cab,Fuel-cell Stack,stainless steel,lbs,0.0,0.0,0.0,793.0
+Class 8 sleeper cab,Fuel-cell Stack,PP,lbs,0.0,0.0,0.0,152.5
+Class 8 sleeper cab,Fuel-cell Stack,cast aluminum,lbs,0.0,0.0,0.0,106.75
+Class 8 sleeper cab,Fuel-cell Stack,each of steel and wrought aluminum,lbs,0.0,0.0,0.0,91.5
+Class 8 sleeper cab,Fuel-cell Stack,glass fiber-reinforced plastic,lbs,0.0,0.0,0.0,61.0
+Class 8 sleeper cab,Fuel-cell Stack,PET,lbs,0.0,0.0,0.0,45.75
+Class 8 sleeper cab,Fuel-cell Stack,plastic (polyphenylene sulfide and other plastics),lbs,0.0,0.0,0.0,30.5
+Class 8 sleeper cab,Fuel-cell Stack,"each of average plastic, copper/brass, and carbon",lbs,0.0,0.0,0.0,30.5
+Class 8 sleeper cab,Fuel-cell Stack,"each of carbon paper, rubber, and PFSA",lbs,0.0,0.0,0.0,15.25
+Class 8 sleeper cab,Fuel-cell Stack,"others (PTFE, nickel, iron, nylon, chromium, platinum, HDPE, molybdenum, glass, ceramic, niobium, titanium, cast iron, bronze, graphite, fiberglass, nichrome, PFSA Nafion, and others)",lbs,0.0,0.0,0.0,0.0
+Class 8 sleeper cab,Engine Fuel Storage + Exhaust Systems,wrought aluminum,lbs,143.85,143.85,0.0,0.0
+Class 8 sleeper cab,Engine Fuel Storage + Exhaust Systems,ceramic,lbs,94.53,94.53,0.0,0.0
+Class 8 sleeper cab,Engine Fuel Storage + Exhaust Systems,plastic (average),lbs,78.09,78.09,0.0,0.0
+Class 8 sleeper cab,Engine Fuel Storage + Exhaust Systems,stainless steel,lbs,53.43,53.43,0.0,0.0
+Class 8 sleeper cab,Engine Fuel Storage + Exhaust Systems,steel,lbs,41.1,41.1,0.0,0.0
+Class 8 sleeper cab,Engine Fuel Storage + Exhaust Systems,others (rubber and platinum),lbs,0.0,0.0,0.0,0.0
+Class 8 sleeper cab,Clutch,steel,lbs,47.3,47.3,0.0,0.0
+Class 8 sleeper cab,Clutch,cast iron,lbs,3.85,3.85,0.0,0.0
+Class 8 sleeper cab,Clutch,plastic,lbs,2.75,2.75,0.0,0.0
+Class 8 sleeper cab,Clutch,rubber,lbs,0.55,0.55,0.0,0.0
+Class 8 sleeper cab,Clutch,"others (cast aluminum, wrought aluminum, rubber, plastic, copper, brass, magnet, and grease)",lbs,0.55,0.55,0.0,0.0
+Class 8 sleeper cab,Gearbox,steel,lbs,669.08,669.08,270.9,276.92
+Class 8 sleeper cab,Gearbox,cast iron,lbs,54.46,54.46,22.05,22.54
+Class 8 sleeper cab,Gearbox,plastic,lbs,38.9,38.9,15.75,16.1
+Class 8 sleeper cab,Gearbox,rubber,lbs,7.78,7.78,3.15,3.22
+Class 8 sleeper cab,Gearbox,"others (cast aluminum, wrought aluminum, rubber, plastic, copper, brass, magnet, and grease)",lbs,7.78,7.78,3.15,3.22
+Class 8 sleeper cab,Final Drive and Coupling,steel,lbs,94.6,94.6,75.68,75.68
+Class 8 sleeper cab,Final Drive and Coupling,cast iron,lbs,7.7,7.7,6.16,6.16
+Class 8 sleeper cab,Final Drive and Coupling,plastic,lbs,5.5,5.5,4.4,4.4
+Class 8 sleeper cab,Final Drive and Coupling,rubber,lbs,1.1,1.1,0.88,0.88
+Class 8 sleeper cab,Final Drive and Coupling,"others (cast aluminum, wrought aluminum, rubber, plastic, copper, brass, magnet, and grease)",lbs,1.1,1.1,0.88,0.88
+Class 8 sleeper cab,Traction Motor,steel,lbs,0.0,65.88,224.64,229.68
+Class 8 sleeper cab,Traction Motor,cast aluminum,lbs,0.0,65.88,224.64,229.68
+Class 8 sleeper cab,Traction Motor,copper and brass,lbs,0.0,51.24,174.72,178.64
+Class 8 sleeper cab,Electronic Controller,steel,lbs,0.0,0.95,3.3,3.4
+Class 8 sleeper cab,Electronic Controller,cast aluminum,lbs,0.0,8.93,31.02,31.96
+Class 8 sleeper cab,Electronic Controller,copper and brass,lbs,0.0,1.52,5.28,5.44
+Class 8 sleeper cab,Electronic Controller,rubber,lbs,0.0,0.76,2.64,2.72
+Class 8 sleeper cab,Electronic Controller,average plastic,lbs,0.0,4.56,15.84,16.32
+Class 8 sleeper cab,Electronic Controller,others,lbs,0.0,2.28,7.92,8.16
+Class 8 sleeper cab,Fuel-cell Onboard Storage,carbon fiber-reinforced composite,lbs,0.0,0.0,0.0,2534.95
+Class 8 sleeper cab,Fuel-cell Onboard Storage,stainless steel,lbs,0.0,0.0,0.0,1797.51
+Class 8 sleeper cab,Fuel-cell Onboard Storage,each of wrought aluminum and HDPE,lbs,0.0,0.0,0.0,92.18
+Class 8 sleeper cab,Fuel-cell Onboard Storage,each of steel and PP,lbs,0.0,0.0,0.0,46.09
+Class 8 sleeper cab,Fuel-cell Onboard Storage,others,lbs,0.0,0.0,0.0,0.0
+Class 8 sleeper cab,Trailer Body,wrought aluminum,lbs,3046.74,3046.74,3046.74,3046.74
+Class 8 sleeper cab,Trailer Body,wood,lbs,2270.12,2270.12,2270.12,2270.12
+Class 8 sleeper cab,Trailer Body,steel,lbs,657.14,657.14,657.14,657.14
+Class 8 sleeper cab,Trailer Body,others (cast aluminum and rubber),lbs,0.0,0.0,0.0,0.0
+Class 8 sleeper cab,Trailer Chassis,steel,lbs,2698.16,2698.16,2698.16,2698.16
+Class 8 sleeper cab,Trailer Chassis,rubber,lbs,837.36,837.36,837.36,837.36
+Class 8 sleeper cab,Trailer Chassis,cast iron,lbs,651.28,651.28,651.28,651.28
+Class 8 sleeper cab,Trailer Chassis,cast aluminum,lbs,418.68,418.68,418.68,418.68
+Class 8 sleeper cab,Trailer Chassis,"others (ceramic, stainless steel, wrought aluminum, plastic, grease, and magnets)",lbs,46.52,46.52,46.52,46.52
+Class 8 sleeper cab,Trailer Auxiliary,steel,lbs,440.22,440.22,440.22,440.22
+Class 8 sleeper cab,Trailer Auxiliary,glass fiber-reinforced plastic,lbs,108.46,108.46,108.46,108.46
+Class 8 sleeper cab,Trailer Auxiliary,wrought aluminum,lbs,38.28,38.28,38.28,38.28
+Class 8 sleeper cab,Trailer Auxiliary,rubber,lbs,31.9,31.9,31.9,31.9
+Class 8 sleeper cab,Trailer Auxiliary,"others (stainless steel, plastic, copper, brass, and others)",lbs,19.14,19.14,19.14,19.14
