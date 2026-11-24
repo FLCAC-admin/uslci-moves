@@ -110,6 +110,47 @@ DQI:
         telematics, and survey datasets reflecting the full range of vehicle
         types covered.
 
+# Link combination-truck t*km processes to GREET MHDV vehicle-materials
+# processes written by processing_vehicle_infra.py (names, units, lifetime VMT,
+# and fuel → powertrain routing read from vehicle_infra_inputs.yaml).
+# Amount per t*km = 1 / (lifetime_km × payload_metric_t).
+VehicleInfra:
+  source_type_to_class:
+    combination truck: Class 8 day cab
+    combination truck, short-haul: Class 8 day cab
+    combination truck, long-haul: Class 8 sleeper cab
+  description: vehicle materials
+
+  # DRAFT link exchange DQI (review before Commons publish)
+  Flow:
+    Flow reliability:
+      score: 4
+      description: >
+        Amount is a qualified estimate: one vehicle amortized over the GREET
+        lifetime distance and the FHWA average combination-truck payload, not
+        measured fleet data.
+    Temporal correlation:
+      score: 2
+      description: >
+        GREET MHDV vehicle-cycle data (circa 2021) are within six years of the
+        MOVES fleet year.
+    Geographical correlation:
+      score: 2
+      description: >
+        US-average vehicle bill of materials, lifetime distance, and payload
+        applied to national and regional processes.
+    Technological correlation:
+      score: 3
+      description: >
+        A single representative GREET Class 8 vehicle stands in for the MOVES
+        fleet; the combination truck rollup of short- and long-haul uses the
+        day-cab vehicle only.
+    Data collection methods:
+      score: 4
+      description: >
+        One representative vehicle per class with average lifetime distance and
+        payload; no fleet sampling of vehicle mass or lifetime activity.
+
 Bridge:
   description: >
     This process links an input in a USLCI process to a provider from the

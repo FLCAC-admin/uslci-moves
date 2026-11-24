@@ -117,6 +117,15 @@ completeness_description: >
     Evaporative emissions while the vehicle is soaking (engine off) are not included.
     Manufacturing of vehicles, roads, and other infrastructure are not included in
     this dataset.
+completeness_description_vehicle_infra: >
+    Included in the inventory are emissions from operations (i.e., tailpipe exhaust)
+    as well as idling and truck hotelling (both extended engine idling and auxiliary
+    power unit use). Particulate matter from brake and tire wear is also included.
+    Evaporative emissions while the vehicle is soaking (engine off) are not included.
+    The vehicle body is included as an input of the [INFRA_PROCESS] process,
+    amortized over the vehicle's lifetime distance and average payload; see that
+    process for the scope of the vehicle materials inventory. Roads and other
+    infrastructure are not included in this dataset.
 
 data_selection_description: >
     MOVES runs were performed at the default settings at the state level.

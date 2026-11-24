@@ -241,6 +241,44 @@ df_olca = (df_olca
 df_olca['default_provider'] = df_olca['default_provider'].replace(
     ['nan', 'None', ''], np.nan)
 df_olca.loc[df_olca['reference'] == True, 'default_provider'] = np.nan
+
+#%% Link combination trucks to vehicle materials (processing_vehicle_infra.py)
+with open(data_path / 'vehicle_infra_inputs.yaml', encoding='utf-8') as f:
+    infra_inputs = yaml.safe_load(f)
+infra_class = moves_inputs['VehicleInfra']['source_type_to_class']
+
+def infra_process_name(source_type, fuel):
+    powertrain = infra_inputs['fuel_to_powertrain'][
+        remove_parentheses_substring(fuel.lower())]
+    return infra_inputs['NamePattern'].format(
+        class_label=infra_class[source_type],
+        powertrain_label=infra_inputs['powertrains'][powertrain]['label'])
+
+def lifetime_km(source_type):
+    vmt = infra_inputs['vehicle_classes'][infra_class[source_type]]['lifetime_vmt_mi']
+    return vmt * infra_inputs['MI_TO_KM']
+
+df_infra = (df_olca
+            .query('reference == True and source_type in @infra_class')
+            .filter(['year', 'source_type', 'fuel', 'payload', 'region',
+                     'ProcessName', 'ProcessCategory', 'ProcessID', 'location'])
+            .assign(FlowName = lambda x: [infra_process_name(s, f) for s, f
+                                          in zip(x['source_type'], x['fuel'])])
+            .assign(Context = infra_inputs['FlowContext'])
+            .assign(FlowUUID = lambda x: [make_uuid(n, infra_inputs['FlowContext'])
+                                          for n in x['FlowName']])
+            .assign(FlowType = 'PRODUCT_FLOW')
+            .assign(IsInput = True)
+            .assign(reference = False)
+            .assign(unit = infra_inputs['ProductUnit'])
+            # vehicles per t*km: one vehicle over its lifetime distance x payload
+            .assign(amount = lambda x: 1 / (x['source_type'].map(lifetime_km)
+                                            * x['payload'] * SHORT_TON_to_metric_tonne))
+            .assign(description = moves_inputs['VehicleInfra']['description'])
+            .assign(default_provider_process = lambda x: x['FlowName'])
+            .assign(default_provider = lambda x: x['FlowName'].apply(make_uuid))
+            )
+df_olca = pd.concat([df_olca, df_infra], ignore_index=True)
 # df_olca.to_csv(parent_path /'moves_processed_output.csv', index=False)
 
 from flcac_utils.generate_processes import build_flow_dict
@@ -261,6 +299,8 @@ df_olca['exchange_dqi'] = format_dqi_score(moves_inputs['DQI']['Flow'])
 # drop DQI entry for reference flow
 df_olca['exchange_dqi'] = np.where(df_olca['reference'] == True,
                                     '', df_olca['exchange_dqi'])
+df_olca.loc[df_olca['FlowUUID'].isin(df_infra['FlowUUID']), 'exchange_dqi'] = (
+    format_dqi_score(moves_inputs['VehicleInfra']['Flow']))
 
 #%% prepare metadata
 from flcac_utils.generate_processes import build_location_dict
@@ -303,6 +343,10 @@ for s in df_olca['source_type'].unique():
             _process_meta['geography_description'] = _process_meta.get('geography_description_US')
         _process_meta.pop('geography_description_US')
         _process_meta.pop('vehicle_descriptions')
+        infra_completeness = _process_meta.pop('completeness_description_vehicle_infra')
+        if s in infra_class:
+            _process_meta['completeness_description'] = infra_completeness.replace(
+                '[INFRA_PROCESS]', infra_process_name(s, i.fuel))
         for k, v in _process_meta.items():
             if not isinstance(v, str): continue
             v = v.replace('[VEHICLE_TYPE]', s.title())
